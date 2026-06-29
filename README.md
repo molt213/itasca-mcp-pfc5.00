@@ -50,7 +50,7 @@ https://raw.githubusercontent.com/molt213/itasca-mcp-pfc5.00/main/docs/agentic/i
 | 组件 | 要求 | 用途 |
 |---|---|---|
 | **PFC** | 5.0 (`pfc3d500_gui_64.exe`) | 运行模拟 |
-| **Python (宿主机)** | 3.10+ | 运行 itasca-mcp MCP Server |
+| **Python (宿主机)** | 2.7.9+ | 运行 itasca-mcp MCP Server |
 | **[uv](https://docs.astral.sh/uv/getting-started/installation/)** | 最新版 | 安装 MCP Server |
 | **Claude Code** (或其他 MCP 客户端) | 最新版 | 与 AI 交互 |
 
