@@ -23,6 +23,8 @@
 - **`execution/main_thread.py`**: 修复 `traceback.format_exc()` 在 `set_exception()`
   之前调用的顺序错误
 - **`handlers/execute_code.py`**: 异常时添加 `traceback.print_exc()` 完整日志
+- **`scripts/addon.py`**: `_import_bridge()` 改为清除所有 `itasca_mcp_bridge.*` 子模块缓存
+  而非仅删除顶层模块，修复 Python 2.7 相对导入因 stale module 对象失败的问题
 - **`bridge/client.py`** (MCP Server): `httpx.AsyncClient(trust_env=False)`
   禁用 Windows 系统代理自动检测，修复 502 Bad Gateway
 
