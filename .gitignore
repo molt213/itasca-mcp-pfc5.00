@@ -18,3 +18,8 @@ Thumbs.db
 
 # Git
 *.orig
+\n# Extraction scripts
+extract_pfc5_knowledge.py
+generate_index.py
+merge_knowledge.py
+fix_kb_index.py
