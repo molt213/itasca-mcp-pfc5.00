@@ -179,7 +179,7 @@ $pfc5_python = Join-Path "{pfc5_path}" "exe64\python27\python.exe"
 ### 3.2 Download or locate the patched bridge
 
 The PFC 5.0 compatible bridge is available in the
-[itasca-mcp-pfc5](https://github.com/<your-org>/itasca-mcp-pfc5) repo.
+[itasca-mcp-pfc5](https://github.com/molt213/itasca-mcp-pfc5.00) repo.
 
 **Option A — From cloned/fetched repo:**
 ```bash

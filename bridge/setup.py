@@ -18,7 +18,7 @@ setup(
     description="PFC 5.0 compatible HTTP bridge for ITASCA codes",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/<your-org>/itasca-mcp-pfc5",
+    url="https://github.com/molt213/itasca-mcp-pfc5.00",
     author="Yusong Han, itasca-mcp-pfc5 contributors",
     license="MIT",
     classifiers=[

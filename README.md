@@ -34,7 +34,7 @@ PFC 5.0 (pfc3d500_gui_64.exe)
 
 ```text
 请全程用中文与我交流。然后获取并完整按照这份引导指南执行（指南为英文，照其步骤操作即可）：
-https://raw.githubusercontent.com/<your-org>/itasca-mcp-pfc5/main/docs/agentic/itasca-mcp-pfc5-bootstrap.md
+https://raw.githubusercontent.com/molt213/itasca-mcp-pfc5.00/main/docs/agentic/itasca-mcp-pfc5-bootstrap.md
 ```
 
 > 💡 指南涵盖：MCP Client 配置 → PFC 5.0 路径探测 → Bridge 安装 → 启动 → 验证。

@@ -24,4 +24,4 @@ dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/yusong652/itasca-mcp"
-"PFC 5.0 Fork" = "https://github.com/<your-org>/itasca-mcp-pfc5"
+"PFC 5.0 Fork" = "https://github.com/molt213/itasca-mcp-pfc5.00"
