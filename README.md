@@ -55,7 +55,60 @@ https://raw.githubusercontent.com/<your-org>/itasca-mcp-pfc5/main/docs/agentic/i
 
 ---
 
-## 安装教程 (Step by Step)
+## 快速开始
+
+### 1. 注册 MCP Server（宿主机，只需一次）
+
+```bash
+claude mcp add itasca-mcp --scope user -- \
+  uv tool run itasca-mcp
+```
+
+> **Windows 代理问题？** 如果遇到 502 Bad Gateway，见下方[安装教程]的代理修复步骤。
+
+### 2. 启动 Bridge（每次打开 PFC 后执行）
+
+下载 [`addon.py`](addon.py)（本项目修改后的 PFC 5.0 兼容版），
+然后在 PFC 5.0 GUI 的 Python 控制台中任选一种方式执行：
+
+- **方式 A：** 打开 `addon.py`，全选复制全部内容，粘贴到 PFC Python 控制台，回车
+- **方式 B：** 将 `addon.py` 保存到本地，在 PFC 控制台中执行：
+  ```python
+  exec(open(r'D:\path\to\addon.py').read())
+  ```
+
+预期输出：
+```
+============================================================
+Itasca MCP Bridge Bootstrap
+============================================================
+Python: 2.7.9
+Installed itasca-mcp-bridge: 0.4.1
+AUTO_UPGRADE is off. Keeping the current installation.
+Using itasca-mcp-bridge: 0.4.1
+Starting bridge on port 9001 ...
+...
+Task loop running via blocking poll (interval=20ms)
+```
+
+> ⚠️ PFC 5.0 没有 Qt 库，Bridge 会以 blocking poll 模式运行，这不影响功能。
+
+### 3. 验证
+
+重启 Claude Code（或你的 MCP 客户端），然后向它提问：
+
+```
+请在 PFC 中执行 itasca_execute_code，打印 "PFC 5.0 connected!"
+```
+
+预期返回：
+```json
+{"ok": true, "data": {"output": "PFC 5.0 connected!\n"}}
+```
+
+---
+
+## 详细安装教程
 
 ### 第一步：宿主机 — 安装 MCP Server
 
