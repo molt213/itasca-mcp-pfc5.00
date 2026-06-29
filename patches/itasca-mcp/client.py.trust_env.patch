@@ -1,0 +1,39 @@
+# Patch: itasca-mcp bridge/client.py — Windows proxy bypass
+#
+# Without this fix, httpx auto-detects the Windows system proxy and
+# routes localhost:9001 requests through the corporate proxy, which
+# returns 502 Bad Gateway errors.
+#
+# File: itasca_mcp/bridge/client.py (in the installed itasca-mcp package)
+# Upstream ref: v0.6.0
+
+--- a/itasca_mcp/bridge/client.py
++++ b/itasca_mcp/bridge/client.py
+@@ -53,7 +53,14 @@ class BridgeClient:
+             # Per-request timeouts are set on each POST; the SSE stream uses an
+             # unbounded read timeout because it stays open between doorbells.
++            # trust_env=False prevents httpx from auto-detecting Windows system
++            # proxy settings, which would otherwise route localhost requests
++            # through the corporate proxy and cause 502 Bad Gateway errors.
+-            self._client = httpx.AsyncClient(base_url=self.url)
++            self._client = httpx.AsyncClient(base_url=self.url, trust_env=False)
+             self._sse_task = asyncio.create_task(self._sse_loop())
+             logger.info("Connected to itasca-mcp-bridge at %s", self.url)
+
+## Manual patch instructions
+
+After installing itasca-mcp via `uv tool install itasca-mcp`, edit the file:
+
+```bash
+# Find the installed location
+CLIENT=$(uv tool list --show-path itasca-mcp)/Lib/site-packages/itasca_mcp/bridge/client.py
+
+# Edit the httpx.AsyncClient() call to add trust_env=False
+# Line ~58: change
+#   self._client = httpx.AsyncClient(base_url=self.url)
+# to:
+#   self._client = httpx.AsyncClient(base_url=self.url, trust_env=False)
+```
+
+Or use the wrapper script `scripts/run_itasca_mcp.py` which sets `NO_PROXY=localhost,127.0.0.1,::1`
+as an additional defense layer (works even without the code patch).

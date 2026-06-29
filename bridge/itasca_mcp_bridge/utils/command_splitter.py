@@ -1,0 +1,352 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, print_function
+
+"""
+Command Splitter - Preprocess scripts to split multi-line itasca.command() calls.
+
+When itasca.command() receives a multi-line string containing multiple ITASCA
+commands, the ITASCA C extension holds the GIL for the entire batch, blocking
+all other Python threads (including the Bridge HTTP server threads).
+
+This module transforms such calls into individual itasca.command() calls,
+allowing the GIL to be released between commands.
+
+Python 3.6 compatible implementation.
+"""
+
+import ast
+import logging
+import re
+
+# Module logger
+logger = logging.getLogger("itasca-mcp-bridge")
+
+
+def split_pfc_commands(multiline_str):
+    # type: (str) -> List[str]
+    """Split a multi-line ITASCA command string into individual commands.
+
+    Handles:
+    - Newline-separated commands
+    - ITASCA line continuation with '...' at end of line
+    - ITASCA comments starting with ';'
+    - Empty/whitespace-only lines
+
+    Args:
+        multiline_str: Multi-line ITASCA command string
+
+    Returns:
+        List of individual ITASCA command strings
+    """
+    lines = multiline_str.split("\n")
+    commands = []
+    current = []  # type: List[str]
+
+    for line in lines:
+        stripped = line.strip()
+
+        # Skip empty lines and pure comment lines
+        if not stripped or stripped.startswith(";"):
+            continue
+
+        # Check for ITASCA line continuation (... at end)
+        if stripped.endswith("..."):
+            # Remove the '...' and accumulate
+            current.append(stripped[:-3].rstrip())
+            continue
+
+        # No continuation — complete the current command
+        current.append(stripped)
+        joined = " ".join(current)
+        if joined.strip():
+            commands.append(joined.strip())
+        current = []
+
+    # Flush any remaining continuation
+    if current:
+        joined = " ".join(current)
+        if joined.strip():
+            commands.append(joined.strip())
+
+    return commands
+
+
+def _get_string_value(node):
+    # type: (ast.AST) -> Optional[str]
+    """Extract string value from an AST node (Python 3.6+ compatible).
+
+    Handles both ast.Str (Python 3.6-3.7) and ast.Constant (Python 3.8+).
+    """
+    # Python 3.6-3.7: ast.Str
+    if hasattr(ast, "Str") and isinstance(node, ast.Str):
+        return node.s
+    # Python 3.8+: ast.Constant
+    if hasattr(ast, "Constant") and isinstance(node, ast.Constant):
+        if isinstance(node.value, str):
+            return node.value
+    return None
+
+
+def _collect_itasca_aliases(tree):
+    # type: (ast.Module) -> Tuple[set, set]
+    """Collect names bound to itasca module / itasca.command in this script.
+
+    Recognizes only top-level imports — local re-bindings inside functions
+    are out of scope (the splitter only operates at module scope anyway).
+
+    Returns:
+        (module_aliases, bare_command_aliases)
+        - module_aliases: names X where X.command(...) means itasca.command(...).
+          Defaults to {"itasca"} so unqualified attribute calls still match
+          when the user wrote a literal `import itasca`.
+        - bare_command_aliases: names Y where Y(...) means itasca.command(...).
+          Populated from `from itasca import command [as Y]`.
+    """
+    module_aliases = {"itasca"}
+    bare_command_aliases = set()  # type: set
+
+    for node in tree.body:
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                if alias.name == "itasca":
+                    module_aliases.add(alias.asname or alias.name)
+        elif isinstance(node, ast.ImportFrom):
+            if node.module == "itasca":
+                for alias in node.names:
+                    if alias.name == "command":
+                        bare_command_aliases.add(alias.asname or alias.name)
+
+    return module_aliases, bare_command_aliases
+
+
+def _is_command_call(node, module_aliases, bare_command_aliases):
+    # type: (ast.Call, set, set) -> bool
+    """Check if a Call node is itasca.command() (under any alias) or bare command()."""
+    func = node.func
+
+    # <alias>.command(...) — e.g. itasca.command(...), it.command(...)
+    if isinstance(func, ast.Attribute):
+        if (func.attr == "command"
+                and isinstance(func.value, ast.Name)
+                and func.value.id in module_aliases):
+            return True
+
+    # command(...) — from 'from itasca import command [as alias]'
+    if isinstance(func, ast.Name) and func.id in bare_command_aliases:
+        return True
+
+    return False
+
+
+def _find_multiline_command_calls(tree, module_aliases, bare_command_aliases):
+    # type: (ast.Module, set, set) -> List[Tuple[ast.Call, str]]
+    """Find all multi-line itasca.command() calls in the AST.
+
+    Returns:
+        List of (call_node, string_value) tuples, sorted by line number descending
+        so replacements can be done back-to-front without shifting offsets.
+    """
+    results = []  # type: List[Tuple[ast.Call, str]]
+
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        if not _is_command_call(node, module_aliases, bare_command_aliases):
+            continue
+        # Must have exactly one positional string arg, no kwargs
+        if len(node.args) != 1 or node.keywords:
+            continue
+        value = _get_string_value(node.args[0])
+        if value is None:
+            continue
+        # Only process if it contains multiple ITASCA commands (newlines)
+        if "\n" not in value:
+            continue
+        # Check it actually has >1 command after splitting
+        commands = split_pfc_commands(value)
+        if len(commands) <= 1:
+            continue
+        results.append((node, value))
+
+    # Sort descending by line number (replace back-to-front)
+    results.sort(key=lambda pair: pair[0].lineno, reverse=True)
+    return results
+
+
+def _find_unrecognized_multiline_command_calls(tree, module_aliases):
+    # type: (ast.Module, set) -> List[Tuple[ast.Call, str]]
+    """Find multi-line `*.command()` calls whose receiver isn't a known itasca alias.
+
+    These slip through the splitter (we can't statically prove the receiver
+    aliases itasca) and can wedge the bridge with the same deadlock the
+    splitter prevents — typical cause is reassignment like `_it = itasca`
+    or wrapping the alias inside a function.
+
+    Returns (call_node, receiver_name) tuples for DEBUG-level logging.
+    """
+    findings = []  # type: List[Tuple[ast.Call, str]]
+
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        func = node.func
+        if not isinstance(func, ast.Attribute):
+            continue
+        if func.attr != "command":
+            continue
+        if not isinstance(func.value, ast.Name):
+            continue
+        if func.value.id in module_aliases:
+            continue  # would already be handled by the main splitter pass
+        if len(node.args) != 1 or node.keywords:
+            continue
+        value = _get_string_value(node.args[0])
+        if value is None or "\n" not in value:
+            continue
+        # Require >1 actual ITASCA command after splitting — single-line block
+        # in triple-quotes isn't risky.
+        if len(split_pfc_commands(value)) <= 1:
+            continue
+        findings.append((node, func.value.id))
+
+    return findings
+
+
+def _detect_call_name(call_node):
+    # type: (ast.Call) -> str
+    """Detect the command call name to use in replacement source.
+
+    Reads the call name from the AST node itself rather than from the
+    source text, so aliases like `import itasca as it` produce
+    `it.command(...)` replacements (not `command(...)` which would
+    NameError because the alias isn't bound that way).
+    """
+    func = call_node.func
+    if isinstance(func, ast.Attribute) and isinstance(func.value, ast.Name):
+        return "{}.{}".format(func.value.id, func.attr)
+    if isinstance(func, ast.Name):
+        return func.id
+    # Shouldn't reach here for nodes that passed _is_command_call,
+    # but stay safe: fall back to the literal 'itasca.command'.
+    return "itasca.command"
+
+
+def _find_call_range(source_lines, call_node):
+    # type: (List[str], ast.Call) -> Tuple[int, int]
+    """Find the line range [start, end) of a call expression in source.
+
+    Tracks parenthesis nesting to find the closing ')'.
+    """
+    start = call_node.lineno - 1  # 0-based
+    depth = 0
+    in_string = None  # type: Optional[str]
+    escape_next = False
+
+    for i in range(start, len(source_lines)):
+        line = source_lines[i]
+        for ch in line:
+            if escape_next:
+                escape_next = False
+                continue
+            if ch == "\\":
+                escape_next = True
+                continue
+            if in_string:
+                if ch == in_string:
+                    in_string = None
+                continue
+            if ch in ('"', "'"):
+                # Check for triple quotes
+                rest = line[line.index(ch):]
+                if rest.startswith('"""') or rest.startswith("'''"):
+                    in_string = ch  # simplified: track single char
+                else:
+                    in_string = ch
+                continue
+            if ch == "(":
+                depth += 1
+            elif ch == ")":
+                depth -= 1
+                if depth == 0:
+                    return (start, i + 1)  # end is exclusive
+
+    # Fallback: couldn't find closing paren
+    return (start, start + 1)
+
+
+def _build_replacement(call_name, commands, indent):
+    # type: (str, List[str], str) -> str
+    """Build replacement source lines for split commands.
+
+    Args:
+        call_name: 'itasca.command' or 'command'
+        commands: List of individual ITASCA command strings
+        indent: Whitespace indentation to preserve
+
+    Returns:
+        Replacement source text with one call per line
+    """
+    lines = []
+    for cmd in commands:
+        # Escape any single quotes in the command
+        escaped = cmd.replace("\\", "\\\\").replace('"', '\\"')
+        lines.append('{}{}("{}")'.format(indent, call_name, escaped))
+    return "\n".join(lines)
+
+
+def preprocess_script(script_content):
+    # type: (str) -> str
+    """Transform multi-line itasca.command() calls into individual calls.
+
+    This is the main entry point. If parsing or transformation fails,
+    the original script content is returned unchanged.
+
+    Args:
+        script_content: Raw Python script content
+
+    Returns:
+        Transformed script content with split command calls
+    """
+    try:
+        tree = ast.parse(script_content)
+    except SyntaxError:
+        # Can't parse — return as-is (compile() will report the error later)
+        return script_content
+
+    module_aliases, bare_command_aliases = _collect_itasca_aliases(tree)
+
+    # Diagnostic: log multi-line .command() calls on receivers we couldn't
+    # prove are itasca aliases (e.g. `_it = itasca; _it.command("""...""")`).
+    # These slip through splitting and can stall the bridge.
+    for node, receiver in _find_unrecognized_multiline_command_calls(tree, module_aliases):
+        logger.debug(
+            "multi-line .command() on unrecognized receiver '%s' at line %d "
+            "— splitter skipped; if this aliases itasca, the bridge may stall",
+            receiver, node.lineno,
+        )
+
+    calls = _find_multiline_command_calls(tree, module_aliases, bare_command_aliases)
+    if not calls:
+        return script_content
+
+    source_lines = script_content.split("\n")
+
+    for call_node, cmd_string in calls:
+        # Detect indentation from source; call name from AST.
+        start_line = source_lines[call_node.lineno - 1]
+        indent = start_line[: len(start_line) - len(start_line.lstrip())]
+        call_name = _detect_call_name(call_node)
+
+        # Find full extent of the call in source
+        line_start, line_end = _find_call_range(source_lines, call_node)
+
+        # Split ITASCA commands and build replacement
+        commands = split_pfc_commands(cmd_string)
+        replacement = _build_replacement(call_name, commands, indent)
+
+        # Replace the lines
+        source_lines[line_start:line_end] = replacement.split("\n")
+
+    result = "\n".join(source_lines)
+    logger.debug("Preprocessed script: split %d multi-line command call(s)", len(calls))
+    return result

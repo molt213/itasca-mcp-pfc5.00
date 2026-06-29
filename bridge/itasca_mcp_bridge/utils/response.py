@@ -1,0 +1,154 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, print_function
+
+"""
+Task Response Builder - Unified response data construction.
+
+This module provides a builder pattern for constructing task response
+data dictionaries, reducing code duplication across ScriptRunner and ScriptTask.
+
+Python 3.6 compatible implementation.
+"""
+
+
+# Bridge-side output cap. Acts as a defensive safety net for very large
+# payloads; normal long-running task output is already tail-limited by
+# ScriptTask.get_current_output (OUTPUT_TAIL_BYTES). We keep the TAIL
+# (most recent output) because monitoring scenarios care about current
+# progress, not the beginning of a multi-hour log.
+MAX_OUTPUT_CHARS = 200000
+
+
+def _truncate_output(text, max_chars=MAX_OUTPUT_CHARS):
+    # type: (str, int) -> str
+    """Truncate output text, keeping the tail (most recent) at a line boundary."""
+    if len(text) <= max_chars:
+        return text
+    tail = text[-max_chars:]
+    nl = tail.find("\n")
+    if nl >= 0:
+        tail = tail[nl + 1:]
+    omitted = len(text) - len(tail)
+    return (
+        "... (truncated, {} earlier chars omitted; showing most recent {} chars. "
+        "Re-query task status with skip_newest/limit/filter_text to page "
+        "within this window.)\n"
+        .format(omitted, len(tail))
+    ) + tail
+
+
+class TaskDataBuilder:
+    """
+    Builder for task response data dictionaries.
+
+    Provides a fluent interface for constructing task metadata,
+    ensuring consistent field naming across all response points.
+
+    Example:
+        data = (TaskDataBuilder(task_id, "script", script_name, entry_script, description)
+            .with_timing(start_time, end_time, elapsed_time)
+            .with_output(output_text)
+            .with_result(result)
+            .build())
+    """
+
+    def __init__(
+        self,
+        task_id,  # type: str
+        task_type,  # type: str
+        script_name,  # type: str
+        entry_script,  # type: str
+        description,  # type: str
+    ):
+        # type: (...) -> None
+        """
+        Initialize builder with required task metadata.
+
+        Args:
+            task_id: Unique task identifier
+            task_type: Task type (e.g., "script")
+            script_name: Script file name (e.g., "main.py")
+            entry_script: Absolute path to entry script
+            description: Task description from agent
+        """
+        self._data = {
+            "task_id": task_id,
+            "task_type": task_type,
+            "script_name": script_name,
+            "entry_script": entry_script,
+            "description": description,
+        }  # type: Dict[str, Any]
+
+    def with_timing(
+        self,
+        start_time,  # type: Optional[float]
+        end_time=None,  # type: Optional[float]
+        elapsed_time=None,  # type: Optional[float]
+    ):
+        # type: (...) -> TaskDataBuilder
+        """
+        Add timing information.
+
+        Args:
+            start_time: Task start timestamp
+            end_time: Task end timestamp (for completed tasks)
+            elapsed_time: Elapsed time in seconds
+        """
+        self._data["start_time"] = start_time
+        if end_time is not None:
+            self._data["end_time"] = end_time
+        if elapsed_time is not None:
+            self._data["elapsed_time"] = elapsed_time
+        return self
+
+    def with_output(self, output):
+        # type: (Optional[str]) -> TaskDataBuilder
+        """Add output field (captured stdout), truncated for safe transport."""
+        if output is not None:
+            self._data["output"] = _truncate_output(output)
+        return self
+
+    def with_pagination(self, pagination):
+        # type: (Optional[Dict[str, Any]]) -> TaskDataBuilder
+        """Add pagination metadata field (total_lines, line_range)."""
+        if pagination is not None:
+            self._data["pagination"] = pagination
+        return self
+
+    def with_result(self, result):
+        # type: (Any) -> TaskDataBuilder
+        """Add result field (script's result variable)."""
+        self._data["result"] = result
+        return self
+
+    def with_error(self, error):
+        # type: (Optional[str]) -> TaskDataBuilder
+        """Add error field."""
+        if error is not None:
+            self._data["error"] = error
+        return self
+
+    def build(self):
+        # type: () -> Dict[str, Any]
+        """Return the built data dictionary."""
+        return self._data.copy()
+
+
+def build_response(status, message, data):
+    # type: (str, str, Dict[str, Any]) -> Dict[str, Any]
+    """
+    Build a complete task response dictionary.
+
+    Args:
+        status: Response status ("pending", "success", "error", "interrupted")
+        message: User-facing message
+        data: Task data dictionary (from TaskDataBuilder)
+
+    Returns:
+        Complete response dictionary with status, message, and data fields
+    """
+    return {
+        "status": status,
+        "message": message,
+        "data": data,
+    }
