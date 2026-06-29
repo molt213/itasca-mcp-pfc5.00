@@ -191,7 +191,25 @@ print(itasca_mcp_bridge.__version__)
 # 预期输出: 0.4.1
 ```
 
-### 第四步：启动 Bridge
+### 第四步：安装 PFC 5.0 知识库（可选）
+
+让 `browse_commands` 和 `query_command` 显示 PFC 5.0 的命令文档：
+
+```bash
+# 1. 复制知识库文件到 MCP Server 目录
+xcopy /E /I knowledge "C:\Users\%USERNAME%\AppData\Roaming\uv\tools\itasca-mcp\Lib\site-packages\itasca_mcp\knowledge"
+
+# 2. 给 MCP Server 打补丁启用 5.0 版本
+#    修改以下文件：
+#    - utils.py: CommandDocVersion 枚举加 V5_0 = "5.0"
+#    - tools/browse_commands.py: 版本描述加 PFC 5.0
+#    - tools/query_command.py: 版本描述加 PFC 5.0
+#    具体修改见 patches/mcp-server/ 下的补丁说明
+```
+
+> 不装也不影响使用 `execute_code` 等执行工具，只是 AI 查命令语法时会按 PFC 7.0 给你。
+
+### 第五步：启动 Bridge
 
 打开 PFC 5.0 GUI，在 Python 控制台中执行：
 
@@ -229,7 +247,7 @@ itasca_mcp_bridge.start(port=9001, auto_upgrade=False)
 > ⚠️ **必须传 `auto_upgrade=False`！** 
 > PFC 5.0 的 Python 2.7.9 SSL 太旧，无法连接 PyPI，不跳过升级会崩溃。
 
-### 第五步：验证连接
+### 第六步：验证连接
 
 回到 Claude Code，MCP 服务器会自动连接。验证：
 
