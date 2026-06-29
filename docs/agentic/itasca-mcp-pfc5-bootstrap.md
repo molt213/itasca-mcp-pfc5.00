@@ -26,7 +26,7 @@ Claude Code (MCP Client)
     ↕ MCP stdio 协议
 itasca-mcp v0.6.0 (MCP Server, 宿主机 Python 3.10+)
     ↕ HTTP localhost:9001
-itasca-mcp-bridge v0.4.1-pfc5 (PFC 5.0 Python 2.7 进程内)
+itasca-mcp-bridge v0.4.2 (PFC 5.0 Python 2.7 进程内)
     ↕ Python SDK
 PFC 5.0 (pfc3d500_gui_64.exe)
 ```

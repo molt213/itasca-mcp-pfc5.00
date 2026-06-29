@@ -4,7 +4,7 @@ build-backend = "setuptools.backends._legacy:_Backend"
 
 [project]
 name = "itasca-mcp-bridge"
-version = "0.4.1-pfc5"
+version = "0.4.2"
 description = "PFC 5.0 compatible HTTP bridge for ITASCA codes - a backport of itasca-mcp-bridge"
 authors = [
     {name = "Yusong Han", email = "yusong.han.652@gmail.com"},

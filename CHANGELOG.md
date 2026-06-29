@@ -1,8 +1,17 @@
 # Changelog
 
-## v0.4.1-pfc5 (2026-06-29)
+## v0.4.2 (2026-06-29)
 
-首个 PFC 5.0 兼容版本，基于 itasca-mcp-bridge v0.4.1 上游。
+PFC 5.0 兼容版本，基于 itasca-mcp-bridge v0.4.1 上游。
+新增 PFC 5.0 命令知识库（pfchelp.chm 提取，131 条命令）。
+修复 Bridge 在 PFC 5.0 上 Python 2.7 的兼容性问题。
+
+### 新增
+- `_compat.py`: Python 2/3 兼容层，涵盖 `threading.get_ident`、`Future`、`TimeoutError`、
+  `Queue/queue`、HTTP server、`urlopen`、`importlib.invalidate_caches`、`makedirs` 等
+- `scripts/addon.py`: PFC 5.0 一键启动引导脚本（自动跳过 PyPI 升级）
+- `scripts/run_itasca_mcp.py`: MCP Server 包装脚本（设置 `NO_PROXY` 环境变量）
+- `knowledge/`: PFC 5.0 命令知识库，131 条命令，12 个分类
 
 ### 新增
 - `_compat.py`: Python 2/3 兼容层，涵盖 `threading.get_ident`、`Future`、`TimeoutError`、

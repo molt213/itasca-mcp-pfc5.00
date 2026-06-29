@@ -14,7 +14,7 @@ with open(os.path.join(here, "..", "README.md"), "rb") as f:
 
 setup(
     name="itasca-mcp-bridge",
-    version="0.4.1-pfc5",
+    version="0.4.2",
     description="PFC 5.0 compatible HTTP bridge for ITASCA codes",
     long_description=long_description,
     long_description_content_type="text/markdown",
