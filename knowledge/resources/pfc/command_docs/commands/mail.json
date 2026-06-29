@@ -1,0 +1,98 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "mail",
+      "syntax": "mailkeywordFISHFISHaddkeywordattachs",
+      "short_description": "Operate on email",
+      "keywords": [
+        {
+          "name": "mail.add",
+          "syntax": "mail.add",
+          "description": "Add an item to the email"
+        },
+        {
+          "name": "mail.add.bcc",
+          "syntax": "mail.add.bcc",
+          "description": "Add a &quot;bcc&quot; recipient"
+        },
+        {
+          "name": "mail.add.cc",
+          "syntax": "mail.add.cc",
+          "description": "Add a &quot;cc&quot; recipient"
+        },
+        {
+          "name": "mail.add.to",
+          "syntax": "mail.add.to",
+          "description": "Add a &quot;to&quot; recipient"
+        },
+        {
+          "name": "mail.clear",
+          "syntax": "mail.clear",
+          "description": "Clear the current mail variables, including body, recipient list, and attachment list"
+        },
+        {
+          "name": "mail.remove",
+          "syntax": "mail.remove",
+          "description": "Remove an item from the email"
+        },
+        {
+          "name": "mail.remove.bcc",
+          "syntax": "mail.remove.bcc",
+          "description": "Remove a &quot;bcc&quot; recipient"
+        },
+        {
+          "name": "mail.remove.cc",
+          "syntax": "mail.remove.cc",
+          "description": "Remove a &quot;cc&quot; recipient"
+        },
+        {
+          "name": "mail.remove.to",
+          "syntax": "mail.remove.to",
+          "description": "Remove a &quot;to&quot; recipient"
+        },
+        {
+          "name": "mail.send",
+          "syntax": "mail.send",
+          "description": "Validate the mail settings, compose the message, and send the message"
+        },
+        {
+          "name": "mail.set",
+          "syntax": "mail.set",
+          "description": "Apply email settings"
+        },
+        {
+          "name": "mail.set.body",
+          "syntax": "mail.set.body",
+          "description": "Set the email body"
+        },
+        {
+          "name": "mail.set.body.string",
+          "syntax": "mail.set.body.string",
+          "description": "Set the message body to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "mail.set.domain",
+          "syntax": "mail.set.domain",
+          "description": "Set the company domain name"
+        },
+        {
+          "name": "mail.set.host",
+          "syntax": "mail.set.host",
+          "description": "Set the SMTP host name"
+        },
+        {
+          "name": "mail.set.password",
+          "syntax": "mail.set.password",
+          "description": "Set the user password for the email account"
+        },
+        {
+          "name": "mail.set.subject",
+          "syntax": "mail.set.subject",
+          "description": "Set the message subject"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

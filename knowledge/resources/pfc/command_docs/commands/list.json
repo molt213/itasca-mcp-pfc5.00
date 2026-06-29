@@ -1,0 +1,193 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "list",
+      "syntax": "listkeywordrangesetlogFISHFISHFISHcyclesequenceFISHsetfishcallbackPFCPFCPFC",
+      "short_description": "Print information. Program and model information is printed to the screen",
+      "keywords": [
+        {
+          "name": "list.cyclesequence",
+          "syntax": "list.cyclesequence",
+          "description": "List the doubles indicating the cycle point and names of the cycle entries in the cycle sequence"
+        },
+        {
+          "name": "list.directory",
+          "syntax": "list.directory",
+          "description": "List the current working directory and the application directory"
+        },
+        {
+          "name": "list.domain",
+          "syntax": "list.domain",
+          "description": "List the domain extent and the conditions"
+        },
+        {
+          "name": "list.fish",
+          "syntax": "list.fish",
+          "description": "List FISH symbols and callback events"
+        },
+        {
+          "name": "list.fish.callback",
+          "syntax": "list.fish.callback",
+          "description": "List all FISH functions to be executed in response to callback events"
+        },
+        {
+          "name": "list.fish.callbackevents",
+          "syntax": "list.fish.callbackevents",
+          "description": "List all available events with which a FISH function can be registered for execution via the <a class=\"reference internal\" href=\"cmd_set"
+        },
+        {
+          "name": "list.fish.code",
+          "syntax": "list.fish.code",
+          "description": "List all FISH internal pseudo-code used to execute functions"
+        },
+        {
+          "name": "list.fish.contents",
+          "syntax": "list.fish.contents",
+          "description": "List the contents of a compound FISH type"
+        },
+        {
+          "name": "list.fish.intrinsics",
+          "syntax": "list.fish.intrinsics",
+          "description": "List all available FISH intrinsic functions in alphabetical order (includes arguments and return types)"
+        },
+        {
+          "name": "list.fish.memitems",
+          "syntax": "list.fish.memitems",
+          "description": "List all current memory blocks allocated with the <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "list.fish.symbols",
+          "syntax": "list.fish.symbols",
+          "description": "List all FISH variables, including their current types and values unless their name starts with a &quot;$&quot; character"
+        },
+        {
+          "name": "list.fishcallback",
+          "syntax": "list.fishcallback",
+          "description": "Synonym for the <a class=\"reference internal\" href=\"#kwd:list"
+        },
+        {
+          "name": "list.fishcallbackevents",
+          "syntax": "list.fishcallbackevents",
+          "description": "Synonym for the <a class=\"reference internal\" href=\"#kwd:list"
+        },
+        {
+          "name": "list.fos",
+          "syntax": "list.fos",
+          "description": "Display the last factor of safety result"
+        },
+        {
+          "name": "list.globals",
+          "syntax": "list.globals",
+          "description": "List global variables"
+        },
+        {
+          "name": "list.group",
+          "syntax": "list.group",
+          "description": "List all existing group names"
+        },
+        {
+          "name": "list.history",
+          "syntax": "list.history",
+          "description": "List summary information (describing name and position of the entity being sampled) of histories"
+        },
+        {
+          "name": "list.information",
+          "syntax": "list.information",
+          "description": "Extensive list of global variables, parameter settings, and program state information"
+        },
+        {
+          "name": "list.keyinfo",
+          "syntax": "list.keyinfo",
+          "description": "List the details of the currently installed security key"
+        },
+        {
+          "name": "list.memory",
+          "syntax": "list.memory",
+          "description": "List the amount of memory that is actively being used"
+        },
+        {
+          "name": "list.module",
+          "syntax": "list.module",
+          "description": "List the module DLLs that are loaded"
+        },
+        {
+          "name": "list.plugins",
+          "syntax": "list.plugins",
+          "description": "List the plug-in DLLs that are loaded"
+        },
+        {
+          "name": "list.principal",
+          "syntax": "list.principal",
+          "description": "List the components and details of a symmetric 3D tensor input in terms of its principal components and their directions"
+        },
+        {
+          "name": "list.principal.maximum",
+          "syntax": "list.principal.maximum",
+          "description": "Maximum principal stress direction"
+        },
+        {
+          "name": "list.principal.minimum",
+          "syntax": "list.principal.minimum",
+          "description": "Minimum principal stress direction"
+        },
+        {
+          "name": "list.principal.azimuthplunge",
+          "syntax": "list.principal.azimuthplunge",
+          "description": "The direction is specified in terms of azimuth and plunge"
+        },
+        {
+          "name": "list.principal.dipdd",
+          "syntax": "list.principal.dipdd",
+          "description": "The direction is specified in terms of the dip and dip direction of the plane normal to that direction"
+        },
+        {
+          "name": "list.principal.normal",
+          "syntax": "list.principal.normal",
+          "description": "The direction is specified in terms of a normal vector"
+        },
+        {
+          "name": "list.principal.trendplunge",
+          "syntax": "list.principal.trendplunge",
+          "description": "The direction is specified in terms of trend and plunge"
+        },
+        {
+          "name": "list.range",
+          "syntax": "list.range",
+          "description": "List all currently defined named ranges"
+        },
+        {
+          "name": "list.record",
+          "syntax": "list.record",
+          "description": "List command record data"
+        },
+        {
+          "name": "list.record.files",
+          "syntax": "list.record.files",
+          "description": "List the imported files stored in the record with a tag indicating whether they currently exist or have been modified since the record was created"
+        },
+        {
+          "name": "list.record.information",
+          "syntax": "list.record.information",
+          "description": "List a summary of the number of lines and the number of file entries stored in the record"
+        },
+        {
+          "name": "list.rlist",
+          "syntax": "list.rlist",
+          "description": "List all currently defined named ranges"
+        },
+        {
+          "name": "list.trace",
+          "syntax": "list.trace",
+          "description": "List the particle trace information"
+        },
+        {
+          "name": "list.version",
+          "syntax": "list.version",
+          "description": "List the version information of the current executable"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

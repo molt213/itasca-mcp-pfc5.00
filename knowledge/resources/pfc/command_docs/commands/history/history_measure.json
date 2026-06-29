@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "history measure",
+      "syntax": "historyididmeasurekeywordidid2orvmeasurehistory",
+      "short_description": "Add a measure history",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

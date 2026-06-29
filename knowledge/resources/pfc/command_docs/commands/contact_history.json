@@ -1,0 +1,148 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact_history",
+      "syntax": "contactsprocesshistoryididskeyword...idhistorysball-ballball-pebbleball-facetpebble-facetidhistorysprocessforce",
+      "short_description": "Magnitude of the contact force",
+      "keywords": [
+        {
+          "name": "contact.history.force",
+          "syntax": "contact.history.force",
+          "description": "Magnitude of the contact force"
+        },
+        {
+          "name": "contact.history.momenton1",
+          "syntax": "contact.history.momenton1",
+          "description": "The {contact moment on end 1 in 2D; magnitude of the contact moment on end 1 in 3D}"
+        },
+        {
+          "name": "contact.history.momenton2",
+          "syntax": "contact.history.momenton2",
+          "description": "The {contact moment on end 2 in 2D; magnitude of the contact moment on end 2 in 3D}"
+        },
+        {
+          "name": "contact.history.normalforce",
+          "syntax": "contact.history.normalforce",
+          "description": "Contact force in the normal direction"
+        },
+        {
+          "name": "contact.history.gap",
+          "syntax": "contact.history.gap",
+          "description": "Contact gap"
+        },
+        {
+          "name": "contact.history.shearforce",
+          "syntax": "contact.history.shearforce",
+          "description": "Magnitude of the shear contact force"
+        },
+        {
+          "name": "contact.history.xforce",
+          "syntax": "contact.history.xforce",
+          "description": "The x -component of the contact force"
+        },
+        {
+          "name": "contact.history.xlocalforce",
+          "syntax": "contact.history.xlocalforce",
+          "description": "The x -component of the contact force in the contact coordinate system"
+        },
+        {
+          "name": "contact.history.xlocalmomenton1",
+          "syntax": "contact.history.xlocalmomenton1",
+          "description": "The x -component of the contact moment on end 1 in the contact coordinate system"
+        },
+        {
+          "name": "contact.history.xlocalmomenton2",
+          "syntax": "contact.history.xlocalmomenton2",
+          "description": "The x -component of the contact moment on end 2 in the contact coordinate system"
+        },
+        {
+          "name": "contact.history.xmomenton1",
+          "syntax": "contact.history.xmomenton1",
+          "description": "The x -component of the contact moment on end 1"
+        },
+        {
+          "name": "contact.history.xmomenton2",
+          "syntax": "contact.history.xmomenton2",
+          "description": "The x -component of the contact moment on end 2"
+        },
+        {
+          "name": "contact.history.xposition",
+          "syntax": "contact.history.xposition",
+          "description": "The x -component of the contact position"
+        },
+        {
+          "name": "contact.history.yforce",
+          "syntax": "contact.history.yforce",
+          "description": "The y -component of the contact force"
+        },
+        {
+          "name": "contact.history.ylocalforce",
+          "syntax": "contact.history.ylocalforce",
+          "description": "The y -component of the contact force in the contact coordinate system"
+        },
+        {
+          "name": "contact.history.ylocalmomenton1",
+          "syntax": "contact.history.ylocalmomenton1",
+          "description": "The y -component of the contact moment on end 1 in the contact coordinate system"
+        },
+        {
+          "name": "contact.history.ylocalmomenton2",
+          "syntax": "contact.history.ylocalmomenton2",
+          "description": "The y -component of the contact moment on end 2 in the contact coordinate system"
+        },
+        {
+          "name": "contact.history.ymomenton1",
+          "syntax": "contact.history.ymomenton1",
+          "description": "The y -component of the contact moment on end 1"
+        },
+        {
+          "name": "contact.history.ymomenton2",
+          "syntax": "contact.history.ymomenton2",
+          "description": "The y -component of the contact moment on end 2"
+        },
+        {
+          "name": "contact.history.yposition",
+          "syntax": "contact.history.yposition",
+          "description": "The y -component of the contact position"
+        },
+        {
+          "name": "contact.history.zforce",
+          "syntax": "contact.history.zforce",
+          "description": "The z -component of the contact force"
+        },
+        {
+          "name": "contact.history.zlocalforce",
+          "syntax": "contact.history.zlocalforce",
+          "description": "The z -component of the contact force in the contact coordinate system"
+        },
+        {
+          "name": "contact.history.zlocalmomenton1",
+          "syntax": "contact.history.zlocalmomenton1",
+          "description": "The z -component of the contact moment on end 1 in the contact coordinate system"
+        },
+        {
+          "name": "contact.history.zlocalmomenton2",
+          "syntax": "contact.history.zlocalmomenton2",
+          "description": "The z -component of the contact moment on end 2 in the contact coordinate system"
+        },
+        {
+          "name": "contact.history.zmomenton1",
+          "syntax": "contact.history.zmomenton1",
+          "description": "The z -component of the contact moment on end 1"
+        },
+        {
+          "name": "contact.history.zmomenton2",
+          "syntax": "contact.history.zmomenton2",
+          "description": "The z -component of the contact moment on end 2"
+        },
+        {
+          "name": "contact.history.zposition",
+          "syntax": "contact.history.zposition",
+          "description": "The z -component of the contact position"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

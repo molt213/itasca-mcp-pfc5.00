@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "cmat apply",
+      "syntax": "cmatsprocessapplyrangecontactpropertycontactmethodsprocess",
+      "short_description": "Apply the CMAT to existing contacts. Visit each contact in the specified range and override its contact model according to the CMAT. Note that the contact models are entirely reassigned to each contact; all information stored in the previous contact model is lost",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

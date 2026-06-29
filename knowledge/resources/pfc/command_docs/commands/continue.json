@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "continue",
+      "syntax": "continuepausecontinuereturn",
+      "short_description": "Resume processing after a pause. This command allows the user to resume reading a data file",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

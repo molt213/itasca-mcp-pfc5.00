@@ -1,0 +1,48 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall list",
+      "syntax": "walllistkeywordrangeattributesetprecisionattributessss'facet position'",
+      "short_description": "List wall attributes",
+      "keywords": [
+        {
+          "name": "wall.list.attribute",
+          "syntax": "wall.list.attribute",
+          "description": "List wall attributes"
+        },
+        {
+          "name": "wall.list.contact",
+          "syntax": "wall.list.contact",
+          "description": "List the contacts with a wall"
+        },
+        {
+          "name": "wall.list.extra",
+          "syntax": "wall.list.extra",
+          "description": "List the extra variables at index <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.list.group",
+          "syntax": "wall.list.group",
+          "description": "List the group names at slot <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.list.property",
+          "syntax": "wall.list.property",
+          "description": "List facet properties"
+        },
+        {
+          "name": "wall.list.result",
+          "syntax": "wall.list.result",
+          "description": "List the wall model results that have been tabulated"
+        },
+        {
+          "name": "wall.list.template",
+          "syntax": "wall.list.template",
+          "description": "List information regarding wall templates including the wall template name, referenced status, facet count, volume, and density"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

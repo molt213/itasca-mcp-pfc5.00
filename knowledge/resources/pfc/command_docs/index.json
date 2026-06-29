@@ -1,0 +1,1024 @@
+{
+  "version": "5.0",
+  "description": "PFC 5.0 command documentation extracted from pfchelp.chm",
+  "categories": {
+    "ball": {
+      "full_name": "Ball Commands",
+      "command_prefix": "ball",
+      "commands": [
+        {
+          "name": "attribute",
+          "file": "commands/ball/ball_attribute.json",
+          "short_description": "Force applied to balls",
+          "syntax": "ballattributekeyword...rangeballinitializeballlistballpropertyappliedforcev",
+          "python_available": false
+        },
+        {
+          "name": "create",
+          "file": "commands/ball/ball_create.json",
+          "short_description": "Ball ID. If not specified, then the next available ID is used. An error is raised if a ball with the specified ID already exists in the system",
+          "syntax": "ballcreatekeyword...groupssloti...isslot",
+          "python_available": false
+        },
+        {
+          "name": "delete",
+          "file": "commands/ball/ball_delete.json",
+          "short_description": "Delete balls. If no range is specified, then all balls in the model are deleted.",
+          "syntax": "balldeleterange",
+          "python_available": false
+        },
+        {
+          "name": "distribute",
+          "file": "commands/ball/ball_distribute.json",
+          "short_description": "Specify the radius range to be used during generation",
+          "syntax": "balldistributekeyword...rangesetrandomgaussballgeneratebinikeyword...ifishdistributionsa...aFISHsFISHFISHgaussradius",
+          "python_available": false
+        },
+        {
+          "name": "export",
+          "file": "commands/ball/ball_export.json",
+          "short_description": "Resolution of the facet edges",
+          "syntax": "ballexportkeywordrangegeometrykeywordresolutionffRRf",
+          "python_available": false
+        },
+        {
+          "name": "extra",
+          "file": "commands/ball/ball_extra.json",
+          "short_description": "Set ball extra variables.",
+          "syntax": "ballextraiarangeai",
+          "python_available": false
+        },
+        {
+          "name": "fix",
+          "file": "commands/ball/ball_fix.json",
+          "short_description": "The angular velocity is fixed",
+          "syntax": "ballfixkeyword...rangespin",
+          "python_available": false
+        },
+        {
+          "name": "free",
+          "file": "commands/ball/ball_free.json",
+          "short_description": "The angular velocity is free",
+          "syntax": "ballfreekeyword...rangespin",
+          "python_available": false
+        },
+        {
+          "name": "generate",
+          "file": "commands/ball/ball_generate.json",
+          "short_description": "Ball will fully fall within this box, such that they will not overlap the box faces or edges. By default, the box is the model domain",
+          "syntax": "ballgeneratekeyword...rangesetrandomgausscubichexagonalballdistributeboxfxminfxmaxfyminfymaxfzminfzmaxONLY",
+          "python_available": false
+        },
+        {
+          "name": "group",
+          "file": "commands/ball/ball_group.json",
+          "short_description": "Specify ball group names.",
+          "syntax": "ballgroupskeyword...rangesaddremovesadds",
+          "python_available": false
+        },
+        {
+          "name": "history",
+          "file": "commands/ball/ball_history.json",
+          "short_description": "Magnitude of the force resulting from contacts",
+          "syntax": "ballhistoryididkeywordidid2orvidhistoryidhistorycontactforce",
+          "python_available": false
+        },
+        {
+          "name": "history ball",
+          "file": "commands/ball/ball_history_ball.json",
+          "short_description": "",
+          "syntax": "historyididballkeyword...ballhistory",
+          "python_available": false
+        },
+        {
+          "name": "initialize",
+          "file": "commands/ball/ball_initialize.json",
+          "short_description": "Modify ball attributes.",
+          "syntax": "ballinitializekeyword...rangeballattribute",
+          "python_available": false
+        },
+        {
+          "name": "list",
+          "file": "commands/ball/ball_list.json",
+          "short_description": "List ball attributes",
+          "syntax": "balllistkeywordrangeattributesetprecisionattributesss",
+          "python_available": false
+        },
+        {
+          "name": "list ball",
+          "file": "commands/ball/ball_list_ball.json",
+          "short_description": "List ball information.",
+          "syntax": "listballkeyword...rangeballlist",
+          "python_available": false
+        },
+        {
+          "name": "property",
+          "file": "commands/ball/ball_property.json",
+          "short_description": "Assign ball surface properties.",
+          "syntax": "ballpropertysas1a21...rangeasballattribute",
+          "python_available": false
+        },
+        {
+          "name": "result",
+          "file": "commands/ball/ball_result.json",
+          "short_description": "Activate the creation of ball result states in memory or as files",
+          "syntax": "ballresultkeyword...PFCcleargenerateexportloadactivate",
+          "python_available": false
+        },
+        {
+          "name": "tolerance",
+          "file": "commands/ball/ball_tolerance.json",
+          "short_description": "Assign the constant contact-detection tolerance. This is assigned on a per-ball basis",
+          "syntax": "balltolerancekeyword...ctoleranceetolerancevtolerancecleanctolerancefrange",
+          "python_available": false
+        },
+        {
+          "name": "trace",
+          "file": "commands/ball/ball_trace.json",
+          "short_description": "",
+          "syntax": "balltraceidididid2orvidtraceidtrace",
+          "python_available": false
+        },
+        {
+          "name": "trace ball",
+          "file": "commands/ball/ball_trace_ball.json",
+          "short_description": "",
+          "syntax": "traceididballkeyword...balltrace",
+          "python_available": false
+        }
+      ],
+      "notes": [
+        "ball attribute = ball state; ball property = contact surface properties (transferred to contacts)"
+      ]
+    },
+    "wall": {
+      "full_name": "Wall Commands",
+      "command_prefix": "wall",
+      "commands": [
+        {
+          "name": "activeside",
+          "file": "commands/wall/wall_activeside.json",
+          "short_description": "Set both sides as active",
+          "syntax": "wallactivesidekeywordrangeboth",
+          "python_available": false
+        },
+        {
+          "name": "addfacet",
+          "file": "commands/wall/wall_addfacet.json",
+          "short_description": "ID of the facet that is being added",
+          "syntax": "walladdfacetkeyword...idnamefacetidvertexfacetidifacet",
+          "python_available": false
+        },
+        {
+          "name": "attribute",
+          "file": "commands/wall/wall_attribute.json",
+          "short_description": "Set the center of rotation for walls in the range. This is the position about which rotations occur when an angular velocity is supplied to a wall. The center of rotation translates with the wall if a translational velocity is supplied. The default center of rotation is the origin",
+          "syntax": "wallattributefacetvertexkeyword...rangewallinitializewalllistvertexvelocityxvelocityyvelocityzvelocityfacetconveyorxconveyoryconveyorzconveyorcentrotationvcen",
+          "python_available": false
+        },
+        {
+          "name": "convey",
+          "file": "commands/wall/wall_convey.json",
+          "short_description": "The point about which the calculation of the tangential velocity at the facet centroid is calculated",
+          "syntax": "wallconveyorkeyword...rangge...wallattributepointvpos",
+          "python_available": false
+        },
+        {
+          "name": "create",
+          "file": "commands/wall/wall_create.json",
+          "short_description": "Wall ID. If not specified, then the next available ID is used",
+          "syntax": "wallcreatekeyword...idnamewallXXXXgroupsislotfacet",
+          "python_available": false
+        },
+        {
+          "name": "delete",
+          "file": "commands/wall/wall_delete.json",
+          "short_description": "Delete facets. Walls without facets are deleted",
+          "syntax": "walldeletekeywordrangewallsfacetsfacets",
+          "python_available": false
+        },
+        {
+          "name": "export",
+          "file": "commands/wall/wall_export.json",
+          "short_description": "Exports walls. If no range is specified, then all walls in the model are exported. At the moment, it is only possible to export walls to geometry sets.",
+          "syntax": "wallexportkeywordrangegeometrykeywordsetsssplitwallmysetswalls",
+          "python_available": false
+        },
+        {
+          "name": "extra",
+          "file": "commands/wall/wall_extra.json",
+          "short_description": "Set wall or facet extra variables.",
+          "syntax": "wallextraiafacetrangeaifacet",
+          "python_available": false
+        },
+        {
+          "name": "generate",
+          "file": "commands/wall/wall_generate.json",
+          "short_description": "Wall ID. If not specified, then the next available ID is used",
+          "syntax": "wallgeneratekeyword...idnamegroupgroupsslotifacet...sislotfacet",
+          "python_available": false
+        },
+        {
+          "name": "group",
+          "file": "commands/wall/wall_group.json",
+          "short_description": "Specify wall or facet group names.",
+          "syntax": "wallgroupskeyword...facetrangesanyremovesfacetadds",
+          "python_available": false
+        },
+        {
+          "name": "history",
+          "file": "commands/wall/wall_history.json",
+          "short_description": "Magnitude of the force resulting from contacts",
+          "syntax": "wallhistoryididkeywordidid2ornamesorvidhistoryidnamehistorycontactforce",
+          "python_available": false
+        },
+        {
+          "name": "import",
+          "file": "commands/wall/wall_import.json",
+          "short_description": "Name of the file from which to import",
+          "syntax": "wallimportkeyword...rangegeometryimportseedfilenamess",
+          "python_available": false
+        },
+        {
+          "name": "initialize",
+          "file": "commands/wall/wall_initialize.json",
+          "short_description": "Modify wall attributes.",
+          "syntax": "wallinitializekeyword...rangewallattribute",
+          "python_available": false
+        },
+        {
+          "name": "list",
+          "file": "commands/wall/wall_list.json",
+          "short_description": "List wall attributes",
+          "syntax": "walllistkeywordrangeattributesetprecisionattributessss'facet position'",
+          "python_available": false
+        },
+        {
+          "name": "property",
+          "file": "commands/wall/wall_property.json",
+          "short_description": "Assign facet surface properties.",
+          "syntax": "wallpropertysas1a1...rangeaswallattribute",
+          "python_available": false
+        },
+        {
+          "name": "resolution",
+          "file": "commands/wall/wall_resolution.json",
+          "short_description": "The contact resolution procedure for contacts with facets is at its full state. This means that in addition to the associative checks for contact activity, the sliver penetration conditions are checked, and the cutoff angle becomes active for contact-state information propagation for convex and concave facet intersections. Proximity contacts may result",
+          "syntax": "wallresolutionkeywordreducedwallactivesidefull",
+          "python_available": false
+        },
+        {
+          "name": "result",
+          "file": "commands/wall/wall_result.json",
+          "short_description": "Activate the creation of wall result states in memory or as files",
+          "syntax": "wallresultkeyword...PFCcleargenerateexportloadactivate",
+          "python_available": false
+        },
+        {
+          "name": "rotate",
+          "file": "commands/wall/wall_rotate.json",
+          "short_description": "Axis of rotation",
+          "syntax": "wallrotatekeyword...rangecentrotationupdateorientaxisvaxis",
+          "python_available": false
+        },
+        {
+          "name": "servo",
+          "file": "commands/wall/wall_servo.json",
+          "short_description": "Set the servo-control active status",
+          "syntax": "wallservokeyword...rangewallservo(1)(2)(3)(4)gainfactorgainupdatePFCwallservoactivatewallattributevelocityactivatebfalse",
+          "python_available": false
+        },
+        {
+          "name": "tolerance",
+          "file": "commands/wall/wall_tolerance.json",
+          "short_description": "Assign the constant contact-detection tolerance. This is assigned on a per-facet basis",
+          "syntax": "walltolerancekeyword...ctoleranceetolerancevtolerancecleanctolerancefrange",
+          "python_available": false
+        }
+      ],
+      "notes": [
+        "Wall facets default active=0 in PFC 5.0; use 'wall activeside' to enable"
+      ]
+    },
+    "contact": {
+      "full_name": "Contact Commands",
+      "command_prefix": "contact",
+      "commands": [
+        {
+          "name": "activate",
+          "file": "commands/contact/contact_activate.json",
+          "short_description": "Change the contact activate flag.",
+          "syntax": "contactsprocessactivatebvalrangebvalsprocess",
+          "python_available": false
+        },
+        {
+          "name": "delete",
+          "file": "commands/contact/contact_delete.json",
+          "short_description": "Delete contacts in specified range.",
+          "syntax": "contactsprocessdeleterangesetdetection",
+          "python_available": false
+        },
+        {
+          "name": "extra",
+          "file": "commands/contact/contact_extra.json",
+          "short_description": "Set contact extra variables.",
+          "syntax": "contactsprocessextraiarangeaisprocess",
+          "python_available": false
+        },
+        {
+          "name": "group",
+          "file": "commands/contact/contact_group.json",
+          "short_description": "Specify contact group names.",
+          "syntax": "contactsprocessgroupskeyword...rangesanyremovessprocessadds",
+          "python_available": false
+        },
+        {
+          "name": "groupbehavior",
+          "file": "commands/contact/contact_groupbehavior.json",
+          "short_description": "A contact is deemed to be in the range if both ends are within a group specified in the range",
+          "syntax": "contactsprocessgroupbehaviorkeywordsprocessand",
+          "python_available": false
+        },
+        {
+          "name": "inhibit",
+          "file": "commands/contact/contact_inhibit.json",
+          "short_description": "",
+          "syntax": "contactsprocessinhibitbvalrangesprocess",
+          "python_available": false
+        },
+        {
+          "name": "list",
+          "file": "commands/contact/contact_list.json",
+          "short_description": "List the energies of a contact model used by the contact",
+          "syntax": "contactsprocesslistkeywordalltypesrangealltypesballsball-ballsprocesssetprecisionenergysssenergylist",
+          "python_available": false
+        },
+        {
+          "name": "method",
+          "file": "commands/contact/contact_method.json",
+          "short_description": "",
+          "syntax": "contactsprocessmethodsmsaa...rangesmsaasprocess",
+          "python_available": false
+        },
+        {
+          "name": "model",
+          "file": "commands/contact/contact_model.json",
+          "short_description": "Assign contact models. The selected contact model applies to contacts in the specified range. If no range is specified, then all contacts in the model are affected.",
+          "syntax": "contactsprocessmodelkeywordrangeloadsprocesssprocessburger",
+          "python_available": false
+        },
+        {
+          "name": "persist",
+          "file": "commands/contact/contact_persist.json",
+          "short_description": "Set the contact persistence flag.",
+          "syntax": "contactsprocesspersistbvalrangebvalsprocess",
+          "python_available": false
+        },
+        {
+          "name": "property",
+          "file": "commands/contact/contact_property.json",
+          "short_description": "Assign contact properties",
+          "syntax": "contactsprocesspropertysainheritanceb...assinheritancesprocess",
+          "python_available": false
+        }
+      ],
+      "notes": [
+        "PFC 5.0 supports contact model, cmat, and contact property commands"
+      ]
+    },
+    "cmat": {
+      "full_name": "Cmat Commands",
+      "command_prefix": "cmat",
+      "commands": [
+        {
+          "name": "add",
+          "file": "commands/cmat/cmat_add.json",
+          "short_description": "Specify the contact model",
+          "syntax": "cmatsprocessaddikeyword...rangeiiiirangesprocessinheritancesb...sb",
+          "python_available": false
+        },
+        {
+          "name": "apply",
+          "file": "commands/cmat/cmat_apply.json",
+          "short_description": "Apply the CMAT to existing contacts. Visit each contact in the specified range and override its contact model according to the CMAT. Note that the contact models are entirely reassigned to each contact; all information stored in the previous contact model is lost",
+          "syntax": "cmatsprocessapplyrangecontactpropertycontactmethodsprocess",
+          "python_available": false
+        },
+        {
+          "name": "default",
+          "file": "commands/cmat/cmat_default.json",
+          "short_description": "Specify the default model. The default slot(s) will not be modified if the corresponding contact type(s) cannot use the specified contact model",
+          "syntax": "cmatsprocessdefaulttypestypekeyword...typesprocessinheritancespropb...spropbsprop",
+          "python_available": false
+        },
+        {
+          "name": "list",
+          "file": "commands/cmat/cmat_list.json",
+          "short_description": "Lists the CMAT.",
+          "syntax": "cmatsprocesslistsprocess",
+          "python_available": false
+        },
+        {
+          "name": "modify",
+          "file": "commands/cmat/cmat_modify.json",
+          "short_description": "Specify the contact model",
+          "syntax": "cmatsprocessmodifyikeywordisprocessmethodssaa...ssaa",
+          "python_available": false
+        },
+        {
+          "name": "remove",
+          "file": "commands/cmat/cmat_remove.json",
+          "short_description": "",
+          "syntax": "cmatsprocessremoveiorallalliisprocess",
+          "python_available": false
+        }
+      ],
+      "notes": [
+        "In PFC 5.0, 'cmat' is a standalone top-level command, NOT a subcommand of 'contact'"
+      ]
+    },
+    "clump": {
+      "full_name": "Clump Commands",
+      "command_prefix": "clump",
+      "commands": [
+        {
+          "name": "attribute",
+          "file": "commands/clump/clump_attribute.json",
+          "short_description": "Force vector applied to clumps",
+          "syntax": "clumpattributekeyword...rangeclumpinitializeclumplistclumppropertyappliedforcev",
+          "python_available": false
+        },
+        {
+          "name": "create",
+          "file": "commands/clump/clump_create.json",
+          "short_description": "This keyword specifies that the clump position, volume, and inertia tensor will be calculated from the pebble distribution assuming constant density. The space containing the clump is recursively subdivided into boxes that are {squares in 2D; cubes in 3D}. The {areas in 2D; volumes in 3D} and inertia tensors of all boxes that fall completely within any pebbles are accumulated. The parallel axis theorem is used to accumulate the inertia tensors. For each iteration the &quot;final&quot; volume is extrapolated, and the iterations cease when either 1) the total number of cells to be subdivided reaches 1e6 or 2) the extrapolated and estimated volumes are within the desired tolerance",
+          "syntax": "clumpcreatekeyword...densitycalculateFISHclumpattributecalculateff",
+          "python_available": false
+        },
+        {
+          "name": "delete",
+          "file": "commands/clump/clump_delete.json",
+          "short_description": "Delete clumps",
+          "syntax": "clumpdeletekeywordrangeclumppebbleclumps",
+          "python_available": false
+        },
+        {
+          "name": "distribute",
+          "file": "commands/clump/clump_distribute.json",
+          "short_description": "Range of azimuths to rotate the clump template randomly about",
+          "syntax": "clumpdistributekeyword...rangesetrandomgaussclumpgeneratebinibinibinazimuthfazlowfazhi",
+          "python_available": false
+        },
+        {
+          "name": "export",
+          "file": "commands/clump/clump_export.json",
+          "short_description": "Resolution of the facet edges for the pebble representations",
+          "syntax": "clumpexportkeywordrangegeometrykeywordresolutionffRRf",
+          "python_available": false
+        },
+        {
+          "name": "extra",
+          "file": "commands/clump/clump_extra.json",
+          "short_description": "Set clump or pebble extra variables.",
+          "syntax": "clumpextraiapebblerangeaipebble",
+          "python_available": false
+        },
+        {
+          "name": "fix",
+          "file": "commands/clump/clump_fix.json",
+          "short_description": "The angular velocity is fixed",
+          "syntax": "clumpfixkeyword...rangespin",
+          "python_available": false
+        },
+        {
+          "name": "free",
+          "file": "commands/clump/clump_free.json",
+          "short_description": "The angular velocity is free",
+          "syntax": "clumpfreekeyword...rangespin",
+          "python_available": false
+        },
+        {
+          "name": "generate",
+          "file": "commands/clump/clump_generate.json",
+          "short_description": "Range of azimuths to rotate the clump template randomly about",
+          "syntax": "clumpgeneratekeyword...rangesetrandomgaussclumpgenerateclumpdistributeazimuthfazlowfazhi",
+          "python_available": false
+        },
+        {
+          "name": "group",
+          "file": "commands/clump/clump_group.json",
+          "short_description": "Specify clump or pebble group names.",
+          "syntax": "clumpgroupskeyword...pebblerangesanyremovespebbleadds",
+          "python_available": false
+        },
+        {
+          "name": "history",
+          "file": "commands/clump/clump_history.json",
+          "short_description": "Magnitude of the force resulting from contacts",
+          "syntax": "clumphistoryididkeywordidid2orvidhistoryidhistorycontactforce",
+          "python_available": false
+        },
+        {
+          "name": "history clump",
+          "file": "commands/clump/clump_history_clump.json",
+          "short_description": "",
+          "syntax": "historyididclumpkeyword...clumphistory",
+          "python_available": false
+        },
+        {
+          "name": "initialize",
+          "file": "commands/clump/clump_initialize.json",
+          "short_description": "Modify clump attributes.",
+          "syntax": "clumpinitializekeyword...rangeclumpattribute",
+          "python_available": false
+        },
+        {
+          "name": "list",
+          "file": "commands/clump/clump_list.json",
+          "short_description": "List clump attributes",
+          "syntax": "clumplistkeywordrangeattributesetprecisionattributessss'pebble position'",
+          "python_available": false
+        },
+        {
+          "name": "list clump",
+          "file": "commands/clump/clump_list_clump.json",
+          "short_description": "List clump information.",
+          "syntax": "listclumpkeywordrangeclumplist",
+          "python_available": false
+        },
+        {
+          "name": "order",
+          "file": "commands/clump/clump_order.json",
+          "short_description": "Set the rotational EOM order. Either two or four are acceptable values. The fourth order method is outlined in Johnson et al. (2008) while the second order method is outlined in Buss (2000) (augmented second order method without energy conservation). Energy is much better conserved with the fourth order scheme, but the computational cost is significantly higher.",
+          "syntax": "clumporderiONLYnew",
+          "python_available": false
+        },
+        {
+          "name": "property",
+          "file": "commands/clump/clump_property.json",
+          "short_description": "Assign clump or pebble surface properties.",
+          "syntax": "clumppropertysas1a1...rangeasclumpattribute",
+          "python_available": false
+        },
+        {
+          "name": "replicate",
+          "file": "commands/clump/clump_replicate.json",
+          "short_description": "Angle about which to rotate the clump in degrees via the right-hand rule. If no angle is specified, then no rotation will occur. In 2D, rotation occurs in the out-of-plane direction",
+          "syntax": "clumpreplicatekeyword...densityanglefang",
+          "python_available": false
+        },
+        {
+          "name": "result",
+          "file": "commands/clump/clump_result.json",
+          "short_description": "Activate the creation of clump result states in memory or as files",
+          "syntax": "clumpresultkeywordPFCcleargenerateexportloadactivate",
+          "python_available": false
+        },
+        {
+          "name": "rotate",
+          "file": "commands/clump/clump_rotate.json",
+          "short_description": "Axis of rotation",
+          "syntax": "clumprotatekeyword...rangecentrotationupdateorientaxisvaxis",
+          "python_available": false
+        },
+        {
+          "name": "scale",
+          "file": "commands/clump/clump_scale.json",
+          "short_description": "Scale the clump to have volume of an equivalent {disk with unit thickness in 2D; sphere in 3D} with a specified diameter",
+          "syntax": "clumpscalekeyword...rangeclumpattributeFISHFISHclump.moi.fixFISHdiameterfdiam",
+          "python_available": false
+        },
+        {
+          "name": "template",
+          "file": "commands/clump/clump_template.json",
+          "short_description": "Create a clump template. The inertial attributes must be specified upon creation. One can either specify them directly (i.e",
+          "syntax": "clumptemplatekeyword...clumpreplicateclumpgenerateclumpdistributecreatekeyword...pebcalculatesurfcalculatebubblepackkeyword...geometryrefinenumfradfradfratiofratiofdistancefdistancefratiofdistancefdistancefdistancefdistancerefinenumbubblepackpebblesdistancefdistancefdistancefdistancefdistance",
+          "python_available": false
+        },
+        {
+          "name": "tolerance",
+          "file": "commands/clump/clump_tolerance.json",
+          "short_description": "Assign the constant contact-detection tolerance. This is assigned on a per-pebble basis",
+          "syntax": "clumptolerancekeyword...ctoleranceetolerancevtolerancecleanctolerancefctolrange",
+          "python_available": false
+        },
+        {
+          "name": "trace",
+          "file": "commands/clump/clump_trace.json",
+          "short_description": "",
+          "syntax": "clumptraceididpebbleidid2orvidtracepebbleidtrace",
+          "python_available": false
+        },
+        {
+          "name": "trace clump",
+          "file": "commands/clump/clump_trace_clump.json",
+          "short_description": "",
+          "syntax": "traceididclumpkeyword...clumptrace",
+          "python_available": false
+        }
+      ],
+      "notes": []
+    },
+    "brick": {
+      "full_name": "Brick Commands",
+      "command_prefix": "brick",
+      "commands": [
+        {
+          "name": "assemble",
+          "file": "commands/brick/brick_assemble.json",
+          "short_description": "ID of the brick being assembled",
+          "syntax": "brickassemblekeywordrangeidi",
+          "python_available": false
+        },
+        {
+          "name": "delete",
+          "file": "commands/brick/brick_delete.json",
+          "short_description": "Delete bricks in range",
+          "syntax": "brickdeleterange",
+          "python_available": false
+        },
+        {
+          "name": "export",
+          "file": "commands/brick/brick_export.json",
+          "short_description": "ID of the brick to export",
+          "syntax": "brickexportkeywordidi",
+          "python_available": false
+        },
+        {
+          "name": "import",
+          "file": "commands/brick/brick_import.json",
+          "short_description": "Name of the file to be loaded. If not specified, then the file {&quot;brick.p3brk&quot; in 3D; &quot;brick.p2brk&quot; in 2D} is used. If no extension is given, the the extension {&quot;.p3brk&quot; in 3D; &quot;.p2brk&quot; in 2D} is used",
+          "syntax": "brickimportkeywordfilenames",
+          "python_available": false
+        },
+        {
+          "name": "make",
+          "file": "commands/brick/brick_make.json",
+          "short_description": "",
+          "syntax": "brickmakeidiid",
+          "python_available": false
+        }
+      ],
+      "notes": []
+    },
+    "measure": {
+      "full_name": "Measure Commands",
+      "command_prefix": "measure",
+      "commands": [
+        {
+          "name": "create",
+          "file": "commands/measure/measure_create.json",
+          "short_description": "Measurement ID. If not specified, the next available ID is assigned",
+          "syntax": "measurecreatekeywordFISHbinsiflfhiflfhmeasuredump",
+          "python_available": false
+        },
+        {
+          "name": "delete",
+          "file": "commands/measure/measure_delete.json",
+          "short_description": "Delete a measurement object. By default, all measurement objects are deleted. A range can be specified to restrict the operation to select objects.",
+          "syntax": "measuredeleterange",
+          "python_available": false
+        },
+        {
+          "name": "dump",
+          "file": "commands/measure/measure_dump.json",
+          "short_description": "",
+          "syntax": "measuredumpidikeywordfiless",
+          "python_available": false
+        },
+        {
+          "name": "history",
+          "file": "commands/measure/measure_history.json",
+          "short_description": "Coordination, or average number of contacts per body, inside the measurement object",
+          "syntax": "measurehistoryididkeywordidid2orvidhistoryidhistorycoordination",
+          "python_available": false
+        },
+        {
+          "name": "list",
+          "file": "commands/measure/measure_list.json",
+          "short_description": "List information related to measurement regions",
+          "syntax": "measurelist",
+          "python_available": false
+        },
+        {
+          "name": "modify",
+          "file": "commands/measure/measure_modify.json",
+          "short_description": "Radius of the measurement circle (sphere)",
+          "syntax": "measuremodifyidikeywordmeasurecreatebinsiflfhiflfhmeasuredump",
+          "python_available": false
+        }
+      ],
+      "notes": []
+    },
+    "domain": {
+      "full_name": "Domain Commands",
+      "command_prefix": "domain",
+      "commands": [
+        {
+          "name": "domain",
+          "file": "commands/domain.json",
+          "short_description": "Set or modify the domain extent and condition",
+          "syntax": "domainkeywordPFCconditionstopconditionsxsyszszonlysxsxconditionstopstopreflectdestroyperiodicstopreflectreflectdestroyperiodicperiodic",
+          "python_available": false
+        }
+      ],
+      "notes": []
+    },
+    "plot": {
+      "full_name": "Plot Commands",
+      "command_prefix": "plot",
+      "commands": [
+        {
+          "name": "plot",
+          "file": "commands/plot.json",
+          "short_description": "Sets the destination file. If one is not specified, then one will be assigned. The extension determines the format (PNG by default). (PNG, JPG, BMP, PPM, and XBM formats are supported",
+          "syntax": "plotkeyword...bitmapviewidkeyword...filenames",
+          "python_available": false
+        }
+      ],
+      "notes": []
+    },
+    "model": {
+      "full_name": "Model Setup and Execution",
+      "command_prefix": null,
+      "notes": [
+        "PFC 5.0 uses 'new' (not 'model new')"
+      ],
+      "commands": [
+        {
+          "name": "calm",
+          "file": "commands/calm.json",
+          "short_description": "Calm the model. For mechanical processes, all linear and rotational velocities are set to 0",
+          "syntax": "calm",
+          "python_available": false
+        },
+        {
+          "name": "clean",
+          "file": "commands/clean.json",
+          "short_description": "Clean the model",
+          "syntax": "cleanallPFCcleansettimestepfixsettimestepautoallallcleandfnmodelclean",
+          "python_available": false
+        },
+        {
+          "name": "contact_history",
+          "file": "commands/contact_history.json",
+          "short_description": "Magnitude of the contact force",
+          "syntax": "contactsprocesshistoryididskeyword...idhistorysball-ballball-pebbleball-facetpebble-facetidhistorysprocessforce",
+          "python_available": false
+        },
+        {
+          "name": "continue",
+          "file": "commands/continue.json",
+          "short_description": "Resume processing after a pause. This command allows the user to resume reading a data file",
+          "syntax": "continuepausecontinuereturn",
+          "python_available": false
+        },
+        {
+          "name": "cycle",
+          "file": "commands/cycle.json",
+          "short_description": "Execute timesteps",
+          "syntax": "cycleicalmi2iShift+EscstepShift+Esccalmi2",
+          "python_available": false
+        },
+        {
+          "name": "heading",
+          "file": "commands/heading.json",
+          "short_description": "Set the model title. The title is included in subsequent plots and stored in model state (SAV) files",
+          "syntax": "headingslistinformationtitlesFISHs",
+          "python_available": false
+        },
+        {
+          "name": "history measure",
+          "file": "commands/history/history_measure.json",
+          "short_description": "Add a measure history",
+          "syntax": "historyididmeasurekeywordidid2orvmeasurehistory",
+          "python_available": false
+        },
+        {
+          "name": "list",
+          "file": "commands/list.json",
+          "short_description": "Print information. Program and model information is printed to the screen",
+          "syntax": "listkeywordrangesetlogFISHFISHFISHcyclesequenceFISHsetfishcallbackPFCPFCPFC",
+          "python_available": false
+        },
+        {
+          "name": "list cmat",
+          "file": "commands/list/list_cmat.json",
+          "short_description": "Lists the CMAT",
+          "syntax": "listcmatsprocesscmatlistsprocess",
+          "python_available": false
+        },
+        {
+          "name": "list contact",
+          "file": "commands/list/list_contact.json",
+          "short_description": "Lists contact information",
+          "syntax": "listcontactsprocesskeywordrangecontactlist",
+          "python_available": false
+        },
+        {
+          "name": "list measure",
+          "file": "commands/list/list_measure.json",
+          "short_description": "List information related to measurement regions",
+          "syntax": "listmeasuremeasurelist",
+          "python_available": false
+        },
+        {
+          "name": "new",
+          "file": "commands/new.json",
+          "short_description": "Clear program-state information. Most information is cleared, allowing one to begin a new problem",
+          "syntax": "newprojectforceforceprojectsetlogsetechosetdeterministicsetrandomnewnewFISHsaverestoreFISHFISHnewnew",
+          "python_available": false
+        },
+        {
+          "name": "pause",
+          "file": "commands/pause.json",
+          "short_description": "Pause command processing",
+          "syntax": "pausekeyipausecontinuekeypauseShift+EscShift+EsciiShift+Esc",
+          "python_available": false
+        },
+        {
+          "name": "set",
+          "file": "commands/set.json",
+          "short_description": "Change a global setting",
+          "syntax": "setkeywordcust1ss",
+          "python_available": false
+        },
+        {
+          "name": "solve",
+          "file": "commands/solve.json",
+          "short_description": "Solve to a specified limit. The solve logic provides a mechanism to continue cycling a model until specified criteria are met, oftentimes resulting in a model that is in equilibrium to some tolerance",
+          "syntax": "solvesprocesskeyword...sprocesssolveagefsprocessftimesprocess",
+          "python_available": false
+        },
+        {
+          "name": "step",
+          "file": "commands/step.json",
+          "short_description": "Execute timesteps",
+          "syntax": "stepicalmi2iShift+EsccycleShift+Esccalmi2",
+          "python_available": false
+        },
+        {
+          "name": "stop",
+          "file": "commands/stop.json",
+          "short_description": "Close the application",
+          "syntax": "stopsavestopquitexit",
+          "python_available": false
+        },
+        {
+          "name": "title",
+          "file": "commands/title.json",
+          "short_description": "Set the model title. The title is included in subsequent plots and stored in model state (SAV) files",
+          "syntax": "titleslistinformationheadingsFISHs",
+          "python_available": false
+        }
+      ]
+    },
+    "program": {
+      "full_name": "Program Control",
+      "command_prefix": null,
+      "notes": [],
+      "commands": [
+        {
+          "name": "call",
+          "file": "commands/call.json",
+          "short_description": "Process the specified data file(s)",
+          "syntax": "callslineilabelslsuppress...sssspausereturncontinueShift + Escsuppresslineilabelsllinelabelcallcallsetdirectorylistdirectory",
+          "python_available": false
+        },
+        {
+          "name": "config",
+          "file": "commands/config.json",
+          "short_description": "Configure an add-on. This command allows the user to specify optional calculation modes that need extra memory to be assigned to specified model components",
+          "syntax": "configurekeyword...configurecfdONLY",
+          "python_available": false
+        },
+        {
+          "name": "define",
+          "file": "commands/define.json",
+          "short_description": "",
+          "syntax": "defines...FISHenddefineendFISHFISHPFC",
+          "python_available": false
+        },
+        {
+          "name": "echo",
+          "file": "commands/echo.json",
+          "short_description": "Echo to the terminal",
+          "syntax": "echossetechosuppresscalls",
+          "python_available": false
+        },
+        {
+          "name": "end",
+          "file": "commands/end.json",
+          "short_description": "",
+          "syntax": "endFISHdefineenddefineendFISHFISHPFC",
+          "python_available": false
+        },
+        {
+          "name": "exit",
+          "file": "commands/exit.json",
+          "short_description": "Close the application",
+          "syntax": "exitsaveexitquitstop",
+          "python_available": false
+        },
+        {
+          "name": "fish",
+          "file": "commands/fish.json",
+          "short_description": "",
+          "syntax": "fishkeywordFISHcreatesasFISHaFISH",
+          "python_available": false
+        },
+        {
+          "name": "gui",
+          "file": "commands/gui.json",
+          "short_description": "Save the current project",
+          "syntax": "guiprojectsavess",
+          "python_available": false
+        },
+        {
+          "name": "help",
+          "file": "commands/help.json",
+          "short_description": "Get command help",
+          "syntax": "helphelphelplist helplist",
+          "python_available": false
+        },
+        {
+          "name": "mail",
+          "file": "commands/mail.json",
+          "short_description": "Operate on email",
+          "syntax": "mailkeywordFISHFISHaddkeywordattachs",
+          "python_available": false
+        },
+        {
+          "name": "playback",
+          "file": "commands/playback.json",
+          "short_description": "Play back a record file. An ASCII record file representing a &quot;playback&quot; of input to the model is read, theoretically exactly duplicating the steps taken to create a model state",
+          "syntax": "playbackslistrecord",
+          "python_available": false
+        },
+        {
+          "name": "quit",
+          "file": "commands/quit.json",
+          "short_description": "Close the application",
+          "syntax": "quitsavequitstopexit",
+          "python_available": false
+        },
+        {
+          "name": "return",
+          "file": "commands/return.json",
+          "short_description": "Return program control. If in batch mode, the mode is set to interactive-command mode (if a single level of calling was used), or to the calling file (if multiple levels of calls have been nested)",
+          "syntax": "returnrerurnreturncommandFISH",
+          "python_available": false
+        },
+        {
+          "name": "system",
+          "file": "commands/system.json",
+          "short_description": "Send commands to DOS. This command allows the user to access the underlying command-driven operating system (DOS, under Windows)",
+          "syntax": "systemtimeoutis...ssdircopydelclonestimeoutiiiPFC",
+          "python_available": false
+        },
+        {
+          "name": "undo",
+          "file": "commands/undo.json",
+          "short_description": "Undo commands",
+          "syntax": "undoiiundoundoundonewFISHcommand/end.commandundo",
+          "python_available": false
+        }
+      ]
+    },
+    "io": {
+      "full_name": "File I/O",
+      "command_prefix": null,
+      "notes": [],
+      "commands": [
+        {
+          "name": "load",
+          "file": "commands/load.json",
+          "short_description": "Load a user-defined DLL",
+          "syntax": "loadkeywordFISHcontactmodelmechanicalautomaticdirectorysdsautomaticsddirectoryss",
+          "python_available": false
+        },
+        {
+          "name": "restore",
+          "file": "commands/restore.json",
+          "short_description": "Restore program-state information",
+          "syntax": "restoressavessssetlogsetechorestorerestoreFISHclean",
+          "python_available": false
+        },
+        {
+          "name": "save",
+          "file": "commands/save.json",
+          "short_description": "Save all program-state information",
+          "syntax": "saveskeywordsFISHinputdirlocaldirrestorecleaninputdir",
+          "python_available": false
+        }
+      ]
+    }
+  },
+  "notes": [
+    "PFC 5.0 uses Python 2.7.9 embedded interpreter",
+    "'cmat' is a standalone command, not 'contact cmat'",
+    "Use 'new' instead of 'model new' to start a fresh model",
+    "ball attribute vs ball property: attribute=state, property=contact surface values",
+    "Flat-Joint model uses 'flatjoint' (not 'flat-joint')"
+  ]
+}

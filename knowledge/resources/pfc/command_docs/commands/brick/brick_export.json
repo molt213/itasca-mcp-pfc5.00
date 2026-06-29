@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "brick export",
+      "syntax": "brickexportkeywordidi",
+      "short_description": "ID of the brick to export",
+      "keywords": [
+        {
+          "name": "brick.export.id",
+          "syntax": "brick.export.id",
+          "description": "ID of the brick to export"
+        },
+        {
+          "name": "brick.export.filename",
+          "syntax": "brick.export.filename",
+          "description": "Name of the binary file"
+        },
+        {
+          "name": "brick.export.nothrow",
+          "syntax": "brick.export.nothrow",
+          "description": ""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

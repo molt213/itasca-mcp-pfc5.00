@@ -1,0 +1,33 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "brick assemble",
+      "syntax": "brickassemblekeywordrangeidi",
+      "short_description": "ID of the brick being assembled",
+      "keywords": [
+        {
+          "name": "brick.assemble.id",
+          "syntax": "brick.assemble.id",
+          "description": "ID of the brick being assembled"
+        },
+        {
+          "name": "brick.assemble.origin",
+          "syntax": "brick.assemble.origin",
+          "description": "Position the origin of the new assembly (i"
+        },
+        {
+          "name": "brick.assemble.size",
+          "syntax": "brick.assemble.size",
+          "description": "Number of replica in the global coordinate system directions"
+        },
+        {
+          "name": "brick.assemble.group",
+          "syntax": "brick.assemble.group",
+          "description": "The group slot <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

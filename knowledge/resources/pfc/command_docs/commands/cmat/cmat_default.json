@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "cmat default",
+      "syntax": "cmatsprocessdefaulttypestypekeyword...typesprocessinheritancespropb...spropbsprop",
+      "short_description": "Specify the default model. The default slot(s) will not be modified if the corresponding contact type(s) cannot use the specified contact model",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

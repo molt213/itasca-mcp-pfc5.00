@@ -1,0 +1,53 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump free",
+      "syntax": "clumpfreekeyword...rangespin",
+      "short_description": "The angular velocity is free",
+      "keywords": [
+        {
+          "name": "clump.free.spin",
+          "syntax": "clump.free.spin",
+          "description": "The angular velocity is free"
+        },
+        {
+          "name": "clump.free.velocity",
+          "syntax": "clump.free.velocity",
+          "description": "The translational velocity is free"
+        },
+        {
+          "name": "clump.free.xspin",
+          "syntax": "clump.free.xspin",
+          "description": "Free the x -component of the angular velocity"
+        },
+        {
+          "name": "clump.free.xvelocity",
+          "syntax": "clump.free.xvelocity",
+          "description": "Free the x -component of the translational velocity"
+        },
+        {
+          "name": "clump.free.yspin",
+          "syntax": "clump.free.yspin",
+          "description": "Free the y -component of the angular velocity"
+        },
+        {
+          "name": "clump.free.yvelocity",
+          "syntax": "clump.free.yvelocity",
+          "description": "Free the y -component of the translational velocity"
+        },
+        {
+          "name": "clump.free.zspin",
+          "syntax": "clump.free.zspin",
+          "description": "Free the z -component of the angular velocity"
+        },
+        {
+          "name": "clump.free.zvelocity",
+          "syntax": "clump.free.zvelocity",
+          "description": "Free the z -component of the translational velocity"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

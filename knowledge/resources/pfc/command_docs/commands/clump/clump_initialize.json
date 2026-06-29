@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump initialize",
+      "syntax": "clumpinitializekeyword...rangeclumpattribute",
+      "short_description": "Modify clump attributes.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

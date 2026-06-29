@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "load",
+      "syntax": "loadkeywordFISHcontactmodelmechanicalautomaticdirectorysdsautomaticsddirectoryss",
+      "short_description": "Load a user-defined DLL",
+      "keywords": [
+        {
+          "name": "load.contactmodelmechanical",
+          "syntax": "load.contactmodelmechanical",
+          "description": "Load mechanical contact model DLLs"
+        },
+        {
+          "name": "load.fish",
+          "syntax": "load.fish",
+          "description": "Load FISH function DLLs"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

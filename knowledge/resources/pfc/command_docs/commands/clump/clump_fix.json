@@ -1,0 +1,53 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump fix",
+      "syntax": "clumpfixkeyword...rangespin",
+      "short_description": "The angular velocity is fixed",
+      "keywords": [
+        {
+          "name": "clump.fix.spin",
+          "syntax": "clump.fix.spin",
+          "description": "The angular velocity is fixed"
+        },
+        {
+          "name": "clump.fix.velocity",
+          "syntax": "clump.fix.velocity",
+          "description": "The translational velocity is fixed"
+        },
+        {
+          "name": "clump.fix.xspin",
+          "syntax": "clump.fix.xspin",
+          "description": "Fix the x -component of the angular velocity"
+        },
+        {
+          "name": "clump.fix.xvelocity",
+          "syntax": "clump.fix.xvelocity",
+          "description": "Fix the x -component of the translational velocity"
+        },
+        {
+          "name": "clump.fix.yspin",
+          "syntax": "clump.fix.yspin",
+          "description": "Fix the y -component of the angular velocity"
+        },
+        {
+          "name": "clump.fix.yvelocity",
+          "syntax": "clump.fix.yvelocity",
+          "description": "Fix the y -component of the translational velocity"
+        },
+        {
+          "name": "clump.fix.zspin",
+          "syntax": "clump.fix.zspin",
+          "description": "Fix the z -component of the angular velocity"
+        },
+        {
+          "name": "clump.fix.zvelocity",
+          "syntax": "clump.fix.zvelocity",
+          "description": "Fix the z -component of the translational velocity"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

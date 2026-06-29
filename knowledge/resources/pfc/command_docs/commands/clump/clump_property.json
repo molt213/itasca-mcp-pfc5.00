@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump property",
+      "syntax": "clumppropertysas1a1...rangeasclumpattribute",
+      "short_description": "Assign clump or pebble surface properties.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump export",
+      "syntax": "clumpexportkeywordrangegeometrykeywordresolutionffRRf",
+      "short_description": "Resolution of the facet edges for the pebble representations",
+      "keywords": [
+        {
+          "name": "clump.export.geometry",
+          "syntax": "clump.export.geometry",
+          "description": "Resolution of the facet edges for the pebble representations"
+        },
+        {
+          "name": "clump.export.geometry.set",
+          "syntax": "clump.export.geometry.set",
+          "description": "Set the geometry set base name to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.export.geometry.split",
+          "syntax": "clump.export.geometry.split",
+          "description": "If specified, the split keyword results in each clump being exported into a dedicated geometry set"
+        },
+        {
+          "name": "clump.export.geometry.surfaces",
+          "syntax": "clump.export.geometry.surfaces",
+          "description": "If set to <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [
+        {
+          "command": "domain extent - 5 5 geometry import &#39;rock1.stl&#39; clump template create name rock1 ... geometry rock1 ... surfcalculate ... bubblepack ratio 0.3 distance 100 clump template create name rock2 ... pebbles 3 ... 0.5 - 0.25 0.0 0.0 ... 0.5 0.25 0.0 0.0 ... 0.5 0.0 0.0 0.25 ... pebcalculate set random 10001 clump generate size 1 2 number 10 template 2 rock1 0.5 rock2 0.5 clump export geometry geometry set clumps geometry export clumps . stl format stl",
+          "description": ""
+        },
+        {
+          "command": "domain extent - 5 5 geometry import &#39;rock1.stl&#39; clump template create name rock1 ... geometry rock1 ... surfcalculate ... bubblepack ratio 0.3 distance 100 clump template create name rock2 ... pebbles 3 ... 0.5 - 0.25 0.0 0.0 ... 0.5 0.25 0.0 0.0 ... 0.5 0.0 0.0 0.25 ... pebcalculate set random 10001 clump generate size 1 2 number 10 template 2 rock1 0.5 rock2 0.5 clump export geometry res 0.2 surfaces off split geometry set clumps_clump1 geometry export clump1 . stl format stl geometry set clumps_clump2 geometry export clump2 . stl format stl",
+          "description": ""
+        }
+      ],
+      "version": "5.0"
+    }
+  }
+}

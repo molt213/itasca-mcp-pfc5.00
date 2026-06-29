@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "config",
+      "syntax": "configurekeyword...configurecfdONLY",
+      "short_description": "Configure an add-on. This command allows the user to specify optional calculation modes that need extra memory to be assigned to specified model components",
+      "keywords": [
+        {
+          "name": "configure.cfd",
+          "syntax": "configure.cfd",
+          "description": ""
+        },
+        {
+          "name": "configure.thermal",
+          "syntax": "configure.thermal",
+          "description": ""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

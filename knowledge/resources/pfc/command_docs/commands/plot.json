@@ -1,0 +1,593 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "plot",
+      "syntax": "plotkeyword...bitmapviewidkeyword...filenames",
+      "short_description": "Sets the destination file. If one is not specified, then one will be assigned. The extension determines the format (PNG by default). (PNG, JPG, BMP, PPM, and XBM formats are supported",
+      "keywords": [
+        {
+          "name": "plot.bitmap",
+          "syntax": "plot.bitmap",
+          "description": "Renders <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.bitmap.size",
+          "syntax": "plot.bitmap.size",
+          "description": "Determines the size of the bitmap (in pixels)"
+        },
+        {
+          "name": "plot.clip",
+          "syntax": "plot.clip",
+          "description": "Add, remove, or modify clip-box objects associated with the display"
+        },
+        {
+          "name": "plot.clip.add.caption",
+          "syntax": "plot.clip.add.caption",
+          "description": "Turns the description of the clip box in the legend on and off"
+        },
+        {
+          "name": "plot.clip.add.center",
+          "syntax": "plot.clip.add.center",
+          "description": "Specifies the center of the clip box"
+        },
+        {
+          "name": "plot.clip.add.ddir",
+          "syntax": "plot.clip.add.ddir",
+          "description": "Specifies the dip-direction orientation of the clip box (in degrees)"
+        },
+        {
+          "name": "plot.clip.add.dip",
+          "syntax": "plot.clip.add.dip",
+          "description": "Specifies the dip orientation of the clip box (in degrees)"
+        },
+        {
+          "name": "plot.clip.add.radius",
+          "syntax": "plot.clip.add.radius",
+          "description": "Specifies the radius of each of the three axes away from the current center"
+        },
+        {
+          "name": "plot.clip.add.roll",
+          "syntax": "plot.clip.add.roll",
+          "description": "Specifies the roll orientation of the clip box (in degrees)"
+        },
+        {
+          "name": "plot.clip.modify",
+          "syntax": "plot.clip.modify",
+          "description": "Modifies the current settings of the <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.clip.remove",
+          "syntax": "plot.clip.remove",
+          "description": "removes the <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.copy",
+          "syntax": "plot.copy",
+          "description": "The view identified by <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.create",
+          "syntax": "plot.create",
+          "description": "A new view named <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.current",
+          "syntax": "plot.current",
+          "description": "The view identified by <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.cut",
+          "syntax": "plot.cut",
+          "description": "Add, remove, or modify cut-plane objects associated with the display"
+        },
+        {
+          "name": "plot.cut.add.octant.dd2",
+          "syntax": "plot.cut.add.octant.dd2",
+          "description": "Defines the dip direction of the second cut plane"
+        },
+        {
+          "name": "plot.cut.add.octant.dd3",
+          "syntax": "plot.cut.add.octant.dd3",
+          "description": "Defines the dip direction of the third cut plane"
+        },
+        {
+          "name": "plot.cut.add.octant.dip1",
+          "syntax": "plot.cut.add.octant.dip1",
+          "description": "Defines the dip of the first cut plane"
+        },
+        {
+          "name": "plot.cut.add.octant.dip2",
+          "syntax": "plot.cut.add.octant.dip2",
+          "description": "Defines the dip of the second cut plane"
+        },
+        {
+          "name": "plot.cut.add.octant.dip3",
+          "syntax": "plot.cut.add.octant.dip3",
+          "description": "Defines the dip of the third cut plane"
+        },
+        {
+          "name": "plot.cut.add.octant.name",
+          "syntax": "plot.cut.add.octant.name",
+          "description": "Creates a name associated with the cut plane"
+        },
+        {
+          "name": "plot.cut.add.octant.normal1",
+          "syntax": "plot.cut.add.octant.normal1",
+          "description": "Defines the orientation of the first cut plane via a normal vector"
+        },
+        {
+          "name": "plot.cut.add.octant.normal2",
+          "syntax": "plot.cut.add.octant.normal2",
+          "description": "Defines the orientation of the second cut plane via a normal vector"
+        },
+        {
+          "name": "plot.cut.add.octant.normal3",
+          "syntax": "plot.cut.add.octant.normal3",
+          "description": "Defines the orientation of the third cut plane via a normal vector"
+        },
+        {
+          "name": "plot.cut.add.octant.origin",
+          "syntax": "plot.cut.add.octant.origin",
+          "description": "Sets the origin of the cut plane, which is defined by an orientation and an origin"
+        },
+        {
+          "name": "plot.cut.add.plane",
+          "syntax": "plot.cut.add.plane",
+          "description": "Creates a single simple cutting plane"
+        },
+        {
+          "name": "plot.cut.add.plane.dip",
+          "syntax": "plot.cut.add.plane.dip",
+          "description": "Defines the dip of the cut plane"
+        },
+        {
+          "name": "plot.cut.add.plane.name",
+          "syntax": "plot.cut.add.plane.name",
+          "description": "Creates a name associated with the cut plane"
+        },
+        {
+          "name": "plot.cut.add.plane.normal",
+          "syntax": "plot.cut.add.plane.normal",
+          "description": "Defines the orientation of the cut plane via a normal vector"
+        },
+        {
+          "name": "plot.cut.add.plane.origin",
+          "syntax": "plot.cut.add.plane.origin",
+          "description": "Sets the origin of the cut plane, which is defined by an orientation and an origin"
+        },
+        {
+          "name": "plot.cut.add.wedge",
+          "syntax": "plot.cut.add.wedge",
+          "description": "Creates a wedge-shaped cut object"
+        },
+        {
+          "name": "plot.cut.add.wedge.dd2",
+          "syntax": "plot.cut.add.wedge.dd2",
+          "description": "Defines the dip direction of the second cut plane"
+        },
+        {
+          "name": "plot.cut.add.wedge.dip1",
+          "syntax": "plot.cut.add.wedge.dip1",
+          "description": "Defines the dip of the first cut plane"
+        },
+        {
+          "name": "plot.cut.add.wedge.dip2",
+          "syntax": "plot.cut.add.wedge.dip2",
+          "description": "Defines the dip of the second cut plane"
+        },
+        {
+          "name": "plot.cut.add.wedge.name",
+          "syntax": "plot.cut.add.wedge.name",
+          "description": "Creates a name associated with the cut plane"
+        },
+        {
+          "name": "plot.cut.add.wedge.normal1",
+          "syntax": "plot.cut.add.wedge.normal1",
+          "description": "Defines the orientation of the first cut plane via a normal vector"
+        },
+        {
+          "name": "plot.cut.add.wedge.normal2",
+          "syntax": "plot.cut.add.wedge.normal2",
+          "description": "Defines the orientation of the second cut plane via a normal vector"
+        },
+        {
+          "name": "plot.cut.add.wedge.origin",
+          "syntax": "plot.cut.add.wedge.origin",
+          "description": "Sets the origin of the cut plane, which is defined by an orientation and an origin"
+        },
+        {
+          "name": "plot.cut.add.modify",
+          "syntax": "plot.cut.add.modify",
+          "description": "Modifies the cut plane object at index <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.cut.add.remove",
+          "syntax": "plot.cut.add.remove",
+          "description": "Removes the cut plane object at index <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.destroy",
+          "syntax": "plot.destroy",
+          "description": "The view <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.dxf",
+          "syntax": "plot.dxf",
+          "description": "This command exports the view <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.excel",
+          "syntax": "plot.excel",
+          "description": "Creates an Excel spreadsheet with data from all plot items that support the conversion (e"
+        },
+        {
+          "name": "plot.excel.view",
+          "syntax": "plot.excel.view",
+          "description": "Select the view"
+        },
+        {
+          "name": "plot.export",
+          "syntax": "plot.export",
+          "description": "This command exports a data file that, if read with the <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.hardcopy",
+          "syntax": "plot.hardcopy",
+          "description": "Prints <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.postscript",
+          "syntax": "plot.postscript",
+          "description": "Creates a PostScript file of <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.postscript.landscape",
+          "syntax": "plot.postscript.landscape",
+          "description": "Specifies use of the landscape layout"
+        },
+        {
+          "name": "plot.postscript.manual",
+          "syntax": "plot.postscript.manual",
+          "description": "Is a special keyword that sets up a layout used in the production of Itasca&#8217;s manuals"
+        },
+        {
+          "name": "plot.postscript.margin",
+          "syntax": "plot.postscript.margin",
+          "description": "Specifies the amount of margin to leave around the edges of the page in the layout (in inches or millimeters)"
+        },
+        {
+          "name": "plot.postscript.paper",
+          "syntax": "plot.postscript.paper",
+          "description": "Specifies the paper size to use in the layout (in inches or millimeters)"
+        },
+        {
+          "name": "plot.postscript.size",
+          "syntax": "plot.postscript.size",
+          "description": "Determines the size of the bitmap"
+        },
+        {
+          "name": "plot.rename",
+          "syntax": "plot.rename",
+          "description": "The view identified as <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.svg",
+          "syntax": "plot.svg",
+          "description": "Generates a Scalable Vector Graphics (SVG) file of <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.svg.size",
+          "syntax": "plot.svg.size",
+          "description": "Specifies the size of the bitmap portion of the plot (in pixels)"
+        },
+        {
+          "name": "plot.vrml",
+          "syntax": "plot.vrml",
+          "description": "Generates a VRML file representing the view"
+        },
+        {
+          "name": "plot.vrml.filename",
+          "syntax": "plot.vrml.filename",
+          "description": "Specifies which file and path to give to the VRML file"
+        },
+        {
+          "name": "plot.reset",
+          "syntax": "plot.reset",
+          "description": "Resets the current view settings to default values, forcing a recalculation of an initial view"
+        },
+        {
+          "name": "plot.set",
+          "syntax": "plot.set",
+          "description": "The view is above the plane defined by dip and dip direction"
+        },
+        {
+          "name": "plot.set.active",
+          "syntax": "plot.set.active",
+          "description": "If set to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.backclip",
+          "syntax": "plot.backclip",
+          "description": "Specifies a back-clipping plane for the view"
+        },
+        {
+          "name": "plot.background",
+          "syntax": "plot.background",
+          "description": "The background <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.below",
+          "syntax": "plot.below",
+          "description": "The view is below the plane defined by dip and dip direction"
+        },
+        {
+          "name": "plot.center",
+          "syntax": "plot.center",
+          "description": "Modifies the center of the view"
+        },
+        {
+          "name": "plot.ddir",
+          "syntax": "plot.ddir",
+          "description": "Modifies the view orientation based on dip direction (in degrees)"
+        },
+        {
+          "name": "plot.dip",
+          "syntax": "plot.dip",
+          "description": "Modifies the view orientation based on dip (in degrees)"
+        },
+        {
+          "name": "plot.distance",
+          "syntax": "plot.distance",
+          "description": "Changes the distance between the eye and the center point"
+        },
+        {
+          "name": "plot.eye",
+          "syntax": "plot.eye",
+          "description": "The location of the eye"
+        },
+        {
+          "name": "plot.fov",
+          "syntax": "plot.fov",
+          "description": "Changes the field-of-view angle at magnification 1"
+        },
+        {
+          "name": "plot.frontclip",
+          "syntax": "plot.frontclip",
+          "description": "Specifies a front clipping plane for the view"
+        },
+        {
+          "name": "plot.index",
+          "syntax": "plot.index",
+          "description": "Specifies the index used for the next movie file generated"
+        },
+        {
+          "name": "plot.jobtitle",
+          "syntax": "plot.jobtitle",
+          "description": "Uses a <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.legend",
+          "syntax": "plot.legend",
+          "description": "Set attributes of the plot legend"
+        },
+        {
+          "name": "plot.legend.copyright",
+          "syntax": "plot.legend.copyright",
+          "description": "The font used to indicate Itasca&#8217;s copyright and code restriction information, if present"
+        },
+        {
+          "name": "plot.legend.custit",
+          "syntax": "plot.legend.custit",
+          "description": "The font used to draw the customer title at the bottom of the legend (if space is available)"
+        },
+        {
+          "name": "plot.legend.heading",
+          "syntax": "plot.legend.heading",
+          "description": "The font used to draw the heading (i"
+        },
+        {
+          "name": "plot.legend.outline",
+          "syntax": "plot.legend.outline",
+          "description": "The line style used to draw the outline of the legend box"
+        },
+        {
+          "name": "plot.legend.placement",
+          "syntax": "plot.legend.placement",
+          "description": "Legend location"
+        },
+        {
+          "name": "plot.legend.placement.left",
+          "syntax": "plot.legend.placement.left",
+          "description": "Legend on left side of plot (default)"
+        },
+        {
+          "name": "plot.legend.placement.right",
+          "syntax": "plot.legend.placement.right",
+          "description": "Legend on right side of plot"
+        },
+        {
+          "name": "plot.legend.position",
+          "syntax": "plot.legend.position",
+          "description": "Position of the legend if floating"
+        },
+        {
+          "name": "plot.legend.size",
+          "syntax": "plot.legend.size",
+          "description": "Size of the legend, in percentage of screen width (<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.legend.step",
+          "syntax": "plot.legend.step",
+          "description": "The font used to draw the step number"
+        },
+        {
+          "name": "plot.legend.time",
+          "syntax": "plot.legend.time",
+          "description": "The font used to draw the current date and time"
+        },
+        {
+          "name": "plot.legend.viewcenter",
+          "syntax": "plot.legend.viewcenter",
+          "description": "The font used to show the current viewport center"
+        },
+        {
+          "name": "plot.legend.viewdip",
+          "syntax": "plot.legend.viewdip",
+          "description": "The font used to show the current viewport&#8217;s dip and dip direction"
+        },
+        {
+          "name": "plot.legend.vieweye",
+          "syntax": "plot.legend.vieweye",
+          "description": "The font used to showthe current viewport eye position"
+        },
+        {
+          "name": "plot.legend.viewinfo",
+          "syntax": "plot.legend.viewinfo",
+          "description": "Turns all current view transformation settings in the legend <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.legend.viewnormal",
+          "syntax": "plot.legend.viewnormal",
+          "description": "The font used to show the current viewport&#8217;s normal vector"
+        },
+        {
+          "name": "plot.legend.viewprojection",
+          "syntax": "plot.legend.viewprojection",
+          "description": "The font used to display whether the current projection mode is perspective or parallel"
+        },
+        {
+          "name": "plot.legend.viewradius",
+          "syntax": "plot.legend.viewradius",
+          "description": "The font used to show the current viewport&#8217;s view radius"
+        },
+        {
+          "name": "plot.magnification",
+          "syntax": "plot.magnification",
+          "description": "Magnifies the plot"
+        },
+        {
+          "name": "plot.mode",
+          "syntax": "plot.mode",
+          "description": "Changes the view controls"
+        },
+        {
+          "name": "plot.movieactive",
+          "syntax": "plot.movieactive",
+          "description": "Turns movie-image generation for this view <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.movieextension",
+          "syntax": "plot.movieextension",
+          "description": "Specifies the file extension (and therefore the file type) of the bitmaps produced by views using the movie option"
+        },
+        {
+          "name": "plot.movieinterval",
+          "syntax": "plot.movieinterval",
+          "description": "Specifies the number of steps (or cycles) between images generated by the movie option"
+        },
+        {
+          "name": "plot.movieprefix",
+          "syntax": "plot.movieprefix",
+          "description": "Specifies a prefix used in the file names of all images generated by the movie option"
+        },
+        {
+          "name": "plot.moviesize",
+          "syntax": "plot.moviesize",
+          "description": "Specifies the size of the image generated by views using the movie option"
+        },
+        {
+          "name": "plot.name",
+          "syntax": "plot.name",
+          "description": "A name associated with the display"
+        },
+        {
+          "name": "plot.orientation",
+          "syntax": "plot.orientation",
+          "description": "Allows view direction and orientation to be set with one command"
+        },
+        {
+          "name": "plot.outline",
+          "syntax": "plot.outline",
+          "description": "The style of the line used to outline the plot area"
+        },
+        {
+          "name": "plot.printsize",
+          "syntax": "plot.printsize",
+          "description": "Specifies the size of the bitmap image used in hard copy printouts"
+        },
+        {
+          "name": "plot.projection",
+          "syntax": "plot.projection",
+          "description": "Changes whether perspective distortion is included in the view"
+        },
+        {
+          "name": "plot.radius",
+          "syntax": "plot.radius",
+          "description": "Changes the extent of the viewing plane seen"
+        },
+        {
+          "name": "plot.roll",
+          "syntax": "plot.roll",
+          "description": "Calculates the &#8220;up&#8221; direction for the current view"
+        },
+        {
+          "name": "plot.sketch",
+          "syntax": "plot.sketch",
+          "description": "determines whether &#8220;sketch mode&#8221; is invoked during active view manipulation"
+        },
+        {
+          "name": "plot.update",
+          "syntax": "plot.update",
+          "description": "If set to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.varray",
+          "syntax": "plot.varray",
+          "description": "Determines whether vertex arrays will be used to draw objects in OpenGL"
+        },
+        {
+          "name": "plot.vbobject",
+          "syntax": "plot.vbobject",
+          "description": "Determines whether the vertex buffer object OpenGL extension will be used if available"
+        },
+        {
+          "name": "plot.vertical",
+          "syntax": "plot.vertical",
+          "description": "Specifies the direction of &#8220;up&#8221; while maintaining the current view direction"
+        },
+        {
+          "name": "plot.viewtitle",
+          "syntax": "plot.viewtitle",
+          "description": "Specifies the font and text used for a view title displayed on top of the view"
+        },
+        {
+          "name": "plot.add",
+          "syntax": "plot.add",
+          "description": "A plot item, identified by the plot-item keyword item (see <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.clear",
+          "syntax": "plot.clear",
+          "description": "Removes all plot items from the view <a class=\"reference internal\" href=\"plot_content"
+        },
+        {
+          "name": "plot.load",
+          "syntax": "plot.load",
+          "description": "Attempts to load a user-defined plot item DLL named <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.modify",
+          "syntax": "plot.modify",
+          "description": "Modifies the plot item item at position <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "plot.subtract",
+          "syntax": "plot.subtract",
+          "description": "Removes the plot item item at position <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

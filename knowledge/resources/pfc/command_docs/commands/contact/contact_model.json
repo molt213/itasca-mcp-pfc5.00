@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact model",
+      "syntax": "contactsprocessmodelkeywordrangeloadsprocesssprocessburger",
+      "short_description": "Assign contact models. The selected contact model applies to contacts in the specified range. If no range is specified, then all contacts in the model are affected.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

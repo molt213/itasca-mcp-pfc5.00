@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "pause",
+      "syntax": "pausekeyipausecontinuekeypauseShift+EscShift+EsciiShift+Esc",
+      "short_description": "Pause command processing",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact extra",
+      "syntax": "contactsprocessextraiarangeaisprocess",
+      "short_description": "Set contact extra variables.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

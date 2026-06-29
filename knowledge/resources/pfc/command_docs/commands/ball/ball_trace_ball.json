@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball trace ball",
+      "syntax": "traceididballkeyword...balltrace",
+      "short_description": "",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

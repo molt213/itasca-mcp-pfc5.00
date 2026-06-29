@@ -1,0 +1,88 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump result",
+      "syntax": "clumpresultkeywordPFCcleargenerateexportloadactivate",
+      "short_description": "Activate the creation of clump result states in memory or as files",
+      "keywords": [
+        {
+          "name": "clump.result.activate",
+          "syntax": "clump.result.activate",
+          "description": "Activate the creation of clump result states in memory or as files"
+        },
+        {
+          "name": "clump.result.addattribute",
+          "syntax": "clump.result.addattribute",
+          "description": "Add the clump attribute <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.result.clear",
+          "syntax": "clump.result.clear",
+          "description": "Clear the current clump result states stored in memory and the table referring to clump results"
+        },
+        {
+          "name": "clump.result.cycles",
+          "syntax": "clump.result.cycles",
+          "description": "Specify the number of cycles between clump result tabulation or, if given with the load / export keywords, specify the exact cycle number of the clump result state to re-create/output"
+        },
+        {
+          "name": "clump.result.deactivate",
+          "syntax": "clump.result.deactivate",
+          "description": "Deactivate the creation of additional clump result states or files"
+        },
+        {
+          "name": "clump.result.export",
+          "syntax": "clump.result.export",
+          "description": "Output a clump result held in memory to file with name specified via the filename keyword"
+        },
+        {
+          "name": "clump.result.filename",
+          "syntax": "clump.result.filename",
+          "description": "Prefix to the name of the binary file into which the clump result will be output if not given with the load or export keywords"
+        },
+        {
+          "name": "clump.result.fishtime",
+          "syntax": "clump.result.fishtime",
+          "description": "<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.result.generate",
+          "syntax": "clump.result.generate",
+          "description": "Generate a clump result corresponding to the current model state"
+        },
+        {
+          "name": "clump.result.load",
+          "syntax": "clump.result.load",
+          "description": "Re-create the corresponding clump state"
+        },
+        {
+          "name": "clump.result.map",
+          "syntax": "clump.result.map",
+          "description": "Place the list of cycle numbers and times associated with result tabulation into the FISH map <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.result.nothrow",
+          "syntax": "clump.result.nothrow",
+          "description": "Set the state affecting 1) the deletion of clumps prior to clump model-state re-creation; and 2) name conflicts that may arise when outputting clump results to file"
+        },
+        {
+          "name": "clump.result.removeattribute",
+          "syntax": "clump.result.removeattribute",
+          "description": "Remove the clump attribute <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.result.time",
+          "syntax": "clump.result.time",
+          "description": "Specify the mechanical time interval between clump result tabulation or, if given with the load / export keywords, specify the mechanical age of the clump result state to re-create/output"
+        },
+        {
+          "name": "clump.result.zero",
+          "syntax": "clump.result.zero",
+          "description": "The clump result times will begin with 0 versus the current mechanical age of the system"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump trace clump",
+      "syntax": "traceididclumpkeyword...clumptrace",
+      "short_description": "",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

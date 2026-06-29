@@ -1,0 +1,41 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball export",
+      "syntax": "ballexportkeywordrangegeometrykeywordresolutionffRRf",
+      "short_description": "Resolution of the facet edges",
+      "keywords": [
+        {
+          "name": "ball.export.geometry",
+          "syntax": "ball.export.geometry",
+          "description": "Resolution of the facet edges"
+        },
+        {
+          "name": "ball.export.geometry.set",
+          "syntax": "ball.export.geometry.set",
+          "description": "Set the geometry set base name to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.export.geometry.split",
+          "syntax": "ball.export.geometry.split",
+          "description": "If specified, the split keyword results in each ball being exported into a dedicated geometry set"
+        }
+      ],
+      "examples": [
+        {
+          "command": "domain extent - 5.0 5.0 ball create radius 2.0 x - 2.5 ball create radius 2.0 x 2.5 ball export geometry",
+          "description": ""
+        },
+        {
+          "command": "domain extent - 5.0 5.0 ball create radius 2.0 x - 4.5 ball create radius 2.0 x 0.0 ball create radius 2.0 x 4.5 ball export geometry set finer resolution 0.1 range id 1 ball export geometry set default resolution 0.25 range id 2 ball export geometry set coarser resolution 0.5 range id 3",
+          "description": ""
+        },
+        {
+          "command": "domain extent - 10.0 10.0 ball generate number 10 radius 1.0 3.0 ball export geometry split geometry export test . stl format stl",
+          "description": ""
+        }
+      ],
+      "version": "5.0"
+    }
+  }
+}

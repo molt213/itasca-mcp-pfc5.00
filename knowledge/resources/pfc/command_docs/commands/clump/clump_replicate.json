@@ -1,0 +1,83 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump replicate",
+      "syntax": "clumpreplicatekeyword...densityanglefang",
+      "short_description": "Angle about which to rotate the clump in degrees via the right-hand rule. If no angle is specified, then no rotation will occur. In 2D, rotation occurs in the out-of-plane direction",
+      "keywords": [
+        {
+          "name": "clump.replicate.angle",
+          "syntax": "clump.replicate.angle",
+          "description": "Angle about which to rotate the clump in degrees via the right-hand rule"
+        },
+        {
+          "name": "clump.replicate.axis",
+          "syntax": "clump.replicate.axis",
+          "description": "Axis about which to rotate the clump"
+        },
+        {
+          "name": "clump.replicate.density",
+          "syntax": "clump.replicate.density",
+          "description": "Density of the clump that is 1 by default"
+        },
+        {
+          "name": "clump.replicate.diameter",
+          "syntax": "clump.replicate.diameter",
+          "description": "Volume is set to be the equivalent to the volume of a {disk of unit thickness in 2D; sphere in 3D} with diameter <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.replicate.fishsize",
+          "syntax": "clump.replicate.fishsize",
+          "description": "Use the FISH function with name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.replicate.group",
+          "syntax": "clump.replicate.group",
+          "description": "The group slot <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.replicate.id",
+          "syntax": "clump.replicate.id",
+          "description": "Clump ID that is the next available ID by default"
+        },
+        {
+          "name": "clump.replicate.origposition",
+          "syntax": "clump.replicate.origposition",
+          "description": "Specify that the clump centroid will be set to the original position of the clump template when it was created"
+        },
+        {
+          "name": "clump.replicate.position",
+          "syntax": "clump.replicate.position",
+          "description": "Clump position that is the origin by default"
+        },
+        {
+          "name": "clump.replicate.name",
+          "syntax": "clump.replicate.name",
+          "description": "Name of the clump template to be replicated"
+        },
+        {
+          "name": "clump.replicate.volume",
+          "syntax": "clump.replicate.volume",
+          "description": "Scale the clump to have a volume of <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.replicate.x",
+          "syntax": "clump.replicate.x",
+          "description": "The x -component of the clump position that is 0 by default"
+        },
+        {
+          "name": "clump.replicate.y",
+          "syntax": "clump.replicate.y",
+          "description": "The y -component of the clump position that is 0 by default"
+        },
+        {
+          "name": "clump.replicate.z",
+          "syntax": "clump.replicate.z",
+          "description": "The z -component of the clump position that is 0 by default"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball property",
+      "syntax": "ballpropertysas1a21...rangeasballattribute",
+      "short_description": "Assign ball surface properties.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

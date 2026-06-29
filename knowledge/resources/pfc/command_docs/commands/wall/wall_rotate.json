@@ -1,0 +1,33 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall rotate",
+      "syntax": "wallrotatekeyword...rangecentrotationupdateorientaxisvaxis",
+      "short_description": "Axis of rotation",
+      "keywords": [
+        {
+          "name": "wall.rotate.axis",
+          "syntax": "wall.rotate.axis",
+          "description": "Axis of rotation"
+        },
+        {
+          "name": "wall.rotate.angle",
+          "syntax": "wall.rotate.angle",
+          "description": "Angle of rotation in degrees using the right-hand rule"
+        },
+        {
+          "name": "wall.rotate.point",
+          "syntax": "wall.rotate.point",
+          "description": "Rotation occurs about the specified point"
+        },
+        {
+          "name": "wall.rotate.updateorient",
+          "syntax": "wall.rotate.updateorient",
+          "description": "Explicitly set the orientation update status for this rotate command"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

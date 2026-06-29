@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "heading",
+      "syntax": "headingslistinformationtitlesFISHs",
+      "short_description": "Set the model title. The title is included in subsequent plots and stored in model state (SAV) files",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

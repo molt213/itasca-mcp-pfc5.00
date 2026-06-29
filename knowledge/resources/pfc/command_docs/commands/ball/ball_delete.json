@@ -1,0 +1,17 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball delete",
+      "syntax": "balldeleterange",
+      "short_description": "Delete balls. If no range is specified, then all balls in the model are deleted.",
+      "keywords": [],
+      "examples": [
+        {
+          "command": "; setup model domain domain extent - 15 15 ; generate balls ball generate radius 0.25 cubic box - 10 10 - 10 10 - 5 0 ; delete balls in a box ball delete range ... cylinder end1 - 3.0 - 16.0 0.0 end2 - 3.0 16.0 0.0 radius 3.0 ball delete range ... cylinder end1 7.0 - 16.0 0.0 end2 - 12.0 16.0 0.0 radius 2.0 ... x - 5.0 15",
+          "description": ""
+        }
+      ],
+      "version": "5.0"
+    }
+  }
+}

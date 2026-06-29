@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "help",
+      "syntax": "helphelphelplist helplist",
+      "short_description": "Get command help",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

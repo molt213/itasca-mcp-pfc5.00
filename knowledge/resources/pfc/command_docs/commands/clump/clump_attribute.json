@@ -1,0 +1,253 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump attribute",
+      "syntax": "clumpattributekeyword...rangeclumpinitializeclumplistclumppropertyappliedforcev",
+      "short_description": "Force vector applied to clumps",
+      "keywords": [
+        {
+          "name": "clump.attribute.appliedforce",
+          "syntax": "clump.attribute.appliedforce",
+          "description": "Force vector applied to clumps"
+        },
+        {
+          "name": "clump.attribute.appliedmoment",
+          "syntax": "clump.attribute.appliedmoment",
+          "description": "Moment applied to clumps"
+        },
+        {
+          "name": "clump.attribute.contactforce",
+          "syntax": "clump.attribute.contactforce",
+          "description": "Sum of the contact force accumulated to the clumps during the previous force-displacement update"
+        },
+        {
+          "name": "clump.attribute.contactmoment",
+          "syntax": "clump.attribute.contactmoment",
+          "description": "Sum of the contact moments accumulated to the clumps during the previous force-displacement update"
+        },
+        {
+          "name": "clump.attribute.damp",
+          "syntax": "clump.attribute.damp",
+          "description": "Clump local damping coefficient where <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.attribute.density",
+          "syntax": "clump.attribute.density",
+          "description": "Clump density where <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.attribute.displacement",
+          "syntax": "clump.attribute.displacement",
+          "description": "Accumulated clump displacement vector as a result of cycling"
+        },
+        {
+          "name": "clump.attribute.euler",
+          "syntax": "clump.attribute.euler",
+          "description": "Current orientation of Euler angles following the X,Y,Z convention (e"
+        },
+        {
+          "name": "clump.attribute.fragment",
+          "syntax": "clump.attribute.fragment",
+          "description": "Fragment ID (see &quot;<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.attribute.position",
+          "syntax": "clump.attribute.position",
+          "description": "Location of clump centroid"
+        },
+        {
+          "name": "clump.attribute.prinrealmoi",
+          "syntax": "clump.attribute.prinrealmoi",
+          "description": "Real principal moments of inertia"
+        },
+        {
+          "name": "clump.attribute.realmoi11",
+          "syntax": "clump.attribute.realmoi11",
+          "description": "11 component of the clump real moment of inertia"
+        },
+        {
+          "name": "clump.attribute.realmoi12",
+          "syntax": "clump.attribute.realmoi12",
+          "description": "12 component of the clump real moment of inertia"
+        },
+        {
+          "name": "clump.attribute.realmoi13",
+          "syntax": "clump.attribute.realmoi13",
+          "description": "13 component of the clump real moment of inertia"
+        },
+        {
+          "name": "clump.attribute.realmoi22",
+          "syntax": "clump.attribute.realmoi22",
+          "description": "22 component of the clump real moment of inertia"
+        },
+        {
+          "name": "clump.attribute.realmoi23",
+          "syntax": "clump.attribute.realmoi23",
+          "description": "23 component of the clump real moment of inertia"
+        },
+        {
+          "name": "clump.attribute.realmoi33",
+          "syntax": "clump.attribute.realmoi33",
+          "description": "33 component of the clump real moment of inertia"
+        },
+        {
+          "name": "clump.attribute.rotation",
+          "syntax": "clump.attribute.rotation",
+          "description": "Current clump orientation"
+        },
+        {
+          "name": "clump.attribute.spin",
+          "syntax": "clump.attribute.spin",
+          "description": "Clump angular velocity in radians per second"
+        },
+        {
+          "name": "clump.attribute.velocity",
+          "syntax": "clump.attribute.velocity",
+          "description": "Clump translational velocity vector"
+        },
+        {
+          "name": "clump.attribute.volume",
+          "syntax": "clump.attribute.volume",
+          "description": "Clump volume"
+        },
+        {
+          "name": "clump.attribute.xappliedforce",
+          "syntax": "clump.attribute.xappliedforce",
+          "description": "The x -component of the force applied to clumps"
+        },
+        {
+          "name": "clump.attribute.xappliedmoment",
+          "syntax": "clump.attribute.xappliedmoment",
+          "description": "The x -component of the moment applied to clumps"
+        },
+        {
+          "name": "clump.attribute.xcontactforce",
+          "syntax": "clump.attribute.xcontactforce",
+          "description": "The x -component of the resultant contact force accumulated to clumps"
+        },
+        {
+          "name": "clump.attribute.xcontactmoment",
+          "syntax": "clump.attribute.xcontactmoment",
+          "description": "The x -component of the resultant contact moment accumulated to clumps"
+        },
+        {
+          "name": "clump.attribute.xdisplacement",
+          "syntax": "clump.attribute.xdisplacement",
+          "description": "The x -component of the accumulated clump displacement as a result of cycling"
+        },
+        {
+          "name": "clump.attribute.xeuler",
+          "syntax": "clump.attribute.xeuler",
+          "description": "The x -euler angle (in degrees) of the current clump orientation"
+        },
+        {
+          "name": "clump.attribute.xposition",
+          "syntax": "clump.attribute.xposition",
+          "description": "The x -component of the location of clump centroids"
+        },
+        {
+          "name": "clump.attribute.xspin",
+          "syntax": "clump.attribute.xspin",
+          "description": "The x -component of the clump angular velocity in radians per second"
+        },
+        {
+          "name": "clump.attribute.xvelocity",
+          "syntax": "clump.attribute.xvelocity",
+          "description": "The x -component of the clump velocity"
+        },
+        {
+          "name": "clump.attribute.yappliedforce",
+          "syntax": "clump.attribute.yappliedforce",
+          "description": "The y -component of the force applied to clumps"
+        },
+        {
+          "name": "clump.attribute.yappliedmoment",
+          "syntax": "clump.attribute.yappliedmoment",
+          "description": "The y -component of the moment applied to clumps"
+        },
+        {
+          "name": "clump.attribute.ycontactforce",
+          "syntax": "clump.attribute.ycontactforce",
+          "description": "The y -component of the resultant contact force accumulated to clumps"
+        },
+        {
+          "name": "clump.attribute.ycontactmoment",
+          "syntax": "clump.attribute.ycontactmoment",
+          "description": "The y -component of the resultant contact moment accumulated to clumps"
+        },
+        {
+          "name": "clump.attribute.ydisplacement",
+          "syntax": "clump.attribute.ydisplacement",
+          "description": "The y -component of accumulated displacement as a result of cycling"
+        },
+        {
+          "name": "clump.attribute.yeuler",
+          "syntax": "clump.attribute.yeuler",
+          "description": "The y -euler angle (in degrees) of the current clump orientation"
+        },
+        {
+          "name": "clump.attribute.yposition",
+          "syntax": "clump.attribute.yposition",
+          "description": "The y -component of the location of clump centroids"
+        },
+        {
+          "name": "clump.attribute.yspin",
+          "syntax": "clump.attribute.yspin",
+          "description": "The y -component of the clump angular velocity in radians per second"
+        },
+        {
+          "name": "clump.attribute.yvelocity",
+          "syntax": "clump.attribute.yvelocity",
+          "description": "The y -component of the clump velocity"
+        },
+        {
+          "name": "clump.attribute.zappliedforce",
+          "syntax": "clump.attribute.zappliedforce",
+          "description": "The z -component of the force applied to clumps"
+        },
+        {
+          "name": "clump.attribute.zappliedmoment",
+          "syntax": "clump.attribute.zappliedmoment",
+          "description": "The z -component of the moment applied to clumps"
+        },
+        {
+          "name": "clump.attribute.zcontactforce",
+          "syntax": "clump.attribute.zcontactforce",
+          "description": "The z -component of the resultant contact force accumulated to clumps"
+        },
+        {
+          "name": "clump.attribute.zcontactmoment",
+          "syntax": "clump.attribute.zcontactmoment",
+          "description": "The z -component of the resultant contact moment accumulated to clumps"
+        },
+        {
+          "name": "clump.attribute.zdisplacement",
+          "syntax": "clump.attribute.zdisplacement",
+          "description": "The z -component of accumulated displacement as a result of cycling"
+        },
+        {
+          "name": "clump.attribute.zeuler",
+          "syntax": "clump.attribute.zeuler",
+          "description": "The z -euler angle (in degrees) of the current clump orientation"
+        },
+        {
+          "name": "clump.attribute.zposition",
+          "syntax": "clump.attribute.zposition",
+          "description": "The z -component of the location of clump centroids"
+        },
+        {
+          "name": "clump.attribute.zspin",
+          "syntax": "clump.attribute.zspin",
+          "description": "The z -component of the clump angular velocity in radians per second"
+        },
+        {
+          "name": "clump.attribute.zvelocity",
+          "syntax": "clump.attribute.zvelocity",
+          "description": "The z -component of the clump velocity"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

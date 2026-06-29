@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump tolerance",
+      "syntax": "clumptolerancekeyword...ctoleranceetolerancevtolerancecleanctolerancefctolrange",
+      "short_description": "Assign the constant contact-detection tolerance. This is assigned on a per-pebble basis",
+      "keywords": [
+        {
+          "name": "clump.tolerance.ctolerance",
+          "syntax": "clump.tolerance.ctolerance",
+          "description": "Assign the constant contact-detection tolerance"
+        },
+        {
+          "name": "clump.tolerance.etolerance",
+          "syntax": "clump.tolerance.etolerance",
+          "description": "Assign the extent contact-detection tolerance"
+        },
+        {
+          "name": "clump.tolerance.vtolerance",
+          "syntax": "clump.tolerance.vtolerance",
+          "description": "Assign the velocity contact-detection tolerance"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

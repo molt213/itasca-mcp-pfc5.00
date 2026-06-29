@@ -1,0 +1,48 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump list",
+      "syntax": "clumplistkeywordrangeattributesetprecisionattributessss'pebble position'",
+      "short_description": "List clump attributes",
+      "keywords": [
+        {
+          "name": "clump.list.attribute",
+          "syntax": "clump.list.attribute",
+          "description": "List clump attributes"
+        },
+        {
+          "name": "clump.list.contact",
+          "syntax": "clump.list.contact",
+          "description": "List the contacts with a clump"
+        },
+        {
+          "name": "clump.list.extra",
+          "syntax": "clump.list.extra",
+          "description": "List the extra variables at index <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.list.group",
+          "syntax": "clump.list.group",
+          "description": "List the group names at slot <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.list.property",
+          "syntax": "clump.list.property",
+          "description": "List pebble properties"
+        },
+        {
+          "name": "clump.list.result",
+          "syntax": "clump.list.result",
+          "description": "List the clump model results that have been tabulated"
+        },
+        {
+          "name": "clump.list.template",
+          "syntax": "clump.list.template",
+          "description": "List information regarding clump templates, including the clump template name, referenced status, pebble count, volume, and density"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "gui",
+      "syntax": "guiprojectsavess",
+      "short_description": "Save the current project",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

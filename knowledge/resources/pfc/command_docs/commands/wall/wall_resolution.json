@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall resolution",
+      "syntax": "wallresolutionkeywordreducedwallactivesidefull",
+      "short_description": "The contact resolution procedure for contacts with facets is at its full state. This means that in addition to the associative checks for contact activity, the sliver penetration conditions are checked, and the cutoff angle becomes active for contact-state information propagation for convex and concave facet intersections. Proximity contacts may result",
+      "keywords": [
+        {
+          "name": "wall.resolution.full",
+          "syntax": "wall.resolution.full",
+          "description": "The contact resolution procedure for contacts with facets is at its full state"
+        },
+        {
+          "name": "wall.resolution.none",
+          "syntax": "wall.resolution.none",
+          "description": "No contact resolution is undertaken"
+        },
+        {
+          "name": "wall.resolution.reduced",
+          "syntax": "wall.resolution.reduced",
+          "description": "The contact resolution procedure for contacts with facets is reduced (the default setting)"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

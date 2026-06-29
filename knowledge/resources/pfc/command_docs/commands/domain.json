@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "domain",
+      "syntax": "domainkeywordPFCconditionstopconditionsxsyszszonlysxsxconditionstopstopreflectdestroyperiodicstopreflectreflectdestroyperiodicperiodic",
+      "short_description": "Set or modify the domain extent and condition",
+      "keywords": [
+        {
+          "name": "domain.condition",
+          "syntax": "domain.condition",
+          "description": "Set the domain boundary conditions"
+        },
+        {
+          "name": "domain.extent",
+          "syntax": "domain.extent",
+          "description": "Specify the locations of the sides of the domain"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

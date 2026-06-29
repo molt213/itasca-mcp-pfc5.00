@@ -1,0 +1,133 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "measure history",
+      "syntax": "measurehistoryididkeywordidid2orvidhistoryidhistorycoordination",
+      "short_description": "Coordination, or average number of contacts per body, inside the measurement object",
+      "keywords": [
+        {
+          "name": "measure.history.coordination",
+          "syntax": "measure.history.coordination",
+          "description": "Coordination, or average number of contacts per body, inside the measurement object"
+        },
+        {
+          "name": "measure.history.porosity",
+          "syntax": "measure.history.porosity",
+          "description": "Porosity inside the measurement object"
+        },
+        {
+          "name": "measure.history.radius",
+          "syntax": "measure.history.radius",
+          "description": "Radius of the measurement object"
+        },
+        {
+          "name": "measure.history.strainratexx",
+          "syntax": "measure.history.strainratexx",
+          "description": "xx -component of the strain rate inside the measurement object"
+        },
+        {
+          "name": "measure.history.strainratexy",
+          "syntax": "measure.history.strainratexy",
+          "description": "xy -component of the strain rate inside the measurement object"
+        },
+        {
+          "name": "measure.history.strainratexz",
+          "syntax": "measure.history.strainratexz",
+          "description": "xz -component of the strain rate inside the measurement object"
+        },
+        {
+          "name": "measure.history.strainrateyx",
+          "syntax": "measure.history.strainrateyx",
+          "description": "yx -component of the strain rate inside the measurement object"
+        },
+        {
+          "name": "measure.history.strainrateyy",
+          "syntax": "measure.history.strainrateyy",
+          "description": "yy -component of the strain rate inside the measurement object"
+        },
+        {
+          "name": "measure.history.strainrateyz",
+          "syntax": "measure.history.strainrateyz",
+          "description": "yz -component of the strain rate inside the measurement object"
+        },
+        {
+          "name": "measure.history.strainratezx",
+          "syntax": "measure.history.strainratezx",
+          "description": "zx -component of the strain rate inside the measurement object"
+        },
+        {
+          "name": "measure.history.strainratezy",
+          "syntax": "measure.history.strainratezy",
+          "description": "zy -component of the strain rate inside the measurement object"
+        },
+        {
+          "name": "measure.history.strainratezz",
+          "syntax": "measure.history.strainratezz",
+          "description": "zz -component of the strain rate inside the measurement object"
+        },
+        {
+          "name": "measure.history.stressxx",
+          "syntax": "measure.history.stressxx",
+          "description": "xx -component of the stress inside the measurement object"
+        },
+        {
+          "name": "measure.history.stressxy",
+          "syntax": "measure.history.stressxy",
+          "description": "xy -component of the stress inside the measurement object"
+        },
+        {
+          "name": "measure.history.stressxz",
+          "syntax": "measure.history.stressxz",
+          "description": "xz -component of the stress inside the measurement object"
+        },
+        {
+          "name": "measure.history.stressyx",
+          "syntax": "measure.history.stressyx",
+          "description": "yx -component of the stress inside the measurement object"
+        },
+        {
+          "name": "measure.history.stressyy",
+          "syntax": "measure.history.stressyy",
+          "description": "yy -component of the stress inside the measurement object"
+        },
+        {
+          "name": "measure.history.stressyz",
+          "syntax": "measure.history.stressyz",
+          "description": "yz -component of the stress inside the measurement object"
+        },
+        {
+          "name": "measure.history.stresszx",
+          "syntax": "measure.history.stresszx",
+          "description": "zx -component of the stress inside the measurement object"
+        },
+        {
+          "name": "measure.history.stresszy",
+          "syntax": "measure.history.stresszy",
+          "description": "zy -component of the stress inside the measurement object"
+        },
+        {
+          "name": "measure.history.stresszz",
+          "syntax": "measure.history.stresszz",
+          "description": "zz -component of the stress inside the measurement object"
+        },
+        {
+          "name": "measure.history.xposition",
+          "syntax": "measure.history.xposition",
+          "description": "x -position of the measurement object"
+        },
+        {
+          "name": "measure.history.yposition",
+          "syntax": "measure.history.yposition",
+          "description": "y -position of the measurement object"
+        },
+        {
+          "name": "measure.history.zposition",
+          "syntax": "measure.history.zposition",
+          "description": "z -position of the measurement object"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

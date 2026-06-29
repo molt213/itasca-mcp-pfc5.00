@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "measure list",
+      "syntax": "measurelist",
+      "short_description": "List information related to measurement regions",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

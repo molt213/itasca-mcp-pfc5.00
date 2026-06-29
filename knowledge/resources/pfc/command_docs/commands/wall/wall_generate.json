@@ -1,0 +1,197 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall generate",
+      "syntax": "wallgeneratekeyword...idnamegroupgroupsslotifacet...sislotfacet",
+      "short_description": "Wall ID. If not specified, then the next available ID is used",
+      "keywords": [
+        {
+          "name": "wall.generate.group",
+          "syntax": "wall.generate.group",
+          "description": "Assign name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.generate.id",
+          "syntax": "wall.generate.id",
+          "description": "Wall ID"
+        },
+        {
+          "name": "wall.generate.name",
+          "syntax": "wall.generate.name",
+          "description": "Wall name"
+        },
+        {
+          "name": "wall.generate.box",
+          "syntax": "wall.generate.box",
+          "description": "Generate a closed box"
+        },
+        {
+          "name": "wall.generate.circle",
+          "syntax": "wall.generate.circle",
+          "description": "Generate a closed circle in 2D"
+        },
+        {
+          "name": "wall.generate.circle.radius",
+          "syntax": "wall.generate.circle.radius",
+          "description": "Radius of the circle that is 1"
+        },
+        {
+          "name": "wall.generate.circle.resolution",
+          "syntax": "wall.generate.circle.resolution",
+          "description": "Resolution of the facets"
+        },
+        {
+          "name": "wall.generate.cone",
+          "syntax": "wall.generate.cone",
+          "description": "Generate a cone in 3D"
+        },
+        {
+          "name": "wall.generate.cone.base",
+          "syntax": "wall.generate.cone.base",
+          "description": "Position of the base of the cone (i"
+        },
+        {
+          "name": "wall.generate.cone.cap",
+          "syntax": "wall.generate.cone.cap",
+          "description": "Indicate the inclusion status of the end caps"
+        },
+        {
+          "name": "wall.generate.cone.height",
+          "syntax": "wall.generate.cone.height",
+          "description": "Height of the cone"
+        },
+        {
+          "name": "wall.generate.cone.onewall",
+          "syntax": "wall.generate.cone.onewall",
+          "description": "Specify that the end caps and side of the cone (if all created) belong to a single wall"
+        },
+        {
+          "name": "wall.generate.cone.radius",
+          "syntax": "wall.generate.cone.radius",
+          "description": "Radius of the cone"
+        },
+        {
+          "name": "wall.generate.cone.resolution",
+          "syntax": "wall.generate.cone.resolution",
+          "description": "Resolution of the edges of the cone ends"
+        },
+        {
+          "name": "wall.generate.cylinder",
+          "syntax": "wall.generate.cylinder",
+          "description": "Generate a cylinder in 3D"
+        },
+        {
+          "name": "wall.generate.cylinder.base",
+          "syntax": "wall.generate.cylinder.base",
+          "description": "Position of the base of the cylinder (i"
+        },
+        {
+          "name": "wall.generate.cylinder.cap",
+          "syntax": "wall.generate.cylinder.cap",
+          "description": "Indicate the inclusion status of the end caps"
+        },
+        {
+          "name": "wall.generate.cylinder.height",
+          "syntax": "wall.generate.cylinder.height",
+          "description": "Height of the cylinder"
+        },
+        {
+          "name": "wall.generate.cylinder.onewall",
+          "syntax": "wall.generate.cylinder.onewall",
+          "description": "Specify that the end caps and side of the cylinder (if all created) belong to a single wall"
+        },
+        {
+          "name": "wall.generate.cylinder.radius",
+          "syntax": "wall.generate.cylinder.radius",
+          "description": "Radius of the cylinder, or the distance from the axis of symmetry to the side"
+        },
+        {
+          "name": "wall.generate.cylinder.resolution",
+          "syntax": "wall.generate.cylinder.resolution",
+          "description": "Resolution of the edges of the cylinder ends"
+        },
+        {
+          "name": "wall.generate.disk",
+          "syntax": "wall.generate.disk",
+          "description": "Generate a disk in 3D"
+        },
+        {
+          "name": "wall.generate.disk.ddir",
+          "syntax": "wall.generate.disk.ddir",
+          "description": "Dip direction of the disk in degrees as measured in a clockwise fashion from the positive y -axis in the range [0,360]"
+        },
+        {
+          "name": "wall.generate.disk.position",
+          "syntax": "wall.generate.disk.position",
+          "description": "Position of the center of the disk that is the origin by default"
+        },
+        {
+          "name": "wall.generate.disk.radius",
+          "syntax": "wall.generate.disk.radius",
+          "description": "Radius of the disk that is 1"
+        },
+        {
+          "name": "wall.generate.disk.resolution",
+          "syntax": "wall.generate.disk.resolution",
+          "description": "Resolution of the disk edges"
+        },
+        {
+          "name": "wall.generate.plane",
+          "syntax": "wall.generate.plane",
+          "description": "Generate a plane wall that spans the entire domain and is truncated at the domain boundaries"
+        },
+        {
+          "name": "wall.generate.plane.ddir",
+          "syntax": "wall.generate.plane.ddir",
+          "description": "Dip direction of the plane in degrees as measured in a clockwise fashion from the positive y -axis in the range [0,360]"
+        },
+        {
+          "name": "wall.generate.plane.position",
+          "syntax": "wall.generate.plane.position",
+          "description": "Position of a point on the plane"
+        },
+        {
+          "name": "wall.generate.point",
+          "syntax": "wall.generate.point",
+          "description": "Generate a point wall"
+        },
+        {
+          "name": "wall.generate.point.resolution",
+          "syntax": "wall.generate.point.resolution",
+          "description": "Resolution of the point wall"
+        },
+        {
+          "name": "wall.generate.polygon",
+          "syntax": "wall.generate.polygon",
+          "description": "Generate a planar, polygonal wall in 3D"
+        },
+        {
+          "name": "wall.generate.sphere",
+          "syntax": "wall.generate.sphere",
+          "description": "Generate a closed sphere wall in 3D"
+        },
+        {
+          "name": "wall.generate.sphere.radius",
+          "syntax": "wall.generate.sphere.radius",
+          "description": "Radius of the sphere that is 1"
+        },
+        {
+          "name": "wall.generate.sphere.resolution",
+          "syntax": "wall.generate.sphere.resolution",
+          "description": "Resolution of the facet edges"
+        }
+      ],
+      "examples": [
+        {
+          "command": "new domain extent - 10 10 wall generate ... group spheres ... sphere position 5.0 0.0 - 2.0 ... radius 3.0 ... resolution 1 wall generate ... group spheres ... sphere position - 5.0 0.0 - 2.0 ... radius 3.0 ... resolution 0.1",
+          "description": ""
+        },
+        {
+          "command": "new domain extent - 20 20 wall generate ... group cones ... cone ... axis 1 0 1 ... base - 12.0 0.0 0 ... cap true true ... height 10.0 ... onewall ... radius 5.0 3.0 ... resolution 1 wall generate ... group cones ... cone ... axis - 1 0 1 ... base 12.0 0.0 0 ... cap false false ... height 10.0 ... onewall ... radius 5.0 3.0 ... resolution 0.1",
+          "description": ""
+        }
+      ],
+      "version": "5.0"
+    }
+  }
+}

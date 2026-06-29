@@ -1,0 +1,188 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball history",
+      "syntax": "ballhistoryididkeywordidid2orvidhistoryidhistorycontactforce",
+      "short_description": "Magnitude of the force resulting from contacts",
+      "keywords": [
+        {
+          "name": "ball.history.contactforce",
+          "syntax": "ball.history.contactforce",
+          "description": "Magnitude of the force resulting from contacts"
+        },
+        {
+          "name": "ball.history.contactmoment",
+          "syntax": "ball.history.contactmoment",
+          "description": "The {moment resulting from contacts in 2D; magnitude of the moment resulting from contacts in 3D}"
+        },
+        {
+          "name": "ball.history.displacement",
+          "syntax": "ball.history.displacement",
+          "description": "Magnitude of the ball displacement vector"
+        },
+        {
+          "name": "ball.history.rotation",
+          "syntax": "ball.history.rotation",
+          "description": "Ball orientation or angular displacement in radians"
+        },
+        {
+          "name": "ball.history.spin",
+          "syntax": "ball.history.spin",
+          "description": "Ball {angular velocity in 2D; angular velocity magnitude in 3D} in radians"
+        },
+        {
+          "name": "ball.history.unbalforce",
+          "syntax": "ball.history.unbalforce",
+          "description": "Magnitude of the ball unbalanced force"
+        },
+        {
+          "name": "ball.history.unbalmoment",
+          "syntax": "ball.history.unbalmoment",
+          "description": "The {unbalanced moment in 2D; magnitude of the unbalanced moment in 3D}"
+        },
+        {
+          "name": "ball.history.velocity",
+          "syntax": "ball.history.velocity",
+          "description": "The magnitude of the ball velocity vector"
+        },
+        {
+          "name": "ball.history.xcontactforce",
+          "syntax": "ball.history.xcontactforce",
+          "description": "The x -component of the force resulting from contacts"
+        },
+        {
+          "name": "ball.history.xcontactmoment",
+          "syntax": "ball.history.xcontactmoment",
+          "description": "The x -component of the moment resulting from contacts"
+        },
+        {
+          "name": "ball.history.xdisplacement",
+          "syntax": "ball.history.xdisplacement",
+          "description": "The x -component of the ball displacement"
+        },
+        {
+          "name": "ball.history.xeuler",
+          "syntax": "ball.history.xeuler",
+          "description": "The x -euler angle (in degrees) of the current ball orientation"
+        },
+        {
+          "name": "ball.history.xposition",
+          "syntax": "ball.history.xposition",
+          "description": "The x -component of the ball position"
+        },
+        {
+          "name": "ball.history.xspin",
+          "syntax": "ball.history.xspin",
+          "description": "The x -component of the ball angular velocity in radians"
+        },
+        {
+          "name": "ball.history.xunbalforce",
+          "syntax": "ball.history.xunbalforce",
+          "description": "The x -component of the ball unbalanced force"
+        },
+        {
+          "name": "ball.history.xunbalmoment",
+          "syntax": "ball.history.xunbalmoment",
+          "description": "The x -component of the ball unbalanced moment"
+        },
+        {
+          "name": "ball.history.xvelocity",
+          "syntax": "ball.history.xvelocity",
+          "description": "The x -component of the ball velocity"
+        },
+        {
+          "name": "ball.history.ycontactforce",
+          "syntax": "ball.history.ycontactforce",
+          "description": "The y -component of the force resulting from contacts"
+        },
+        {
+          "name": "ball.history.ycontactmoment",
+          "syntax": "ball.history.ycontactmoment",
+          "description": "The y -component of the moment resulting from contacts"
+        },
+        {
+          "name": "ball.history.ydisplacement",
+          "syntax": "ball.history.ydisplacement",
+          "description": "The y -component of the ball displacement"
+        },
+        {
+          "name": "ball.history.yeuler",
+          "syntax": "ball.history.yeuler",
+          "description": "The y -euler angle (in degrees) of the current ball orientation"
+        },
+        {
+          "name": "ball.history.yposition",
+          "syntax": "ball.history.yposition",
+          "description": "The y -component of the ball position"
+        },
+        {
+          "name": "ball.history.yspin",
+          "syntax": "ball.history.yspin",
+          "description": "The y -component of the ball angular velocity in radians"
+        },
+        {
+          "name": "ball.history.yunbalforce",
+          "syntax": "ball.history.yunbalforce",
+          "description": "The y -component of the ball unbalanced force"
+        },
+        {
+          "name": "ball.history.yunbalmoment",
+          "syntax": "ball.history.yunbalmoment",
+          "description": "The y -component of the ball unbalanced moment"
+        },
+        {
+          "name": "ball.history.yvelocity",
+          "syntax": "ball.history.yvelocity",
+          "description": "The y -component of the ball velocity"
+        },
+        {
+          "name": "ball.history.zcontactforce",
+          "syntax": "ball.history.zcontactforce",
+          "description": "The z -component of the force resulting from contacts"
+        },
+        {
+          "name": "ball.history.zcontactmoment",
+          "syntax": "ball.history.zcontactmoment",
+          "description": "The z -component of the moment resulting from contacts"
+        },
+        {
+          "name": "ball.history.zdisplacement",
+          "syntax": "ball.history.zdisplacement",
+          "description": "The z -component of the ball displacement"
+        },
+        {
+          "name": "ball.history.zeuler",
+          "syntax": "ball.history.zeuler",
+          "description": "The z -euler angle (in degrees) of the current ball orientation"
+        },
+        {
+          "name": "ball.history.zposition",
+          "syntax": "ball.history.zposition",
+          "description": "The z -component of the ball position"
+        },
+        {
+          "name": "ball.history.zspin",
+          "syntax": "ball.history.zspin",
+          "description": "The z -component of the ball angular velocity in radians"
+        },
+        {
+          "name": "ball.history.zunbalforce",
+          "syntax": "ball.history.zunbalforce",
+          "description": "The z -component of the ball unbalanced force"
+        },
+        {
+          "name": "ball.history.zunbalmoment",
+          "syntax": "ball.history.zunbalmoment",
+          "description": "The z -component of the ball unbalanced moment"
+        },
+        {
+          "name": "ball.history.zvelocity",
+          "syntax": "ball.history.zvelocity",
+          "description": "The z -component of the ball velocity"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

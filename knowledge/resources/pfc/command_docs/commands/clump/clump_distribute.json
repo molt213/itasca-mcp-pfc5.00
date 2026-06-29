@@ -1,0 +1,93 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump distribute",
+      "syntax": "clumpdistributekeyword...rangesetrandomgaussclumpgeneratebinibinibinazimuthfazlowfazhi",
+      "short_description": "Range of azimuths to rotate the clump template randomly about",
+      "keywords": [
+        {
+          "name": "clump.distribute.bin",
+          "syntax": "clump.distribute.bin",
+          "description": "Specify the distributional properties of bin <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.distribute.bin.density",
+          "syntax": "clump.distribute.bin.density",
+          "description": "The clump density that is 1 by default"
+        },
+        {
+          "name": "clump.distribute.bin.elevation",
+          "syntax": "clump.distribute.bin.elevation",
+          "description": "Range of elevations to rotate the clump template randomly about"
+        },
+        {
+          "name": "clump.distribute.bin.fishdistribution",
+          "syntax": "clump.distribute.bin.fishdistribution",
+          "description": "The clump sizes are drawn from the distribution represented by the FISH function <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.distribute.bin.gauss",
+          "syntax": "clump.distribute.bin.gauss",
+          "description": "Specify that the clump sizes are chosen from a Gaussian distribution with mean value (<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.distribute.bin.group",
+          "syntax": "clump.distribute.bin.group",
+          "description": "Specify that generated clumps or pebbles are given group name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.distribute.bin.size",
+          "syntax": "clump.distribute.bin.size",
+          "description": "Specify the size range to be used during generation"
+        },
+        {
+          "name": "clump.distribute.bin.template",
+          "syntax": "clump.distribute.bin.template",
+          "description": "Name of the clump template to be used"
+        },
+        {
+          "name": "clump.distribute.bin.tilt",
+          "syntax": "clump.distribute.bin.tilt",
+          "description": "Range of tilts to rotate the clump template randomly about"
+        },
+        {
+          "name": "clump.distribute.bin.volumefraction",
+          "syntax": "clump.distribute.bin.volumefraction",
+          "description": "The volume fraction of clumps in this distibution"
+        },
+        {
+          "name": "clump.distribute.box",
+          "syntax": "clump.distribute.box",
+          "description": "Clumps will fully fall within this box, such that they will not overlap the box faces or edges"
+        },
+        {
+          "name": "clump.distribute.diameter",
+          "syntax": "clump.distribute.diameter",
+          "description": "Specify that the linear size used to scale the clumps is the volume equivalent diameter of a {disk in 2D; sphere in 3D}"
+        },
+        {
+          "name": "clump.distribute.fishsize",
+          "syntax": "clump.distribute.fishsize",
+          "description": "The size used to scale the clumps while generating can be specified by the FISH function with name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.distribute.numbin",
+          "syntax": "clump.distribute.numbin",
+          "description": "Number of distributions used to generate the assembly"
+        },
+        {
+          "name": "clump.distribute.porosity",
+          "syntax": "clump.distribute.porosity",
+          "description": "The final porosity is set to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.distribute.resolution",
+          "syntax": "clump.distribute.resolution",
+          "description": "Optional resolution that can be used as a multiplicative factor of the size of each clump generated"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

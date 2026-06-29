@@ -1,0 +1,43 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall addfacet",
+      "syntax": "walladdfacetkeyword...idnamefacetidvertexfacetidifacet",
+      "short_description": "ID of the facet that is being added",
+      "keywords": [
+        {
+          "name": "wall.addfacet.facetid",
+          "syntax": "wall.addfacet.facetid",
+          "description": "ID of the facet that is being added"
+        },
+        {
+          "name": "wall.addfacet.group",
+          "syntax": "wall.addfacet.group",
+          "description": "Specify that the created facets are given a group name"
+        },
+        {
+          "name": "wall.addfacet.group.slot",
+          "syntax": "wall.addfacet.group.slot",
+          "description": "Set the group slot with index <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.addfacet.id",
+          "syntax": "wall.addfacet.id",
+          "description": "ID of the wall to which the facet is being added"
+        },
+        {
+          "name": "wall.addfacet.name",
+          "syntax": "wall.addfacet.name",
+          "description": "Name of the wall to which the facet is being added"
+        },
+        {
+          "name": "wall.addfacet.vertex",
+          "syntax": "wall.addfacet.vertex",
+          "description": "The vertex ID or position"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

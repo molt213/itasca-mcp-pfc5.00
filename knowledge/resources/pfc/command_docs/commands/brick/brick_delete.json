@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "brick delete",
+      "syntax": "brickdeleterange",
+      "short_description": "Delete bricks in range",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

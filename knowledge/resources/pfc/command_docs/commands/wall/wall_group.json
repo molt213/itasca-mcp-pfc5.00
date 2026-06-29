@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall group",
+      "syntax": "wallgroupskeyword...facetrangesanyremovesfacetadds",
+      "short_description": "Specify wall or facet group names.",
+      "keywords": [
+        {
+          "name": "wall.group.add",
+          "syntax": "wall.group.add",
+          "description": "Assign <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.group.remove",
+          "syntax": "wall.group.remove",
+          "description": "Remove <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.group.slot",
+          "syntax": "wall.group.slot",
+          "description": "Set group slot <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

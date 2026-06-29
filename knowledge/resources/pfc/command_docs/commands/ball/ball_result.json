@@ -1,0 +1,88 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball result",
+      "syntax": "ballresultkeyword...PFCcleargenerateexportloadactivate",
+      "short_description": "Activate the creation of ball result states in memory or as files",
+      "keywords": [
+        {
+          "name": "ball.result.activate",
+          "syntax": "ball.result.activate",
+          "description": "Activate the creation of ball result states in memory or as files"
+        },
+        {
+          "name": "ball.result.addattribute",
+          "syntax": "ball.result.addattribute",
+          "description": "Add the ball attribute <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.result.clear",
+          "syntax": "ball.result.clear",
+          "description": ""
+        },
+        {
+          "name": "ball.result.cycles",
+          "syntax": "ball.result.cycles",
+          "description": "Specify the number of cycles between ball result tabulation or, if given with the load / export keywords, specify the exact cycle number of the ball result state to re-create/output"
+        },
+        {
+          "name": "ball.result.deactivate",
+          "syntax": "ball.result.deactivate",
+          "description": "Deactivate the creation of additional ball result states or files"
+        },
+        {
+          "name": "ball.result.export",
+          "syntax": "ball.result.export",
+          "description": ""
+        },
+        {
+          "name": "ball.result.filename",
+          "syntax": "ball.result.filename",
+          "description": ""
+        },
+        {
+          "name": "ball.result.fishtime",
+          "syntax": "ball.result.fishtime",
+          "description": "<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.result.generate",
+          "syntax": "ball.result.generate",
+          "description": "Generate a ball result corresponding to the current model state"
+        },
+        {
+          "name": "ball.result.load",
+          "syntax": "ball.result.load",
+          "description": "Re-create the corresponding ball state"
+        },
+        {
+          "name": "ball.result.map",
+          "syntax": "ball.result.map",
+          "description": ""
+        },
+        {
+          "name": "ball.result.nothrow",
+          "syntax": "ball.result.nothrow",
+          "description": ""
+        },
+        {
+          "name": "ball.result.removeattribute",
+          "syntax": "ball.result.removeattribute",
+          "description": "Remove the ball attribute <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.result.time",
+          "syntax": "ball.result.time",
+          "description": ""
+        },
+        {
+          "name": "ball.result.zero",
+          "syntax": "ball.result.zero",
+          "description": "The ball result times will begin with 0 versus the current mechanical age of the system"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

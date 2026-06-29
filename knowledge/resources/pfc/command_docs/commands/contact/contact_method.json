@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact method",
+      "syntax": "contactsprocessmethodsmsaa...rangesmsaasprocess",
+      "short_description": "",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball list",
+      "syntax": "balllistkeywordrangeattributesetprecisionattributesss",
+      "short_description": "List ball attributes",
+      "keywords": [
+        {
+          "name": "ball.list.attribute",
+          "syntax": "ball.list.attribute",
+          "description": "List ball attributes"
+        },
+        {
+          "name": "ball.list.contact",
+          "syntax": "ball.list.contact",
+          "description": "List the contacts with a ball"
+        },
+        {
+          "name": "ball.list.extra",
+          "syntax": "ball.list.extra",
+          "description": "List the extra variables at index <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.list.group",
+          "syntax": "ball.list.group",
+          "description": "List the group names at slot <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.list.property",
+          "syntax": "ball.list.property",
+          "description": "List ball properties"
+        },
+        {
+          "name": "ball.list.result",
+          "syntax": "ball.list.result",
+          "description": "List the ball model results that have been tabulated"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

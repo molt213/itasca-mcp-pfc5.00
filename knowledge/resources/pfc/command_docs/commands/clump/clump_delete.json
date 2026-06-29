@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump delete",
+      "syntax": "clumpdeletekeywordrangeclumppebbleclumps",
+      "short_description": "Delete clumps",
+      "keywords": [
+        {
+          "name": "clump.delete.clumps",
+          "syntax": "clump.delete.clumps",
+          "description": "Delete clumps"
+        },
+        {
+          "name": "clump.delete.pebbles",
+          "syntax": "clump.delete.pebbles",
+          "description": "Delete pebbles from clumps"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

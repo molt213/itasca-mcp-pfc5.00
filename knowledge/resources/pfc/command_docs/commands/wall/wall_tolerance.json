@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall tolerance",
+      "syntax": "walltolerancekeyword...ctoleranceetolerancevtolerancecleanctolerancefrange",
+      "short_description": "Assign the constant contact-detection tolerance. This is assigned on a per-facet basis",
+      "keywords": [
+        {
+          "name": "wall.tolerance.ctolerance",
+          "syntax": "wall.tolerance.ctolerance",
+          "description": "Assign the constant contact-detection tolerance"
+        },
+        {
+          "name": "wall.tolerance.etolerance",
+          "syntax": "wall.tolerance.etolerance",
+          "description": "Assign the extent contact-detection tolerance"
+        },
+        {
+          "name": "wall.tolerance.vtolerance",
+          "syntax": "wall.tolerance.vtolerance",
+          "description": "Assign the velocity contact-detection tolerance"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

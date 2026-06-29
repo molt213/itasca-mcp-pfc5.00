@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact delete",
+      "syntax": "contactsprocessdeleterangesetdetection",
+      "short_description": "Delete contacts in specified range.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

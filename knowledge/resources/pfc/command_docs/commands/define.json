@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "define",
+      "syntax": "defines...FISHenddefineendFISHFISHPFC",
+      "short_description": "",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "measure create",
+      "syntax": "measurecreatekeywordFISHbinsiflfhiflfhmeasuredump",
+      "short_description": "Measurement ID. If not specified, the next available ID is assigned",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

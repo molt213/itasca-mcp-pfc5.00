@@ -1,0 +1,33 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump rotate",
+      "syntax": "clumprotatekeyword...rangecentrotationupdateorientaxisvaxis",
+      "short_description": "Axis of rotation",
+      "keywords": [
+        {
+          "name": "clump.rotate.axis",
+          "syntax": "clump.rotate.axis",
+          "description": "Axis of rotation"
+        },
+        {
+          "name": "clump.rotate.angle",
+          "syntax": "clump.rotate.angle",
+          "description": "Angle of rotation in degrees using the right-hand-rule"
+        },
+        {
+          "name": "clump.rotate.point",
+          "syntax": "clump.rotate.point",
+          "description": "Rotation occurs about the specified point"
+        },
+        {
+          "name": "clump.rotate.updateorient",
+          "syntax": "clump.rotate.updateorient",
+          "description": "Explicitly set the orientation update status for this rotate command"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

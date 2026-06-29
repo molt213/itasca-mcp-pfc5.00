@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "restore",
+      "syntax": "restoressavessssetlogsetechorestorerestoreFISHclean",
+      "short_description": "Restore program-state information",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

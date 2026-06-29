@@ -1,0 +1,53 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball free",
+      "syntax": "ballfreekeyword...rangespin",
+      "short_description": "The angular velocity is free",
+      "keywords": [
+        {
+          "name": "ball.free.spin",
+          "syntax": "ball.free.spin",
+          "description": "The angular velocity is free"
+        },
+        {
+          "name": "ball.free.velocity",
+          "syntax": "ball.free.velocity",
+          "description": "The translational velocity is free"
+        },
+        {
+          "name": "ball.free.xspin",
+          "syntax": "ball.free.xspin",
+          "description": "Free the x -component of the angular velocity"
+        },
+        {
+          "name": "ball.free.xvelocity",
+          "syntax": "ball.free.xvelocity",
+          "description": "Free the x -component of the translational velocity"
+        },
+        {
+          "name": "ball.free.yspin",
+          "syntax": "ball.free.yspin",
+          "description": "Free the y -component of the angular velocity"
+        },
+        {
+          "name": "ball.free.yvelocity",
+          "syntax": "ball.free.yvelocity",
+          "description": "Free the y -component of the translational velocity"
+        },
+        {
+          "name": "ball.free.zspin",
+          "syntax": "ball.free.zspin",
+          "description": "Free the z -component of the angular velocity"
+        },
+        {
+          "name": "ball.free.zvelocity",
+          "syntax": "ball.free.zvelocity",
+          "description": "Free the z -component of the translational velocity"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

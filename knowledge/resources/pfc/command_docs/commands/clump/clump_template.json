@@ -1,0 +1,108 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump template",
+      "syntax": "clumptemplatekeyword...clumpreplicateclumpgenerateclumpdistributecreatekeyword...pebcalculatesurfcalculatebubblepackkeyword...geometryrefinenumfradfradfratiofratiofdistancefdistancefratiofdistancefdistancefdistancefdistancerefinenumbubblepackpebblesdistancefdistancefdistancefdistancefdistance",
+      "short_description": "Create a clump template. The inertial attributes must be specified upon creation. One can either specify them directly (i.e",
+      "keywords": [
+        {
+          "name": "clump.template.create",
+          "syntax": "clump.template.create",
+          "description": "Create a clump template"
+        },
+        {
+          "name": "clump.template.create.bubblepack.ratio",
+          "syntax": "clump.template.create.bubblepack.ratio",
+          "description": "Ratio of the smallest to largest pebble kept in the clump template with 0 &lt; <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.template.create.bubblepack.radfactor",
+          "syntax": "clump.template.create.bubblepack.radfactor",
+          "description": "Radius factor used for consideration as a pebble"
+        },
+        {
+          "name": "clump.template.create.bubblepack.refinenum",
+          "syntax": "clump.template.create.bubblepack.refinenum",
+          "description": "Specify the maximum number of {linear in 2D; triangular in 3D} facets used when automatically refining the surface mesh"
+        },
+        {
+          "name": "clump.template.create.geometry",
+          "syntax": "clump.template.create.geometry",
+          "description": "Name of geometry set to be used as the surface descriptor of the clump"
+        },
+        {
+          "name": "clump.template.create.inertia",
+          "syntax": "clump.template.create.inertia",
+          "description": "Set the inertia &quot;tensor&quot; of the clump in its current configuration"
+        },
+        {
+          "name": "clump.template.create.name",
+          "syntax": "clump.template.create.name",
+          "description": "Given name of the clump template"
+        },
+        {
+          "name": "clump.template.create.pebbles",
+          "syntax": "clump.template.create.pebbles",
+          "description": "Number of pebbles in the clump, <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.template.create.pebcalculate",
+          "syntax": "clump.template.create.pebcalculate",
+          "description": "This keyword specifies that the clump position, volume, and inertia tensor will be calculated from the pebble distribution assuming constant density"
+        },
+        {
+          "name": "clump.template.create.position",
+          "syntax": "clump.template.create.position",
+          "description": "Clump position that is the origin by default"
+        },
+        {
+          "name": "clump.template.create.surfcalculate",
+          "syntax": "clump.template.create.surfcalculate",
+          "description": "Calculate the inertial attributes from the surface description assuming uniform density"
+        },
+        {
+          "name": "clump.template.create.volume",
+          "syntax": "clump.template.create.volume",
+          "description": "Set the {volume per unit thickness in 2D; volume in 3D} to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.template.create.x",
+          "syntax": "clump.template.create.x",
+          "description": "The x -component of the position that is 0 by default"
+        },
+        {
+          "name": "clump.template.create.y",
+          "syntax": "clump.template.create.y",
+          "description": "The y -component of the position that is 0 by default"
+        },
+        {
+          "name": "clump.template.create.z",
+          "syntax": "clump.template.create.z",
+          "description": "The z -component of the position that is 0 by default"
+        },
+        {
+          "name": "clump.template.delete",
+          "syntax": "clump.template.delete",
+          "description": "Delete clump template <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.template.export",
+          "syntax": "clump.template.export",
+          "description": "Export the clump template <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.template.export.nothrow",
+          "syntax": "clump.template.export.nothrow",
+          "description": "Indicate that if a previous file of the specified <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.template.import",
+          "syntax": "clump.template.import",
+          "description": "Import clump template from file with name <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

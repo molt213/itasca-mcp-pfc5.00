@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall property",
+      "syntax": "wallpropertysas1a1...rangeaswallattribute",
+      "short_description": "Assign facet surface properties.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

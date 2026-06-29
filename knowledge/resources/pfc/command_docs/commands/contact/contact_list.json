@@ -1,0 +1,78 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact list",
+      "syntax": "contactsprocesslistkeywordalltypesrangealltypesballsball-ballsprocesssetprecisionenergysssenergylist",
+      "short_description": "List the energies of a contact model used by the contact",
+      "keywords": [
+        {
+          "name": "contact.list.energy",
+          "syntax": "contact.list.energy",
+          "description": "List the energies of a contact model used by the contact"
+        },
+        {
+          "name": "contact.list.energylist",
+          "syntax": "contact.list.energylist",
+          "description": "List the energies available in each contact model"
+        },
+        {
+          "name": "contact.list.extra",
+          "syntax": "contact.list.extra",
+          "description": "List the contact extra variables at index <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "contact.list.force",
+          "syntax": "contact.list.force",
+          "description": "List the contact force in the global coordinate system"
+        },
+        {
+          "name": "contact.list.group",
+          "syntax": "contact.list.group",
+          "description": "List the contact group names at slot <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "contact.list.methodlist",
+          "syntax": "contact.list.methodlist",
+          "description": "List all available contact models, their available methods, and the names of the method arguments"
+        },
+        {
+          "name": "contact.list.model",
+          "syntax": "contact.list.model",
+          "description": "List the contact model name for each contact"
+        },
+        {
+          "name": "contact.list.modellist",
+          "syntax": "contact.list.modellist",
+          "description": "List all available contact models, whether or not they have been loaded as plug-in contact models, and their property names"
+        },
+        {
+          "name": "contact.list.moment",
+          "syntax": "contact.list.moment",
+          "description": "List the contact moments in the global coordinate system"
+        },
+        {
+          "name": "contact.list.normal",
+          "syntax": "contact.list.normal",
+          "description": "List the contact normal direction, pointing from the end1 piece to the end2 piece"
+        },
+        {
+          "name": "contact.list.property",
+          "syntax": "contact.list.property",
+          "description": "List the properties of a contact model used by the contact"
+        },
+        {
+          "name": "contact.list.propertylist",
+          "syntax": "contact.list.propertylist",
+          "description": "List all available contact models, whether or not they have been loaded as plug-in contact models, and their property names"
+        },
+        {
+          "name": "contact.list.shear",
+          "syntax": "contact.list.shear",
+          "description": "List the contact shear direction"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

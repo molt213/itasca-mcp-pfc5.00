@@ -1,0 +1,68 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump create",
+      "syntax": "clumpcreatekeyword...densitycalculateFISHclumpattributecalculateff",
+      "short_description": "This keyword specifies that the clump position, volume, and inertia tensor will be calculated from the pebble distribution assuming constant density. The space containing the clump is recursively subdivided into boxes that are {squares in 2D; cubes in 3D}. The {areas in 2D; volumes in 3D} and inertia tensors of all boxes that fall completely within any pebbles are accumulated. The parallel axis theorem is used to accumulate the inertia tensors. For each iteration the &quot;final&quot; volume is extrapolated, and the iterations cease when either 1) the total number of cells to be subdivided reaches 1e6 or 2) the extrapolated and estimated volumes are within the desired tolerance",
+      "keywords": [
+        {
+          "name": "clump.create.calculate",
+          "syntax": "clump.create.calculate",
+          "description": ""
+        },
+        {
+          "name": "clump.create.density",
+          "syntax": "clump.create.density",
+          "description": "Clump density with default value 1"
+        },
+        {
+          "name": "clump.create.group",
+          "syntax": "clump.create.group",
+          "description": "The group at slot with index <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.create.id",
+          "syntax": "clump.create.id",
+          "description": "Clump ID"
+        },
+        {
+          "name": "clump.create.inertia",
+          "syntax": "clump.create.inertia",
+          "description": "Set the inertia &quot;tensor&quot; of the clump in its current configuration"
+        },
+        {
+          "name": "clump.create.pebbles",
+          "syntax": "clump.create.pebbles",
+          "description": "Number of pebbles in the clump, <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.create.position",
+          "syntax": "clump.create.position",
+          "description": "Clump position that is the origin by default"
+        },
+        {
+          "name": "clump.create.volume",
+          "syntax": "clump.create.volume",
+          "description": "Set the {volume per unit thickness in 2D; volume in 3D} to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.create.x",
+          "syntax": "clump.create.x",
+          "description": "The x -component of the clump centroid position that is 0 by default"
+        },
+        {
+          "name": "clump.create.y",
+          "syntax": "clump.create.y",
+          "description": "The y -component of the clump centroid position that is 0 by default"
+        },
+        {
+          "name": "clump.create.z",
+          "syntax": "clump.create.z",
+          "description": "The z -component of the clump centroid position that is 0 by default"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

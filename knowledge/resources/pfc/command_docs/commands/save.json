@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "save",
+      "syntax": "saveskeywordsFISHinputdirlocaldirrestorecleaninputdir",
+      "short_description": "Save all program-state information",
+      "keywords": [
+        {
+          "name": "save.inputdir",
+          "syntax": "save.inputdir",
+          "description": "Save to the directory of the calling file (the default behavior)"
+        },
+        {
+          "name": "save.localdir",
+          "syntax": "save.localdir",
+          "description": "Save to the current project directory"
+        },
+        {
+          "name": "save.readonly",
+          "syntax": "save.readonly",
+          "description": "If the optional readonly keyword is used, the model state file is marked as read only"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

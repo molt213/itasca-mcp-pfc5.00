@@ -1,0 +1,71 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball distribute",
+      "syntax": "balldistributekeyword...rangesetrandomgaussballgeneratebinikeyword...ifishdistributionsa...aFISHsFISHFISHgaussradius",
+      "short_description": "Specify the radius range to be used during generation",
+      "keywords": [
+        {
+          "name": "ball.distribute.bin",
+          "syntax": "ball.distribute.bin",
+          "description": "Specify the distributional properties of bin <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.distribute.bin.gauss",
+          "syntax": "ball.distribute.bin.gauss",
+          "description": ""
+        },
+        {
+          "name": "ball.distribute.bin.group",
+          "syntax": "ball.distribute.bin.group",
+          "description": "Specify that generated balls are given group name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.distribute.bin.radius",
+          "syntax": "ball.distribute.bin.radius",
+          "description": "Specify the radius range to be used during generation"
+        },
+        {
+          "name": "ball.distribute.bin.volumefraction",
+          "syntax": "ball.distribute.bin.volumefraction",
+          "description": "The volume fraction of balls in this distribution"
+        },
+        {
+          "name": "ball.distribute.box",
+          "syntax": "ball.distribute.box",
+          "description": ""
+        },
+        {
+          "name": "ball.distribute.numbin",
+          "syntax": "ball.distribute.numbin",
+          "description": "Number of distributions used to generate the assembly"
+        },
+        {
+          "name": "ball.distribute.porosity",
+          "syntax": "ball.distribute.porosity",
+          "description": "The final porosity is set to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.distribute.resolution",
+          "syntax": "ball.distribute.resolution",
+          "description": ""
+        }
+      ],
+      "examples": [
+        {
+          "command": "; setup model domain and CMAT domain extent - 25.0 25.0 condition periodic cmat default model linear method deformability emod 1e6 kratio 1.25 property fric 0.25 ; generate balls ball distribute radius 1.0 1.6 porosity 0.30",
+          "description": ""
+        },
+        {
+          "command": "ball attribute density 1000.0 damp 0.7 cycle 1000 calm 100 solve",
+          "description": ""
+        },
+        {
+          "command": "ball distribute radius 1.0 1.6 porosity 0.30",
+          "description": ""
+        }
+      ],
+      "version": "5.0"
+    }
+  }
+}

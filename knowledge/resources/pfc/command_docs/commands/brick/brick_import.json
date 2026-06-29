@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "brick import",
+      "syntax": "brickimportkeywordfilenames",
+      "short_description": "Name of the file to be loaded. If not specified, then the file {&quot;brick.p3brk&quot; in 3D; &quot;brick.p2brk&quot; in 2D} is used. If no extension is given, the the extension {&quot;.p3brk&quot; in 3D; &quot;.p2brk&quot; in 2D} is used",
+      "keywords": [
+        {
+          "name": "brick.import.filename",
+          "syntax": "brick.import.filename",
+          "description": "Name of the file to be loaded"
+        },
+        {
+          "name": "brick.import.id",
+          "syntax": "brick.import.id",
+          "description": "The ID of the imported brick will be set to <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

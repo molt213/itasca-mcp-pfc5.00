@@ -1,0 +1,88 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump generate",
+      "syntax": "clumpgeneratekeyword...rangesetrandomgaussclumpgenerateclumpdistributeazimuthfazlowfazhi",
+      "short_description": "Range of azimuths to rotate the clump template randomly about",
+      "keywords": [
+        {
+          "name": "clump.generate.azimuth",
+          "syntax": "clump.generate.azimuth",
+          "description": "Range of azimuths to rotate the clump template randomly about"
+        },
+        {
+          "name": "clump.generate.box",
+          "syntax": "clump.generate.box",
+          "description": "Clumps will fully fall within this box, such that they will not overlap the box faces or edges"
+        },
+        {
+          "name": "clump.generate.diameter",
+          "syntax": "clump.generate.diameter",
+          "description": "Specify that the linear size used to scale the clumps is the volume equivalent diameter of a {disk in 2D; sphere in 3D}"
+        },
+        {
+          "name": "clump.generate.density",
+          "syntax": "clump.generate.density",
+          "description": "The clump density that is 1 by default"
+        },
+        {
+          "name": "clump.generate.elevation",
+          "syntax": "clump.generate.elevation",
+          "description": "Range of elevations to rotate the clump template randomly about"
+        },
+        {
+          "name": "clump.generate.fishdistribution",
+          "syntax": "clump.generate.fishdistribution",
+          "description": "The clump sizes are drawn from the distribution represented by the FISH function <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.generate.fishsize",
+          "syntax": "clump.generate.fishsize",
+          "description": "The size used to scale the clumps while generating can be specified by the FISH function with name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.generate.gauss",
+          "syntax": "clump.generate.gauss",
+          "description": "Specify that the clump sizes are chosen from a Gaussian distribution with mean value (<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.generate.group",
+          "syntax": "clump.generate.group",
+          "description": "Specify that generated clumps or pebbles are given group name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.generate.id",
+          "syntax": "clump.generate.id",
+          "description": "The ID of the first clump generated is set to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.generate.number",
+          "syntax": "clump.generate.number",
+          "description": "Specify the number of clumps to be generated"
+        },
+        {
+          "name": "clump.generate.size",
+          "syntax": "clump.generate.size",
+          "description": "Specify the size range to be used during generation"
+        },
+        {
+          "name": "clump.generate.templates",
+          "syntax": "clump.generate.templates",
+          "description": "Specify the number <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.generate.tilt",
+          "syntax": "clump.generate.tilt",
+          "description": "Range of tilts to rotate the clump template randomly about"
+        },
+        {
+          "name": "clump.generate.tries",
+          "syntax": "clump.generate.tries",
+          "description": "Number of tries to fill the specified region with the number of clumps"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall result",
+      "syntax": "wallresultkeyword...PFCcleargenerateexportloadactivate",
+      "short_description": "Activate the creation of wall result states in memory or as files",
+      "keywords": [
+        {
+          "name": "wall.result.activate",
+          "syntax": "wall.result.activate",
+          "description": "Activate the creation of wall result states in memory or as files"
+        },
+        {
+          "name": "wall.result.addattribute",
+          "syntax": "wall.result.addattribute",
+          "description": "Add the wall attribute <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.result.clear",
+          "syntax": "wall.result.clear",
+          "description": "Clear the current wall result states stored in memory and the table referring to wall results"
+        },
+        {
+          "name": "wall.result.cycles",
+          "syntax": "wall.result.cycles",
+          "description": "Specify the number of cycles between wall result tabulation or, if given with the load / export keywords, specify the exact cycle number of the wall result state to re-create/output"
+        },
+        {
+          "name": "wall.result.deactivate",
+          "syntax": "wall.result.deactivate",
+          "description": "Deactivate the creation of additional wall result states or files"
+        },
+        {
+          "name": "wall.result.export",
+          "syntax": "wall.result.export",
+          "description": "Output a wall result held in memory to file with a name specified via the filename keyword"
+        },
+        {
+          "name": "wall.result.filename",
+          "syntax": "wall.result.filename",
+          "description": "Prefix to the name of the binary file into which the wall result will be output if not given with the load or export keywords"
+        },
+        {
+          "name": "wall.result.fishtime",
+          "syntax": "wall.result.fishtime",
+          "description": "<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.result.generate",
+          "syntax": "wall.result.generate",
+          "description": "Generate a wall result corresponding to the current model state"
+        },
+        {
+          "name": "wall.result.load",
+          "syntax": "wall.result.load",
+          "description": "Re-create the corresponding wall state"
+        },
+        {
+          "name": "wall.result.map",
+          "syntax": "wall.result.map",
+          "description": "Place the list of cycle numbers and times associated with result tabulation into the FISH map <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.result.nothrow",
+          "syntax": "wall.result.nothrow",
+          "description": "Set the state affecting 1) the deletion of walls prior to wall model-state re-creation and 2) name conflicts that may arise when outputting wall results to file"
+        },
+        {
+          "name": "wall.result.removeattribute",
+          "syntax": "wall.result.removeattribute",
+          "description": "Remove the wall attribute <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.result.time",
+          "syntax": "wall.result.time",
+          "description": "Specify the mechanical time interval between wall result tabulation or, if given with the load / export keywords, specify the mechanical age of the wall result state to re-create/output"
+        },
+        {
+          "name": "wall.result.zero",
+          "syntax": "wall.result.zero",
+          "description": "The wall result times will begin with 0 versus the current mechanical age of the system"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

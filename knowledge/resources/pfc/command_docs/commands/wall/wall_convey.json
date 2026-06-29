@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall convey",
+      "syntax": "wallconveyorkeyword...rangge...wallattributepointvpos",
+      "short_description": "The point about which the calculation of the tangential velocity at the facet centroid is calculated",
+      "keywords": [
+        {
+          "name": "wall.conveyor.point",
+          "syntax": "wall.conveyor.point",
+          "description": "The point about which the calculation of the tangential velocity at the facet centroid is calculated"
+        },
+        {
+          "name": "wall.conveyor.spin",
+          "syntax": "wall.conveyor.spin",
+          "description": "The angular velocity in radians per second"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

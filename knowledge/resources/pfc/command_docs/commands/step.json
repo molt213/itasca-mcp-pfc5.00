@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "step",
+      "syntax": "stepicalmi2iShift+EsccycleShift+Esccalmi2",
+      "short_description": "Execute timesteps",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

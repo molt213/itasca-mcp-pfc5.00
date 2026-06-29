@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "calm",
+      "syntax": "calm",
+      "short_description": "Calm the model. For mechanical processes, all linear and rotational velocities are set to 0",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

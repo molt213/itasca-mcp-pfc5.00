@@ -1,0 +1,228 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "set",
+      "syntax": "setkeywordcust1ss",
+      "short_description": "Change a global setting",
+      "keywords": [
+        {
+          "name": "set.cust1",
+          "syntax": "set.cust1",
+          "description": "Set the first line of customer information, which is displayed in the lower-left corner of the legend of all plot views by default"
+        },
+        {
+          "name": "set.cust2",
+          "syntax": "set.cust2",
+          "description": "Set the second line of customer information, which is displayed in the lower-left corner of the legend of all plot views by default"
+        },
+        {
+          "name": "set.deterministic",
+          "syntax": "set.deterministic",
+          "description": "Set the deterministic mode"
+        },
+        {
+          "name": "set.detection",
+          "syntax": "set.detection",
+          "description": ""
+        },
+        {
+          "name": "set.directory",
+          "syntax": "set.directory",
+          "description": "Set the working directory"
+        },
+        {
+          "name": "set.directory.input",
+          "syntax": "set.directory.input",
+          "description": "Set the working directory to the location of the current input data file"
+        },
+        {
+          "name": "set.display",
+          "syntax": "set.display",
+          "description": "Additional information can be displayed along with the cycle information (either a history value or the value of a FISH symbol)"
+        },
+        {
+          "name": "set.display.history",
+          "syntax": "set.display.history",
+          "description": "Add the tabulated value of the history with ID <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.display.off",
+          "syntax": "set.display.off",
+          "description": "Turn off the additional information in the cycle information"
+        },
+        {
+          "name": "set.echo",
+          "syntax": "set.echo",
+          "description": "Set the echo state to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.energy",
+          "syntax": "set.energy",
+          "description": "Set the energy tracking state"
+        },
+        {
+          "name": "set.fish",
+          "syntax": "set.fish",
+          "description": "Specify FISH settings"
+        },
+        {
+          "name": "set.fish.callback",
+          "syntax": "set.fish.callback",
+          "description": "Add or remove (if the optional remove keyword is given) FISH functions to be executed in response to callback events"
+        },
+        {
+          "name": "set.fishcallback",
+          "syntax": "set.fishcallback",
+          "description": "This is a synonym for the <a class=\"reference internal\" href=\"#kwd:set"
+        },
+        {
+          "name": "set.gravity",
+          "syntax": "set.gravity",
+          "description": "Set the gravity"
+        },
+        {
+          "name": "set.hist_rep",
+          "syntax": "set.hist_rep",
+          "description": "Specify that histories are recorded every <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.log",
+          "syntax": "set.log",
+          "description": "Set the logging state to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.logfile",
+          "syntax": "set.logfile",
+          "description": "Specify that <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.max_clock",
+          "syntax": "set.max_clock",
+          "description": "Set the default maximum number of clock minutes that the code will continue to cycle after a <a class=\"reference internal\" href=\"cmd_cycle"
+        },
+        {
+          "name": "set.max_cycles",
+          "syntax": "set.max_cycles",
+          "description": "Set the default maximum number of cycles that the code will continue to cycle after a <a class=\"reference internal\" href=\"cmd_cycle"
+        },
+        {
+          "name": "set.mechanical",
+          "syntax": "set.mechanical",
+          "description": "Set mechanical process state to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.mechanical.slave",
+          "syntax": "set.mechanical.slave",
+          "description": "Set the mechanical process as a slave process"
+        },
+        {
+          "name": "set.mechanical.substep",
+          "syntax": "set.mechanical.substep",
+          "description": "Set the maximum number of sub-steps that the mechanical process, as a slave, can take for each master step"
+        },
+        {
+          "name": "set.ncycle",
+          "syntax": "set.ncycle",
+          "description": "Specify that histories are recorded every <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.notice",
+          "syntax": "set.notice",
+          "description": "Set the notice state"
+        },
+        {
+          "name": "set.nstep",
+          "syntax": "set.nstep",
+          "description": "Specify that histories are recorded every <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.orientation",
+          "syntax": "set.orientation",
+          "description": "Set the orientation tracking state"
+        },
+        {
+          "name": "set.pagination",
+          "syntax": "set.pagination",
+          "description": "Set the pagination state"
+        },
+        {
+          "name": "set.precision",
+          "syntax": "set.precision",
+          "description": "Set the listing precision for outputting floating point values to the screen with the <a class=\"reference internal\" href=\"cmd_list"
+        },
+        {
+          "name": "set.processors",
+          "syntax": "set.processors",
+          "description": "Set the number of threads to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.random",
+          "syntax": "set.random",
+          "description": "Set the seed for the random-number generator to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.thermal",
+          "syntax": "set.thermal",
+          "description": "Set thermal process state to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.thermal.slave",
+          "syntax": "set.thermal.slave",
+          "description": "Set the thermal process as a slave process"
+        },
+        {
+          "name": "set.thermal.substep",
+          "syntax": "set.thermal.substep",
+          "description": "Set the maximum number of sub-steps that the thermal process, as a slave, can take for each master step"
+        },
+        {
+          "name": "set.timestep",
+          "syntax": "set.timestep",
+          "description": "Set the timestep calculation mode"
+        },
+        {
+          "name": "set.timestep.fix",
+          "syntax": "set.timestep.fix",
+          "description": "Set the timestep to be the fixed value <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.timestep.increment",
+          "syntax": "set.timestep.increment",
+          "description": "Set the incremental amount that the timestep is allowed to increase from one cycle to the next in auto mode"
+        },
+        {
+          "name": "set.timestep.maximum",
+          "syntax": "set.timestep.maximum",
+          "description": "Set the maximum allowed timestep"
+        },
+        {
+          "name": "set.timestep.safetyfactor",
+          "syntax": "set.timestep.safetyfactor",
+          "description": "Set the timestep safety factor, or the factor that is multiplied by the stable timestep calculated when in auto mode"
+        },
+        {
+          "name": "set.timestep.scale",
+          "syntax": "set.timestep.scale",
+          "description": "Enable timestep scaling"
+        },
+        {
+          "name": "set.trace_rep",
+          "syntax": "set.trace_rep",
+          "description": "Specify that particle traces are recorded every <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "set.update",
+          "syntax": "set.update",
+          "description": "Set the number of cycles between timestep calculation"
+        },
+        {
+          "name": "set.warning",
+          "syntax": "set.warning",
+          "description": "Set the warning state"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

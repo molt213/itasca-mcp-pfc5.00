@@ -1,0 +1,188 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump history",
+      "syntax": "clumphistoryididkeywordidid2orvidhistoryidhistorycontactforce",
+      "short_description": "Magnitude of the force resulting from contacts",
+      "keywords": [
+        {
+          "name": "clump.history.contactforce",
+          "syntax": "clump.history.contactforce",
+          "description": "Magnitude of the force resulting from contacts"
+        },
+        {
+          "name": "clump.history.contactmoment",
+          "syntax": "clump.history.contactmoment",
+          "description": "The {moment resulting from contacts in 2D; magnitude of the moment resulting from contacts in 3D}"
+        },
+        {
+          "name": "clump.history.displacement",
+          "syntax": "clump.history.displacement",
+          "description": "Magnitude of the clump displacement vector"
+        },
+        {
+          "name": "clump.history.rotation",
+          "syntax": "clump.history.rotation",
+          "description": "Clump orientation or angular displacement in radians"
+        },
+        {
+          "name": "clump.history.spin",
+          "syntax": "clump.history.spin",
+          "description": "Clump {angular velocity in 2D; angular velocity magnitude in 3D} in radians"
+        },
+        {
+          "name": "clump.history.unbalforce",
+          "syntax": "clump.history.unbalforce",
+          "description": "Magnitude of the clump unbalanced force"
+        },
+        {
+          "name": "clump.history.unbalmoment",
+          "syntax": "clump.history.unbalmoment",
+          "description": "The {unbalanced moment in 2D; magnitude of the unbalanced moment in 3D}"
+        },
+        {
+          "name": "clump.history.velocity",
+          "syntax": "clump.history.velocity",
+          "description": "The magnitude of the clump velocity vector"
+        },
+        {
+          "name": "clump.history.xcontactforce",
+          "syntax": "clump.history.xcontactforce",
+          "description": "The x -component of the force resulting from contacts"
+        },
+        {
+          "name": "clump.history.xcontactmoment",
+          "syntax": "clump.history.xcontactmoment",
+          "description": "The x -component of the moment resulting from contacts"
+        },
+        {
+          "name": "clump.history.xdisplacement",
+          "syntax": "clump.history.xdisplacement",
+          "description": "The x -component of the clump displacement"
+        },
+        {
+          "name": "clump.history.xeuler",
+          "syntax": "clump.history.xeuler",
+          "description": "The x -euler angle (in degrees) of the current clump orientation"
+        },
+        {
+          "name": "clump.history.xposition",
+          "syntax": "clump.history.xposition",
+          "description": "The x -component of the clump position"
+        },
+        {
+          "name": "clump.history.xspin",
+          "syntax": "clump.history.xspin",
+          "description": "The x -component of the clump angular velocity in radians"
+        },
+        {
+          "name": "clump.history.xunbalforce",
+          "syntax": "clump.history.xunbalforce",
+          "description": "The x -component of the clump unbalanced force"
+        },
+        {
+          "name": "clump.history.xunbalmoment",
+          "syntax": "clump.history.xunbalmoment",
+          "description": "The x -component of the clump unbalanced moment"
+        },
+        {
+          "name": "clump.history.xvelocity",
+          "syntax": "clump.history.xvelocity",
+          "description": "The x -component of the clump velocity"
+        },
+        {
+          "name": "clump.history.ycontactforce",
+          "syntax": "clump.history.ycontactforce",
+          "description": "The y -component of the force resulting from contacts"
+        },
+        {
+          "name": "clump.history.ycontactmoment",
+          "syntax": "clump.history.ycontactmoment",
+          "description": "The y -component of the moment resulting from contacts"
+        },
+        {
+          "name": "clump.history.ydisplacement",
+          "syntax": "clump.history.ydisplacement",
+          "description": "The y -component of the clump displacement"
+        },
+        {
+          "name": "clump.history.yeuler",
+          "syntax": "clump.history.yeuler",
+          "description": "The y -euler angle (in degrees) of the current clump orientation"
+        },
+        {
+          "name": "clump.history.yposition",
+          "syntax": "clump.history.yposition",
+          "description": "The y -component of the clump position"
+        },
+        {
+          "name": "clump.history.yspin",
+          "syntax": "clump.history.yspin",
+          "description": "The y -component of the clump angular velocity in radians"
+        },
+        {
+          "name": "clump.history.yunbalforce",
+          "syntax": "clump.history.yunbalforce",
+          "description": "The y -component of the clump unbalanced force"
+        },
+        {
+          "name": "clump.history.yunbalmoment",
+          "syntax": "clump.history.yunbalmoment",
+          "description": "The y -component of the clump unbalanced moment"
+        },
+        {
+          "name": "clump.history.yvelocity",
+          "syntax": "clump.history.yvelocity",
+          "description": "The y -component of the clump velocity"
+        },
+        {
+          "name": "clump.history.zcontactforce",
+          "syntax": "clump.history.zcontactforce",
+          "description": "The z -component of the force resulting from contacts"
+        },
+        {
+          "name": "clump.history.zcontactmoment",
+          "syntax": "clump.history.zcontactmoment",
+          "description": "The z -component of the moment resulting from contacts"
+        },
+        {
+          "name": "clump.history.zdisplacement",
+          "syntax": "clump.history.zdisplacement",
+          "description": "The z -component of the clump displacement"
+        },
+        {
+          "name": "clump.history.zeuler",
+          "syntax": "clump.history.zeuler",
+          "description": "The z -euler angle (in degrees) of the current clump orientation"
+        },
+        {
+          "name": "clump.history.zposition",
+          "syntax": "clump.history.zposition",
+          "description": "The z -component of the clump position"
+        },
+        {
+          "name": "clump.history.zspin",
+          "syntax": "clump.history.zspin",
+          "description": "The z -component of the clump angular velocity in radians"
+        },
+        {
+          "name": "clump.history.zunbalforce",
+          "syntax": "clump.history.zunbalforce",
+          "description": "The z -component of the clump unbalanced force"
+        },
+        {
+          "name": "clump.history.zunbalmoment",
+          "syntax": "clump.history.zunbalmoment",
+          "description": "The z -component of the clump unbalanced moment"
+        },
+        {
+          "name": "clump.history.zvelocity",
+          "syntax": "clump.history.zvelocity",
+          "description": "The z -component of the clump velocity"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

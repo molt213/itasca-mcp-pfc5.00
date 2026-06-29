@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "echo",
+      "syntax": "echossetechosuppresscalls",
+      "short_description": "Echo to the terminal",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

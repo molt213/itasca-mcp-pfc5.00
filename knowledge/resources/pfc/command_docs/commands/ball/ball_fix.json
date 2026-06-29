@@ -1,0 +1,53 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball fix",
+      "syntax": "ballfixkeyword...rangespin",
+      "short_description": "The angular velocity is fixed",
+      "keywords": [
+        {
+          "name": "ball.fix.spin",
+          "syntax": "ball.fix.spin",
+          "description": "The angular velocity is fixed"
+        },
+        {
+          "name": "ball.fix.velocity",
+          "syntax": "ball.fix.velocity",
+          "description": "The translational velocity is fixed"
+        },
+        {
+          "name": "ball.fix.xspin",
+          "syntax": "ball.fix.xspin",
+          "description": "Fix the x -component of the angular velocity"
+        },
+        {
+          "name": "ball.fix.xvelocity",
+          "syntax": "ball.fix.xvelocity",
+          "description": "Fix the x -component of the translational velocity"
+        },
+        {
+          "name": "ball.fix.yspin",
+          "syntax": "ball.fix.yspin",
+          "description": "Fix the y -component of the angular velocity"
+        },
+        {
+          "name": "ball.fix.yvelocity",
+          "syntax": "ball.fix.yvelocity",
+          "description": "Fix the y -component of the translational velocity"
+        },
+        {
+          "name": "ball.fix.zspin",
+          "syntax": "ball.fix.zspin",
+          "description": "Fix the z -component of the angular velocity"
+        },
+        {
+          "name": "ball.fix.zvelocity",
+          "syntax": "ball.fix.zvelocity",
+          "description": "Fix the z -component of the translational velocity"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

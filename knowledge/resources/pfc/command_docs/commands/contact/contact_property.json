@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact property",
+      "syntax": "contactsprocesspropertysainheritanceb...assinheritancesprocess",
+      "short_description": "Assign contact properties",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball initialize",
+      "syntax": "ballinitializekeyword...rangeballattribute",
+      "short_description": "Modify ball attributes.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact activate",
+      "syntax": "contactsprocessactivatebvalrangebvalsprocess",
+      "short_description": "Change the contact activate flag.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

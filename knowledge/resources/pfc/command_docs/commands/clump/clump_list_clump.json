@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump list clump",
+      "syntax": "listclumpkeywordrangeclumplist",
+      "short_description": "List clump information.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

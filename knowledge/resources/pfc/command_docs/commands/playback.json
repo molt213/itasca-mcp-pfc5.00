@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "playback",
+      "syntax": "playbackslistrecord",
+      "short_description": "Play back a record file. An ASCII record file representing a &quot;playback&quot; of input to the model is read, theoretically exactly duplicating the steps taken to create a model state",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

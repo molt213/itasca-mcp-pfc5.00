@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "brick make",
+      "syntax": "brickmakeidiid",
+      "short_description": "",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

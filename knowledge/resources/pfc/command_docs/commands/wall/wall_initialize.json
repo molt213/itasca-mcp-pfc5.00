@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall initialize",
+      "syntax": "wallinitializekeyword...rangewallattribute",
+      "short_description": "Modify wall attributes.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

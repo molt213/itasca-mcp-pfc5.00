@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "measure modify",
+      "syntax": "measuremodifyidikeywordmeasurecreatebinsiflfhiflfhmeasuredump",
+      "short_description": "Radius of the measurement circle (sphere)",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

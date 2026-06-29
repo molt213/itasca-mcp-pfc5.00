@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "new",
+      "syntax": "newprojectforceforceprojectsetlogsetechosetdeterministicsetrandomnewnewFISHsaverestoreFISHFISHnewnew",
+      "short_description": "Clear program-state information. Most information is cleared, allowing one to begin a new problem",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall extra",
+      "syntax": "wallextraiafacetrangeaifacet",
+      "short_description": "Set wall or facet extra variables.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

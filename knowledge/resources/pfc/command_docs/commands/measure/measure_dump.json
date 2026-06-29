@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "measure dump",
+      "syntax": "measuredumpidikeywordfiless",
+      "short_description": "",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

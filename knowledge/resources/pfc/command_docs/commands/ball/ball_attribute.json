@@ -1,0 +1,231 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball attribute",
+      "syntax": "ballattributekeyword...rangeballinitializeballlistballpropertyappliedforcev",
+      "short_description": "Force applied to balls",
+      "keywords": [
+        {
+          "name": "ball.attribute.appliedforce",
+          "syntax": "ball.attribute.appliedforce",
+          "description": "Force applied to balls"
+        },
+        {
+          "name": "ball.attribute.appliedmoment",
+          "syntax": "ball.attribute.appliedmoment",
+          "description": "Moment applied to balls"
+        },
+        {
+          "name": "ball.attribute.contactforce",
+          "syntax": "ball.attribute.contactforce",
+          "description": "Sum of the contact force accumulated to the balls during the previous force-displacement update"
+        },
+        {
+          "name": "ball.attribute.contactmoment",
+          "syntax": "ball.attribute.contactmoment",
+          "description": "Sum of the contact moments accumulated to the balls during the previous force-displacement update"
+        },
+        {
+          "name": "ball.attribute.damp",
+          "syntax": "ball.attribute.damp",
+          "description": "Ball local damping coefficient where <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.attribute.density",
+          "syntax": "ball.attribute.density",
+          "description": "Ball density, where <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.attribute.displacement",
+          "syntax": "ball.attribute.displacement",
+          "description": "Accumulated ball displacement vector as a result of cycling"
+        },
+        {
+          "name": "ball.attribute.euler",
+          "syntax": "ball.attribute.euler",
+          "description": "Current orientation of Euler angles following the X,Y,Z convention (e"
+        },
+        {
+          "name": "ball.attribute.fragment",
+          "syntax": "ball.attribute.fragment",
+          "description": "Fragment ID (see &quot;<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.attribute.position",
+          "syntax": "ball.attribute.position",
+          "description": "Location of ball centroid"
+        },
+        {
+          "name": "ball.attribute.radius",
+          "syntax": "ball.attribute.radius",
+          "description": "Ball radius where <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.attribute.rotation",
+          "syntax": "ball.attribute.rotation",
+          "description": "Current ball orientation"
+        },
+        {
+          "name": "ball.attribute.spin",
+          "syntax": "ball.attribute.spin",
+          "description": "Ball angular velocity"
+        },
+        {
+          "name": "ball.attribute.velocity",
+          "syntax": "ball.attribute.velocity",
+          "description": "Ball translational velocity vector"
+        },
+        {
+          "name": "ball.attribute.xappliedforce",
+          "syntax": "ball.attribute.xappliedforce",
+          "description": "The x -component of the force applied to balls"
+        },
+        {
+          "name": "ball.attribute.xappliedmoment",
+          "syntax": "ball.attribute.xappliedmoment",
+          "description": "The x -component of the moment applied to balls"
+        },
+        {
+          "name": "ball.attribute.xcontactforce",
+          "syntax": "ball.attribute.xcontactforce",
+          "description": "The x -component of the resultant contact force accumulated to balls"
+        },
+        {
+          "name": "ball.attribute.xcontactmoment",
+          "syntax": "ball.attribute.xcontactmoment",
+          "description": "The x -component of the resultant contact moment accumulated to balls"
+        },
+        {
+          "name": "ball.attribute.xdisplacement",
+          "syntax": "ball.attribute.xdisplacement",
+          "description": "The x -component of the accumulated ball displacement as a result of cycling"
+        },
+        {
+          "name": "ball.attribute.xeuler",
+          "syntax": "ball.attribute.xeuler",
+          "description": "The x -euler angle (in degrees) of the current ball orientation"
+        },
+        {
+          "name": "ball.attribute.xposition",
+          "syntax": "ball.attribute.xposition",
+          "description": "The x -component of the location of ball centroids"
+        },
+        {
+          "name": "ball.attribute.xspin",
+          "syntax": "ball.attribute.xspin",
+          "description": "The x -component of the ball angular velocity in radians"
+        },
+        {
+          "name": "ball.attribute.xvelocity",
+          "syntax": "ball.attribute.xvelocity",
+          "description": "The x -component of the ball velocity"
+        },
+        {
+          "name": "ball.attribute.yappliedforce",
+          "syntax": "ball.attribute.yappliedforce",
+          "description": "The y -component of the force applied to balls"
+        },
+        {
+          "name": "ball.attribute.yappliedmoment",
+          "syntax": "ball.attribute.yappliedmoment",
+          "description": "The y -component of the moment applied to balls"
+        },
+        {
+          "name": "ball.attribute.ycontactforce",
+          "syntax": "ball.attribute.ycontactforce",
+          "description": "The y -component of the resultant contact force accumulated to balls"
+        },
+        {
+          "name": "ball.attribute.ycontactmoment",
+          "syntax": "ball.attribute.ycontactmoment",
+          "description": "The y -component of the resultant contact moment accumulated to balls"
+        },
+        {
+          "name": "ball.attribute.ydisplacement",
+          "syntax": "ball.attribute.ydisplacement",
+          "description": "The y -component of accumulated displacement as a result of cycling"
+        },
+        {
+          "name": "ball.attribute.yeuler",
+          "syntax": "ball.attribute.yeuler",
+          "description": "The y -euler angle (in degrees) of the current ball orientation"
+        },
+        {
+          "name": "ball.attribute.yposition",
+          "syntax": "ball.attribute.yposition",
+          "description": "The y -component of the location of ball centroids"
+        },
+        {
+          "name": "ball.attribute.yspin",
+          "syntax": "ball.attribute.yspin",
+          "description": "The y -component of the ball angular velocity in radians"
+        },
+        {
+          "name": "ball.attribute.yvelocity",
+          "syntax": "ball.attribute.yvelocity",
+          "description": "The y -component of the ball velocity"
+        },
+        {
+          "name": "ball.attribute.zappliedforce",
+          "syntax": "ball.attribute.zappliedforce",
+          "description": "The z -component of the force applied to balls"
+        },
+        {
+          "name": "ball.attribute.zappliedmoment",
+          "syntax": "ball.attribute.zappliedmoment",
+          "description": "The z -component of the moment applied to balls"
+        },
+        {
+          "name": "ball.attribute.zcontactforce",
+          "syntax": "ball.attribute.zcontactforce",
+          "description": "The z -component of the resultant contact force accumulated to balls"
+        },
+        {
+          "name": "ball.attribute.zcontactmoment",
+          "syntax": "ball.attribute.zcontactmoment",
+          "description": "The z -component of the resultant contact moment accumulated to balls"
+        },
+        {
+          "name": "ball.attribute.zdisplacement",
+          "syntax": "ball.attribute.zdisplacement",
+          "description": "The z -component of accumulated displacement as a result of cycling"
+        },
+        {
+          "name": "ball.attribute.zeuler",
+          "syntax": "ball.attribute.zeuler",
+          "description": "The z -euler angle (in degrees) of the current ball orientation"
+        },
+        {
+          "name": "ball.attribute.zposition",
+          "syntax": "ball.attribute.zposition",
+          "description": "The z -component of the location of ball centroids"
+        },
+        {
+          "name": "ball.attribute.zspin",
+          "syntax": "ball.attribute.zspin",
+          "description": "The z -component of the ball angular velocity in radians"
+        },
+        {
+          "name": "ball.attribute.zvelocity",
+          "syntax": "ball.attribute.zvelocity",
+          "description": "The z -component of the ball velocity"
+        }
+      ],
+      "examples": [
+        {
+          "command": "; setup model domain domain extent - 10 10 ; select default contact model and its properties cmat default model linear property kn 1e6 ; generate a random assembly of balls in a box set random 10001 wall generate box - 5 5 onewall ball generate id 1 500 box - 4.5 4.5 radius 0.5 ; assign density and local damping coefficient to existing balls ball attribute density 1000.0 damp 0.7 ; set gravity and solve the system set gravity 10.0 solve",
+          "description": ""
+        },
+        {
+          "command": "; setup model domain domain extent - 10 10 condition destroy ; select default contact model and its properties cmat default model linear property kn 1e6 dp_nratio 0.2 ; generate a random assembly of balls in a box set random 10001 wall generate box - 5 5 onewall ball generate id 1 100 box - 4.5 4.5 0.0 0.0 radius 0.5 cubic ; assign density and local damping coefficient to existing balls ball attribute density 1000.0 ; set the velocity attribute for a selected range of balls ; note that ball velocitied will be updated during cycling ball attribute velocity ( 0.0 , 0.0 , - 1.0 ) range x - 4.5 0.0 ; set the applied force attribute of remaining balls ; since applied force is never updated during the cycling, this ; value will remain constant ball attribute appliedforce ( 0.0 , 0.0 , - 1.0 ) range x - 4.5 0.0 not ; perform cycles cycle 10000",
+          "description": ""
+        },
+        {
+          "command": "; set velocity for all the balls, and fix the x-velocity component ; for a selected range ball attribute velocity ( 0.5 , 0.0 , 0.0 ) ball fix x range x - 4.5 0.0 ; perform cycles - the balls with fixed velocities exit the domain cycle 5000",
+          "description": ""
+        }
+      ],
+      "version": "5.0"
+    }
+  }
+}

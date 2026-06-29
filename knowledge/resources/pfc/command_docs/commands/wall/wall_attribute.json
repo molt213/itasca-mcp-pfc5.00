@@ -1,0 +1,163 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall attribute",
+      "syntax": "wallattributefacetvertexkeyword...rangewallinitializewalllistvertexvelocityxvelocityyvelocityzvelocityfacetconveyorxconveyoryconveyorzconveyorcentrotationvcen",
+      "short_description": "Set the center of rotation for walls in the range. This is the position about which rotations occur when an angular velocity is supplied to a wall. The center of rotation translates with the wall if a translational velocity is supplied. The default center of rotation is the origin",
+      "keywords": [
+        {
+          "name": "wall.attribute.centrotation",
+          "syntax": "wall.attribute.centrotation",
+          "description": "Set the center of rotation for walls in the range"
+        },
+        {
+          "name": "wall.attribute.conveyor",
+          "syntax": "wall.attribute.conveyor",
+          "description": "Set the facet conveyor velocity vector"
+        },
+        {
+          "name": "wall.attribute.cutoffang",
+          "syntax": "wall.attribute.cutoffang",
+          "description": "Set the cutoff angle (an angle in degrees) for walls"
+        },
+        {
+          "name": "wall.attribute.displacement",
+          "syntax": "wall.attribute.displacement",
+          "description": "Accumulated wall displacement vector as a result of cycling"
+        },
+        {
+          "name": "wall.attribute.euler",
+          "syntax": "wall.attribute.euler",
+          "description": "Current orientation of Euler angles following the X,Y,Z convention (e"
+        },
+        {
+          "name": "wall.attribute.fragment",
+          "syntax": "wall.attribute.fragment",
+          "description": "Fragment ID (see &quot;<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.attribute.position",
+          "syntax": "wall.attribute.position",
+          "description": "Wall location vector"
+        },
+        {
+          "name": "wall.attribute.spin",
+          "syntax": "wall.attribute.spin",
+          "description": "The wall angular velocity in radians per second"
+        },
+        {
+          "name": "wall.attribute.velocity",
+          "syntax": "wall.attribute.velocity",
+          "description": "Wall translational velocity vector"
+        },
+        {
+          "name": "wall.attribute.xcentrotation",
+          "syntax": "wall.attribute.xcentrotation",
+          "description": "Set the x -component of the center of rotation for walls in the range"
+        },
+        {
+          "name": "wall.attribute.xconveyor",
+          "syntax": "wall.attribute.xconveyor",
+          "description": "Set the x -component of the facet conveyor velocity"
+        },
+        {
+          "name": "wall.attribute.xdisplacement",
+          "syntax": "wall.attribute.xdisplacement",
+          "description": "The x -component of the accumulated wall displacement as a result of cycling"
+        },
+        {
+          "name": "wall.attribute.xeuler",
+          "syntax": "wall.attribute.xeuler",
+          "description": "The x -euler angle (in degrees) of the current wall orientation"
+        },
+        {
+          "name": "wall.attribute.xposition",
+          "syntax": "wall.attribute.xposition",
+          "description": "The x -component of the wall location"
+        },
+        {
+          "name": "wall.attribute.xspin",
+          "syntax": "wall.attribute.xspin",
+          "description": "The x -component of the wall angular velocity in radians per second"
+        },
+        {
+          "name": "wall.attribute.xvelocity",
+          "syntax": "wall.attribute.xvelocity",
+          "description": "The x -component of the wall translational velocity"
+        },
+        {
+          "name": "wall.attribute.ycentrotation",
+          "syntax": "wall.attribute.ycentrotation",
+          "description": "Set the y -component of the center of rotation for walls in the range"
+        },
+        {
+          "name": "wall.attribute.yconveyor",
+          "syntax": "wall.attribute.yconveyor",
+          "description": "Set the y -component of the facet conveyor velocity"
+        },
+        {
+          "name": "wall.attribute.ydisplacement",
+          "syntax": "wall.attribute.ydisplacement",
+          "description": "The y -component of the accumulated wall displacement as a result of cycling"
+        },
+        {
+          "name": "wall.attribute.yeuler",
+          "syntax": "wall.attribute.yeuler",
+          "description": "The y -euler angle (in degrees) of the current wall orientation"
+        },
+        {
+          "name": "wall.attribute.yposition",
+          "syntax": "wall.attribute.yposition",
+          "description": "The y -component of the wall location"
+        },
+        {
+          "name": "wall.attribute.yspin",
+          "syntax": "wall.attribute.yspin",
+          "description": "The y -component of the wall angular velocity in radians per second"
+        },
+        {
+          "name": "wall.attribute.yvelocity",
+          "syntax": "wall.attribute.yvelocity",
+          "description": "The y -component of the wall translational velocity"
+        },
+        {
+          "name": "wall.attribute.zcentrotation",
+          "syntax": "wall.attribute.zcentrotation",
+          "description": "Set the z -component of the center of rotation for walls in the range"
+        },
+        {
+          "name": "wall.attribute.zconveyor",
+          "syntax": "wall.attribute.zconveyor",
+          "description": "Set the z -component of the facet conveyor velocity"
+        },
+        {
+          "name": "wall.attribute.zdisplacement",
+          "syntax": "wall.attribute.zdisplacement",
+          "description": "The z -component of the accumulated wall displacement as a result of cycling"
+        },
+        {
+          "name": "wall.attribute.zeuler",
+          "syntax": "wall.attribute.zeuler",
+          "description": "The z -euler angle (in degrees) of the current wall orientation"
+        },
+        {
+          "name": "wall.attribute.zposition",
+          "syntax": "wall.attribute.zposition",
+          "description": "The z -component of the wall location"
+        },
+        {
+          "name": "wall.attribute.zspin",
+          "syntax": "wall.attribute.zspin",
+          "description": "The z -component of the wall angular velocity in radians per second"
+        },
+        {
+          "name": "wall.attribute.zvelocity",
+          "syntax": "wall.attribute.zvelocity",
+          "description": "The z -component of the wall translational velocity"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact groupbehavior",
+      "syntax": "contactsprocessgroupbehaviorkeywordsprocessand",
+      "short_description": "A contact is deemed to be in the range if both ends are within a group specified in the range",
+      "keywords": [
+        {
+          "name": "contact.groupbehavior.and",
+          "syntax": "contact.groupbehavior.and",
+          "description": "A contact is deemed to be in the range if both ends are within a group specified in the range"
+        },
+        {
+          "name": "contact.groupbehavior.contact",
+          "syntax": "contact.groupbehavior.contact",
+          "description": "A contact is deemed to be in the range if the contact group is within a group specified in the range"
+        },
+        {
+          "name": "contact.groupbehavior.or",
+          "syntax": "contact.groupbehavior.or",
+          "description": ""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

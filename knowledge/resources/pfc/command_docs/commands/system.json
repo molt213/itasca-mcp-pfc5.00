@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "system",
+      "syntax": "systemtimeoutis...ssdircopydelclonestimeoutiiiPFC",
+      "short_description": "Send commands to DOS. This command allows the user to access the underlying command-driven operating system (DOS, under Windows)",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

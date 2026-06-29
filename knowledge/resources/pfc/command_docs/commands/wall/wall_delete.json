@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall delete",
+      "syntax": "walldeletekeywordrangewallsfacetsfacets",
+      "short_description": "Delete facets. Walls without facets are deleted",
+      "keywords": [
+        {
+          "name": "wall.delete.facets",
+          "syntax": "wall.delete.facets",
+          "description": "Delete facets"
+        },
+        {
+          "name": "wall.delete.walls",
+          "syntax": "wall.delete.walls",
+          "description": "Delete walls"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

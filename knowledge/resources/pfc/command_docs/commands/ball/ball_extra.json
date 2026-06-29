@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball extra",
+      "syntax": "ballextraiarangeai",
+      "short_description": "Set ball extra variables.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

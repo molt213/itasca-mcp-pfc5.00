@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump group",
+      "syntax": "clumpgroupskeyword...pebblerangesanyremovespebbleadds",
+      "short_description": "Specify clump or pebble group names.",
+      "keywords": [
+        {
+          "name": "clump.group.add",
+          "syntax": "clump.group.add",
+          "description": "Assign <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.group.remove",
+          "syntax": "clump.group.remove",
+          "description": "Remove <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.group.slot",
+          "syntax": "clump.group.slot",
+          "description": "Set group slot <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

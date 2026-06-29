@@ -1,0 +1,32 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall export",
+      "syntax": "wallexportkeywordrangegeometrykeywordsetsssplitwallmysetswalls",
+      "short_description": "Exports walls. If no range is specified, then all walls in the model are exported. At the moment, it is only possible to export walls to geometry sets.",
+      "keywords": [
+        {
+          "name": "wall.export.geometry",
+          "syntax": "wall.export.geometry",
+          "description": "Set the geometry set base name to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.export.geometry.split",
+          "syntax": "wall.export.geometry.split",
+          "description": "If specified, the split keyword results in each wall being exported into a dedicated geometry set"
+        }
+      ],
+      "examples": [
+        {
+          "command": "domain extent - 10 10 wall generate sphere position 0.0 0.0 5.0 radius 2.5 wall generate cone base - 2.5 0.0 - 5.0 axis 1 1 1 height 2.0 radius 0.1 2.5 ... cap true true resolution 0.5 onewall wall generate disk radius 5.0 dip 45.0 ddir 90.0 wall export geometry geometry export walls . stl format stl",
+          "description": ""
+        },
+        {
+          "command": "domain extent - 10 10 wall generate sphere position 0.0 0.0 5.0 radius 2.5 wall generate cone base - 2.5 0.0 - 5.0 axis 1 1 1 height 2.0 radius 0.1 2.5 ... cap true true resolution 0.5 onewall wall generate disk radius 5.0 dip 45.0 ddir 90.0 wall export geometry split geometry set walls_wall1 geometry export wall1 . stl format stl",
+          "description": ""
+        }
+      ],
+      "version": "5.0"
+    }
+  }
+}

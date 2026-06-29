@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "call",
+      "syntax": "callslineilabelslsuppress...sssspausereturncontinueShift + Escsuppresslineilabelsllinelabelcallcallsetdirectorylistdirectory",
+      "short_description": "Process the specified data file(s)",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

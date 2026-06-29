@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact persist",
+      "syntax": "contactsprocesspersistbvalrangebvalsprocess",
+      "short_description": "Set the contact persistence flag.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

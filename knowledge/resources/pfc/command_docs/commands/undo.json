@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "undo",
+      "syntax": "undoiiundoundoundonewFISHcommand/end.commandundo",
+      "short_description": "Undo commands",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

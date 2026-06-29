@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball tolerance",
+      "syntax": "balltolerancekeyword...ctoleranceetolerancevtolerancecleanctolerancefrange",
+      "short_description": "Assign the constant contact-detection tolerance. This is assigned on a per-ball basis",
+      "keywords": [
+        {
+          "name": "ball.tolerance.ctolerance",
+          "syntax": "ball.tolerance.ctolerance",
+          "description": "Assign the constant contact-detection tolerance"
+        },
+        {
+          "name": "ball.tolerance.etolerance",
+          "syntax": "ball.tolerance.etolerance",
+          "description": "Assign the extent contact-detection tolerance"
+        },
+        {
+          "name": "ball.tolerance.vtolerance",
+          "syntax": "ball.tolerance.vtolerance",
+          "description": "Assign the velocity contact-detection tolerance"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clump scale",
+      "syntax": "clumpscalekeyword...rangeclumpattributeFISHFISHclump.moi.fixFISHdiameterfdiam",
+      "short_description": "Scale the clump to have volume of an equivalent {disk with unit thickness in 2D; sphere in 3D} with a specified diameter",
+      "keywords": [
+        {
+          "name": "clump.scale.diameter",
+          "syntax": "clump.scale.diameter",
+          "description": "Scale the clump to have volume of an equivalent {disk with unit thickness in 2D; sphere in 3D} with a specified diameter"
+        },
+        {
+          "name": "clump.scale.fishsize",
+          "syntax": "clump.scale.fishsize",
+          "description": "Use the FISH function with name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "clump.scale.volume",
+          "syntax": "clump.scale.volume",
+          "description": "Scale the clump to have volume <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

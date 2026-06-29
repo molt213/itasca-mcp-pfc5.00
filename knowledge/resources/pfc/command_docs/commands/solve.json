@@ -1,0 +1,78 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "solve",
+      "syntax": "solvesprocesskeyword...sprocesssolveagefsprocessftimesprocess",
+      "short_description": "Solve to a specified limit. The solve logic provides a mechanism to continue cycling a model until specified criteria are met, oftentimes resulting in a model that is in equilibrium to some tolerance",
+      "keywords": [
+        {
+          "name": "solve.age",
+          "syntax": "solve.age",
+          "description": "Cycle until the total age of <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.aratio",
+          "syntax": "solve.aratio",
+          "description": "Cycle until the average ratio is less than or equal to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.calm",
+          "syntax": "solve.calm",
+          "description": "Specify that every <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.clock",
+          "syntax": "solve.clock",
+          "description": "Limit the computer run time to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.elastic",
+          "syntax": "solve.elastic",
+          "description": "Perform a mechanical calculation in two steps by first assuming elastic behavior, then using the actual strength values of the material"
+        },
+        {
+          "name": "solve.exact",
+          "syntax": "solve.exact",
+          "description": "Solves to the exact time or age"
+        },
+        {
+          "name": "solve.fishhalt",
+          "syntax": "solve.fishhalt",
+          "description": "The FISH function <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.lratio",
+          "syntax": "solve.lratio",
+          "description": "Cycle until the local ratio is less than or equal to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.max_cycles",
+          "syntax": "solve.max_cycles",
+          "description": "Limit the total number of cycles in the solve to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.mratio",
+          "syntax": "solve.mratio",
+          "description": "Cycle until the maximum ratio is less than or equal to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.time",
+          "syntax": "solve.time",
+          "description": "Cycle until the time of <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.totalcycles",
+          "syntax": "solve.totalcycles",
+          "description": "Cycle until the total number of cycles that have ever occurred for <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "solve.unbalanced",
+          "syntax": "solve.unbalanced",
+          "description": "Cycle until the maximum unbalanced quantity, defined by <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

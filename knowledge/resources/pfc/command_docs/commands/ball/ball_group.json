@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball group",
+      "syntax": "ballgroupskeyword...rangesaddremovesadds",
+      "short_description": "Specify ball group names.",
+      "keywords": [
+        {
+          "name": "ball.group.add",
+          "syntax": "ball.group.add",
+          "description": "Assign <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.group.remove",
+          "syntax": "ball.group.remove",
+          "description": "Remove <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.group.slot",
+          "syntax": "ball.group.slot",
+          "description": "Set group slot <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

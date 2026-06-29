@@ -1,0 +1,148 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall history",
+      "syntax": "wallhistoryididkeywordidid2ornamesorvidhistoryidnamehistorycontactforce",
+      "short_description": "Magnitude of the force resulting from contacts",
+      "keywords": [
+        {
+          "name": "wall.history.contactforce",
+          "syntax": "wall.history.contactforce",
+          "description": "Magnitude of the force resulting from contacts"
+        },
+        {
+          "name": "wall.history.contactmoment",
+          "syntax": "wall.history.contactmoment",
+          "description": "The {moment resulting from contacts in 2D; magnitude of the moment resulting from contacts in 3D}"
+        },
+        {
+          "name": "wall.history.displacement",
+          "syntax": "wall.history.displacement",
+          "description": "Magnitude of the wall displacement vector"
+        },
+        {
+          "name": "wall.history.rotation",
+          "syntax": "wall.history.rotation",
+          "description": "Wall orientation or angular displacement in radians"
+        },
+        {
+          "name": "wall.history.spin",
+          "syntax": "wall.history.spin",
+          "description": "Wall {angular velocity in 2D; angular velocity magnitude in 3D} in radians"
+        },
+        {
+          "name": "wall.history.velocity",
+          "syntax": "wall.history.velocity",
+          "description": "The magnitude of the wall velocity vector"
+        },
+        {
+          "name": "wall.history.xcontactforce",
+          "syntax": "wall.history.xcontactforce",
+          "description": "The x -component of the force resulting from contacts"
+        },
+        {
+          "name": "wall.history.xcontactmoment",
+          "syntax": "wall.history.xcontactmoment",
+          "description": "The x -component of the moment resulting from contacts"
+        },
+        {
+          "name": "wall.history.xdisplacement",
+          "syntax": "wall.history.xdisplacement",
+          "description": "The x -component of the wall displacement"
+        },
+        {
+          "name": "wall.history.xeuler",
+          "syntax": "wall.history.xeuler",
+          "description": "The x -euler angle (in degrees) of the current wall orientation"
+        },
+        {
+          "name": "wall.history.xposition",
+          "syntax": "wall.history.xposition",
+          "description": "The x -component of the wall position"
+        },
+        {
+          "name": "wall.history.xspin",
+          "syntax": "wall.history.xspin",
+          "description": "The x -component of the wall angular velocity in radians"
+        },
+        {
+          "name": "wall.history.xvelocity",
+          "syntax": "wall.history.xvelocity",
+          "description": "The x -component of the wall velocity"
+        },
+        {
+          "name": "wall.history.ycontactforce",
+          "syntax": "wall.history.ycontactforce",
+          "description": "The y -component of the force resulting from contacts"
+        },
+        {
+          "name": "wall.history.ycontactmoment",
+          "syntax": "wall.history.ycontactmoment",
+          "description": "The y -component of the moment resulting from contacts"
+        },
+        {
+          "name": "wall.history.ydisplacement",
+          "syntax": "wall.history.ydisplacement",
+          "description": "The y -component of the wall displacement"
+        },
+        {
+          "name": "wall.history.yeuler",
+          "syntax": "wall.history.yeuler",
+          "description": "The y -euler angle (in degrees) of the current wall orientation"
+        },
+        {
+          "name": "wall.history.yposition",
+          "syntax": "wall.history.yposition",
+          "description": "The y -component of the wall position"
+        },
+        {
+          "name": "wall.history.yspin",
+          "syntax": "wall.history.yspin",
+          "description": "The y -component of the wall angular velocity in radians"
+        },
+        {
+          "name": "wall.history.yvelocity",
+          "syntax": "wall.history.yvelocity",
+          "description": "The y -component of the wall velocity"
+        },
+        {
+          "name": "wall.history.zcontactforce",
+          "syntax": "wall.history.zcontactforce",
+          "description": "The z -component of the force resulting from contacts"
+        },
+        {
+          "name": "wall.history.zcontactmoment",
+          "syntax": "wall.history.zcontactmoment",
+          "description": "The z -component of the moment resulting from contacts"
+        },
+        {
+          "name": "wall.history.zdisplacement",
+          "syntax": "wall.history.zdisplacement",
+          "description": "The z -component of the wall displacement"
+        },
+        {
+          "name": "wall.history.zeuler",
+          "syntax": "wall.history.zeuler",
+          "description": "The z -euler angle (in degrees) of the current wall orientation"
+        },
+        {
+          "name": "wall.history.zposition",
+          "syntax": "wall.history.zposition",
+          "description": "The z -component of the wall position"
+        },
+        {
+          "name": "wall.history.zspin",
+          "syntax": "wall.history.zspin",
+          "description": "The z -component of the wall angular velocity in radians"
+        },
+        {
+          "name": "wall.history.zvelocity",
+          "syntax": "wall.history.zvelocity",
+          "description": "The z -component of the wall velocity"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

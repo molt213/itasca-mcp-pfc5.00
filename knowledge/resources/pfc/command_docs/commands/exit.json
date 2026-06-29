@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "exit",
+      "syntax": "exitsaveexitquitstop",
+      "short_description": "Close the application",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

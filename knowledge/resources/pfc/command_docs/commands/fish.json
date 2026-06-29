@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "fish",
+      "syntax": "fishkeywordFISHcreatesasFISHaFISH",
+      "short_description": "",
+      "keywords": [
+        {
+          "name": "fish.create",
+          "syntax": "fish.create",
+          "description": "<a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "fish.debug",
+          "syntax": "fish.debug",
+          "description": "Executes the FISH function <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "fish.define",
+          "syntax": "fish.define",
+          "description": "This is a synonym for the <a class=\"reference internal\" href=\"cmd_define"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

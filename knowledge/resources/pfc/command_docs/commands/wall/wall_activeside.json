@@ -1,0 +1,33 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall activeside",
+      "syntax": "wallactivesidekeywordrangeboth",
+      "short_description": "Set both sides as active",
+      "keywords": [
+        {
+          "name": "wall.activeside.both",
+          "syntax": "wall.activeside.both",
+          "description": "Set both sides as active"
+        },
+        {
+          "name": "wall.activeside.bottom",
+          "syntax": "wall.activeside.bottom",
+          "description": "Set the side opposite the direction of the facet normal vector as active"
+        },
+        {
+          "name": "wall.activeside.neither",
+          "syntax": "wall.activeside.neither",
+          "description": "Set both sides as inactive"
+        },
+        {
+          "name": "wall.activeside.top",
+          "syntax": "wall.activeside.top",
+          "description": "Set the side in the direction of the facet normal vector as active"
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

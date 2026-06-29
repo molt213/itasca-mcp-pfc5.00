@@ -1,0 +1,28 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "contact group",
+      "syntax": "contactsprocessgroupskeyword...rangesanyremovessprocessadds",
+      "short_description": "Specify contact group names.",
+      "keywords": [
+        {
+          "name": "contact.group.add",
+          "syntax": "contact.group.add",
+          "description": "Assign <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "contact.group.remove",
+          "syntax": "contact.group.remove",
+          "description": "Remove <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "contact.group.slot",
+          "syntax": "contact.group.slot",
+          "description": "Set group slot <a class=\"reference internal\" href=\""
+        }
+      ],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "clean",
+      "syntax": "cleanallPFCcleansettimestepfixsettimestepautoallallcleandfnmodelclean",
+      "short_description": "Clean the model",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "list contact",
+      "syntax": "listcontactsprocesskeywordrangecontactlist",
+      "short_description": "Lists contact information",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

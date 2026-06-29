@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "cmat list",
+      "syntax": "cmatsprocesslistsprocess",
+      "short_description": "Lists the CMAT.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

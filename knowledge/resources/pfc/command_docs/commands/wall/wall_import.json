@@ -1,0 +1,58 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "wall import",
+      "syntax": "wallimportkeyword...rangegeometryimportseedfilenamess",
+      "short_description": "Name of the file from which to import",
+      "keywords": [
+        {
+          "name": "wall.import.filename",
+          "syntax": "wall.import.filename",
+          "description": "Name of the file from which to import"
+        },
+        {
+          "name": "wall.import.geometry",
+          "syntax": "wall.import.geometry",
+          "description": "Name of the geometry set from which to import"
+        },
+        {
+          "name": "wall.import.geometry.keepid",
+          "syntax": "wall.import.geometry.keepid",
+          "description": "Specify that the facet IDs will be set to the IDs of the geometry {edges in 2D; polygons in 3D}"
+        },
+        {
+          "name": "wall.import.geometry.seed",
+          "syntax": "wall.import.geometry.seed",
+          "description": "ID of the geometry {edge in 2D; polygon in 3D} with which to start the stitching process"
+        },
+        {
+          "name": "wall.import.group",
+          "syntax": "wall.import.group",
+          "description": "Set name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "wall.import.id",
+          "syntax": "wall.import.id",
+          "description": "Wall ID"
+        },
+        {
+          "name": "wall.import.name",
+          "syntax": "wall.import.name",
+          "description": "Name of the wall"
+        },
+        {
+          "name": "wall.import.nothrow",
+          "syntax": "wall.import.nothrow",
+          "description": "Optional keyword indicating that the import will continue in spite of the detection of non-manifold conditions or points falling outside the model domain"
+        }
+      ],
+      "examples": [
+        {
+          "command": "new domain extent - 2 2 wall import filename gear . stl nothrow id 100 wall rotate axis 1 0 0 angle 90 point 0 0 0 wall group gear range set id 100",
+          "description": ""
+        }
+      ],
+      "version": "5.0"
+    }
+  }
+}

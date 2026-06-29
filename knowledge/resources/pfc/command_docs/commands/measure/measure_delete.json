@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "measure delete",
+      "syntax": "measuredeleterange",
+      "short_description": "Delete a measurement object. By default, all measurement objects are deleted. A range can be specified to restrict the operation to select objects.",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "return",
+      "syntax": "returnrerurnreturncommandFISH",
+      "short_description": "Return program control. If in batch mode, the mode is set to interactive-command mode (if a single level of calling was used), or to the calling file (if multiple levels of calls have been nested)",
+      "keywords": [],
+      "examples": [],
+      "version": "5.0"
+    }
+  }
+}

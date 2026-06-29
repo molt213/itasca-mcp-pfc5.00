@@ -1,0 +1,76 @@
+{
+  "versions": {
+    "5.0": {
+      "command": "ball generate",
+      "syntax": "ballgeneratekeyword...rangesetrandomgausscubichexagonalballdistributeboxfxminfxmaxfyminfymaxfzminfzmaxONLY",
+      "short_description": "Ball will fully fall within this box, such that they will not overlap the box faces or edges. By default, the box is the model domain",
+      "keywords": [
+        {
+          "name": "ball.generate.box",
+          "syntax": "ball.generate.box",
+          "description": ""
+        },
+        {
+          "name": "ball.generate.cubic",
+          "syntax": "ball.generate.cubic",
+          "description": ""
+        },
+        {
+          "name": "ball.generate.fishdistribution",
+          "syntax": "ball.generate.fishdistribution",
+          "description": ""
+        },
+        {
+          "name": "ball.generate.gauss",
+          "syntax": "ball.generate.gauss",
+          "description": ""
+        },
+        {
+          "name": "ball.generate.group",
+          "syntax": "ball.generate.group",
+          "description": "Specify that generated balls are given group name <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.generate.hexagonal",
+          "syntax": "ball.generate.hexagonal",
+          "description": ""
+        },
+        {
+          "name": "ball.generate.id",
+          "syntax": "ball.generate.id",
+          "description": "The ID of the first ball generated is set to <a class=\"reference internal\" href=\""
+        },
+        {
+          "name": "ball.generate.number",
+          "syntax": "ball.generate.number",
+          "description": "Specify the number of balls to be generated"
+        },
+        {
+          "name": "ball.generate.radius",
+          "syntax": "ball.generate.radius",
+          "description": "Specify the radius range to be used during generation"
+        },
+        {
+          "name": "ball.generate.tries",
+          "syntax": "ball.generate.tries",
+          "description": "Number of tries to fill the specified region with the number of balls"
+        }
+      ],
+      "examples": [
+        {
+          "command": "; setup model domain and CMAT domain extent - 10.0 10.0 condition periodic cmat default model linear method deformability emod 1e6 kratio 1.25 property fric 0.25 ; generate balls set random 10001 ; set the seed of the random number generator to ensure repeatability ball generate radius 0.5 0.7 number 100 box - 5.0 0.0 - 5.0 5.0 ball generate radius 1.0 1.4 number 100 box 0.0 5.0 - 5.0 5.0",
+          "description": ""
+        },
+        {
+          "command": "; create a surrounding box, assign density and local damping attributes wall generate box - 6.0 6.0 ball attribute density 1000.0 damp 0.7 ; set gravity magnitude and solve set gravity 10.0 solve arat 1e-3",
+          "description": ""
+        },
+        {
+          "command": "domain extent - 15.0 15.0 set random 10001 ball generate id 1 200 ... radius 0.5 0.6 ... box - 15.0 - 5.0 - 5.0 5.0 ... range sphere center - 10.0 0.0 0.0 radius 5.0 ball generate id 201 400 ... radius 0.5 0.6 ... gauss ... box 5.0 15.0 - 5.0 5.0 ... range sphere center 10.0 0.0 0.0 radius 5.0",
+          "description": ""
+        }
+      ],
+      "version": "5.0"
+    }
+  }
+}
