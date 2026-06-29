@@ -96,6 +96,8 @@ Task loop running via blocking poll (interval=20ms)
 ```
 
 > ⚠️ PFC 5.0 没有 Qt 库，Bridge 会以 blocking poll 模式运行，这不影响功能。
+> ⚠️ **必须用 `auto_upgrade=False`**，原版不加参数在 PFC 5.0 上会崩溃。
+> 嫌每次敲参数麻烦？直接用 [`addon.py`](addon.py) 一键启动。
 
 ### 3. 验证
 
@@ -254,12 +256,18 @@ itasca_execute_code(code="import itasca as it; print('Balls:', it.ball.count())"
 
 ## 日常使用
 
-每次打开 PFC 后，只需重启 Bridge：
+每次打开 PFC 后，在 PFC Python 控制台执行这两行：
 
 ```python
 import itasca_mcp_bridge
 itasca_mcp_bridge.start(port=9001, auto_upgrade=False)
 ```
+
+> ⚠️ **PFC 5.0 必须传 `auto_upgrade=False`！** 原因：Python 2.7.9 的 SSL 太旧，
+> 连接 PyPI 会直接崩溃。原版的 `start()` 不传参在 PFC 5.0 上不能跑。
+>
+> 如果你嫌麻烦，直接用 `addon.py` — 复制整个文件内容粘贴到 PFC 控制台就行，
+> 它会自动处理 `auto_upgrade=False` 和模块缓存清理。
 
 MCP 客户端配置长期有效，无需重复配置。
 
