@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yusong652/itasca-mcp/assets/header.gif" alt="itasca-mcp-pfc5" width="70%">
+  <img src="https://raw.githubusercontent.com/yusong652/itasca-mcp/assets/header.gif" alt="itasca-mcp-pfc5.00" width="70%">
 </p>
 
 # itasca-mcp-pfc5
@@ -13,6 +13,9 @@
 原项目 [itasca-mcp](https://github.com/yusong652/itasca-mcp) (© Yusong Han, Nagisa Toyoura) 
 官方支持 PFC 6.0+/7.0/9.0 (Python 3.6+)。本项目通过兼容层将其完整移植到 
 **PFC 5.0 (Python 2.7.9)**。
+
+由于此移植版项目完全由**AI**修改编写，有许多功能还没来得及测试，属于是能跑的起来就行的那种。readme也是ai写的，我不一定能保证给ai看了之后它跑不跑得起来，反正我是边修边跑的，现在能跑起来了。
+同时因为本人最近准备考研了，后续应该就没有那么多时间维护这个项目，望见谅。
 
 `pfc3d> ;老版本也能跑 MCP`
 
