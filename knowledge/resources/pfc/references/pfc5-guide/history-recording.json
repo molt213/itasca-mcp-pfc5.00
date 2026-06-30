@@ -1,0 +1,38 @@
+{
+  "full_name": "History Recording in PFC 5.0",
+  "description": "Recording simulation data over time using the history command in PFC 5.0. Covers FISH function history, wall history, measurement history, ball history, and mechanical history.",
+  "sections": [
+    {
+      "heading": "FISH Function History",
+      "content": "Record the return value of a FISH function at each timestep.\n\nSyntax:\n  history id N @fish_function_name\n\n  id N                  — unique history ID for later reference/plotting\n  @fish_function_name   — name of a FISH function (must return a value)\n\nExample:\n  ; Define a FISH function\n  define axial_stress\n    local wp = wall.find(6)\n    local force = wall.force.contact(wp, 3)\n    axial_stress = force / cross_area\n  end\n\n  ; Record it every step\n  history id 1 @axial_stress\n\nThe history records whatever value the named FISH function assigns to its own name (the return value convention in FISH)."
+    },
+    {
+      "heading": "Wall History",
+      "content": "Record wall quantities directly without defining a FISH function.\n\nSyntax (PFC 5.0):\n  history wall <quantity> id N\n\nAvailable quantities:\n  xcontactforce   — total x-contact force on wall ID N\n  ycontactforce   — total y-contact force on wall ID N\n  zcontactforce   — total z-contact force on wall ID N\n  xdisplacement   — x-displacement of wall ID N\n  ydisplacement   — y-displacement of wall ID N\n  zdisplacement   — z-displacement of wall ID N\n\nExamples:\n  history wall xcontactforce id 3    ; force on left wall\n  history wall zcontactforce id 6    ; force on top wall\n  history wall zdisplacement id 6    ; top wall displacement\n  history wall ydisplacement id 1    ; front wall displacement\n\nInternally, these map to FISH functions:\n  wall xcontactforce  — wall.force.contact(wp, 1)\n  wall ycontactforce  — wall.force.contact(wp, 2)\n  wall zcontactforce  — wall.force.contact(wp, 3)\n  wall xdisplacement  — wall.disp(wp, 1)\n  wall ydisplacement  — wall.disp(wp, 2)\n  wall zdisplacement  — wall.disp(wp, 3)"
+    },
+    {
+      "heading": "Measurement History",
+      "content": "Record quantities computed by measurement spheres.\n\nSyntax:\n  history id N measure <quantity> id M\n\n  id N        — history ID\n  quantity    — measured quantity\n  id M        — measurement sphere ID\n\nAvailable quantities:\n  stressxx    — xx component of stress tensor\n  stressyy    — yy component of stress tensor\n  stresszz    — zz component of stress tensor\n  stressxy    — xy component of stress tensor\n  stressxz    — xz component of stress tensor\n  stressyz    — yz component of stress tensor\n  porosity    — porosity of measurement region\n  coord       — coordination number (avg contacts per particle)\n\nExamples:\n  measure create id 1 radius 0.03 x 0 y 0 z 0\n  history id 10 measure stresszz id 1\n  history id 11 measure porosity id 1\n  history id 12 measure coord id 1"
+    },
+    {
+      "heading": "Ball History",
+      "content": "Record properties of individual balls.\n\nSyntax:\n  ball history <quantity> id N\n\n  quantity    — property to record\n  id N        — ball ID\n\nAvailable quantities:\n  xvelocity   — x-velocity of the ball\n  yvelocity   — y-velocity of the ball\n  zvelocity   — z-velocity of the ball\n  xposition   — x-position of the ball\n  yposition   — y-position of the ball\n  zposition   — z-position of the ball\n  xforce      — resultant x-force on the ball\n  yforce      — resultant y-force on the ball\n  zforce      — resultant z-force on the ball\n  displacement — total displacement magnitude\n\nExample:\n  ball history zvelocity id 5    ; track a specific ball's z-velocity\n  ball history xposition id 5    ; track ball position\n\nNote: Replace 'ball' with 'clump' or 'pebble' for clump histories."
+    },
+    {
+      "heading": "Mechanical History",
+      "content": "Record global mechanical state variables.\n\nSyntax:\n  history mechanical solve <quantity>\n\nAvailable quantities:\n  unbalanced  — maximum unbalanced force ratio (average ratio)\n  ratio       — same as unbalanced\n  step        — current step number\n  age         — mechanical time (real or timestep count)\n\nExample:\n  history id 3 mechanical solve unbalanced\n\nThis records the average ratio (maximum unbalanced / average contact force), which is useful for monitoring convergence during solving."
+    },
+    {
+      "heading": "History Recording Frequency",
+      "content": "Control how often histories are recorded.\n\nSyntax:\n  set hist_rep N\n\n  N   — record every N steps (default: 1 = every step)\n\nExample:\n  set hist_rep 10     ; record history every 10 steps\n\nWhen 'solve' command is used, histories are recorded at solve intervals. With 'set hist_rep', you can reduce data volume during long runs without sacrificing early-step data.\n\nTo write history data to a file during execution:\n  history write id N file 'filename.his'\n  history write id N file 'filename.his' table <table_name>\n\nTo display history in plot:\n  plot item create history 1 vs 2\n  (plots history 2 on x-axis vs history 1 on y-axis)"
+    },
+    {
+      "heading": "Accessing History Data in FISH",
+      "content": "Read history values programmatically:\n\n  his.find(id)           — get history pointer by ID\n  his.time(hip)          — get time/value at current step\n  his.start(hip)         — initial time/value\n  his.end(hip)           — final (current) time/value\n  his.label(hip)         — history label string\n\nExample:\n  local hip = his.find(1)\n  local current_val = his.end(hip)\n  local label = his.label(hip)\n\nTo export history data to a table:\n  history table <table_name> id N\n\nExample:\n  history table 'stress_data' id 1\n  history table 'strain_data' id 2\n  ; then plot or export the tables"
+    },
+    {
+      "heading": "Practical Notes",
+      "content": "- Always assign explicit history IDs with 'id N' for clarity. If omitted, IDs are auto-assigned but harder to reference.\n- History IDs must be unique. If you reuse an ID, the old history is overwritten.\n- For long simulations, use 'set hist_rep 100' or higher to reduce memory/file size.\n- Wall history ('history wall zcontactforce id N') is equivalent to a FISH function returning 'wall.force.contact(wall.find(N), 3)', but more concise.\n- For complex derived quantities (e.g., stress ratio), define a FISH function and use 'history id N @function'.\n- In PFC 5.0, measurement history automatically creates the measurement sphere if it doesn't exist for the specified ID.\n- To write all histories to a file: 'history write id all file \"output.his\"' at the end of simulation.\n- The 'history write' command writes tab-separated columns: step, value1, value2, ..."
+    }
+  ]
+}

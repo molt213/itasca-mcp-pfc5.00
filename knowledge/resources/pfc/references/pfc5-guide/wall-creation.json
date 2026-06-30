@@ -1,0 +1,26 @@
+{
+  "full_name": "Wall Creation in PFC 5.0",
+  "description": "Creating walls in PFC 5.0 using wall generate plane, wall generate box, and wall create vertices commands. Walls define model boundaries and loading platens in PFC simulations.",
+  "sections": [
+    {
+      "heading": "wall generate plane — Flat Walls",
+      "content": "The simplest way to create a planar wall (infinite plane trimmed by domain extent).\n\nSyntax:\n  wall generate id N plane dip D dd DD position X Y Z\n\nParameters:\n  id N        — wall ID number (must be unique)\n  dip D       — dip angle in degrees (0-90)\n  dd DD       — dip direction in degrees (0-360)\n  position X Y Z — a point the plane passes through\n\nCommon orientations:\n  dip 0  dd 0   — horizontal plane, normal aligned with z-axis (floor/ceiling)\n  dip 90 dd 90  — vertical plane, normal aligned with x-axis (left/right walls)\n  dip 90 dd 0   — vertical plane, normal aligned with y-axis (front/back walls)\n\nExample:\n  wall generate id 1 plane dip 0 dd 0 position 0 0 0.04\n\nThe plane extends across the entire domain. The domain extent (set via 'domain extent') defines the visible/active portion of the wall."
+    },
+    {
+      "heading": "wall generate box — Box Walls",
+      "content": "Create a closed rectangular box from 6 planar walls in one command.\n\nSyntax:\n  wall generate box x1 x2 y1 y2 z1 z2 [one-wall]\n\n  x1, x2   — x-range of the box\n  y1, y2   — y-range of the box\n  z1, z2   — z-range of the box\n\n  one-wall — optional keyword; if provided, creates a single wall (6 facets on 1 wall)\n             instead of 6 separate walls. Useful for rigid box boundaries.\n\nWithout 'one-wall', 6 walls are created with IDs 1-6. The wall IDs correspond to:\n  ID 1: x-min face (normal = -x)\n  ID 2: x-max face (normal = +x)\n  ID 3: y-min face (normal = -y)\n  ID 4: y-max face (normal = +y)\n  ID 5: z-min face (normal = -z)\n  ID 6: z-max face (normal = +z)\n\nExample:\n  wall generate box -5.0 5.0 onewall\n  wall generate box -0.025 0.025 -0.025 0.025 -0.04 0.04"
+    },
+    {
+      "heading": "wall create vertices — Custom Faceted Walls",
+      "content": "Create custom wall shapes from triangular facets.\n\nSyntax:\n  wall create id N vertices x1 y1 z1 x2 y2 z2 x3 y3 z3 ...\n\n  id N       — wall ID (use same ID for multiple facets belonging to the same wall)\n  vertices x1 y1 z1 x2 y2 z2 x3 y3 z3 — 3D coordinates of triangle vertices\n\nKey rules:\n  - Each facet must be a triangle (exactly 3 vertices in 3D)\n  - For a rectangle, you need 2 triangles (6 vertices)\n  - All triangles sharing the same wall ID form a single composite wall\n  - Vertices are ordered counter-clockwise to define the outward normal\n\nExample — a rectangular wall (2 triangles):\n  wall create id 1 vertices 0 0 0  1 0 0  1 1 0\n  wall create id 1 vertices 0 0 0  1 1 0  0 1 0\n\nThis creates a 1x1 square in the z=0 plane using two triangles sharing the diagonal from (0,0,0) to (1,1,0)."
+    },
+    {
+      "heading": "Wall Attributes and Properties",
+      "content": "After creation, walls can be modified with the 'wall attribute' command.\n\nCommon attributes:\n  wall attribute damping D            — set wall damping coefficient\n  wall attribute xvelocity V          — set x-velocity (PFC 5.0 syntax)\n  wall attribute yvelocity V          — set y-velocity\n  wall attribute zvelocity V          — set z-velocity\n  wall attribute spin S               — set angular velocity\n\nWall properties for contact:\n  wall property kn K                  — normal stiffness\n  wall property ks K                  — shear stiffness\n  wall property fric F                — friction coefficient\n\nNote: Wall properties are set AFTER the wall is created, typically via the contact model. In PFC 5.0, walls automatically participate in contact detection; no special activation is needed."
+    },
+    {
+      "heading": "Practical Notes",
+      "content": "- Wall IDs must be positive integers and are assigned sequentially if omitted, but explicit IDs are recommended for clarity.\n- For servo-controlled boundaries, give each wall a unique ID and reference it by ID in servo logic.\n- The 'onewall' option in 'wall generate box' creates a single wall with 6 faces. This is convenient for rigid boxes but prevents individual face control (e.g., independent loading platens). For biaxial/triaxial tests, use separate walls (no onewall) so each face can move independently.\n- In PFC 5.0, walls are not deformable. They act as rigid boundaries. For deformable boundaries, use a flexible membrane (ball-wall logic) or a wall composed of many small triangular facets.\n- Wall stiffness should be comparable to particle stiffness for stable contact behavior. Too-stiff walls cause high contact forces; too-soft walls allow particle penetration."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "full_name": "Contact Model Setup in PFC 5.0",
+  "description": "Setting contact models and contact properties in PFC 5.0 using cmat, contact model, and contact property commands. Covers default models, deformability method, parallel bonds, and type-specific defaults.",
+  "sections": [
+    {
+      "heading": "cmat default — Setting Default Contact Models",
+      "content": "The 'cmat default' command (PFC 5.0 syntax; 'contact cmat default' in PFC 7.0+) sets the contact model that will be assigned to new contacts as they form.\n\nSyntax:\n  cmat default model <model_name> [property <prop> <value> ...]\n\nCommon models:\n  linear            — linear elastic (no tension)\n  linearpbond       — linear elastic + parallel bond (bonds carry force/moment)\n  linearcbond       — linear elastic + contact bond (point bond, no moment)\n  hertz             — Hertz-Mindlin (nonlinear elastic)\n  smoothjoint       — smooth joint for jointed rock\n  flatjoint         — flat joint for rock\n  rollingresistance — rolling resistance for sand\n\nExamples:\n  cmat default model linear property kn 1.0e6 ks 1.0e6 fric 0.5\n  cmat default model linearpbond property pb_ten 10.0e6 pb_coh 50.0e6 pb_fa 0.0"
+    },
+    {
+      "heading": "Deformability Method",
+      "content": "The deformability method automatically computes kn and ks from Young's modulus (E) and stiffness ratio (kn/ks).\n\nSyntax:\n  cmat default model linear method deformability emod E kratio R\n\n  emod E    — Young's modulus (stress units)\n  kratio R  — kn/ks ratio (kratio = 0 means ks = kn, i.e., no shear stiffness distinction)\n\nFor ball-ball contacts:\n  kn = 2 * E * r_avg   (where r_avg = (r1 + r2) / 2 for two contacting balls)\n  ks = kn / kratio\n\nFor ball-wall contacts:\n  kn = 4 * E * r_ball   (wall is treated as infinite radius)\n  ks = kn / kratio\n\nExample:\n  cmat default model linear method deformability emod 1.0e9 kratio 2.5\n\nNote: The deformability method must be called BEFORE cmat apply or ball generation to take effect. It does not modify existing contacts."
+    },
+    {
+      "heading": "Type-Specific Defaults",
+      "content": "Set different default models for ball-ball vs ball-wall contacts.\n\nSyntax:\n  cmat default type <contact_type> model <model_name> [property ...]\n\nContact types:\n  ball-ball    — contacts between two balls\n  ball-wall    — contacts between a ball and a wall\n  pebble-pebble — clump-pebble contacts\n\nExample:\n  cmat default type ball-ball model linearpbond property pb_ten 10.0e6 pb_coh 20.0e6\n  cmat default type ball-wall model linear property kn 1.0e9 ks 1.0e9 fric 0.8\n\nWhen both type-specific and general defaults exist, the type-specific default takes precedence for that contact type."
+    },
+    {
+      "heading": "cmat apply — Applying Defaults to Existing Contacts",
+      "content": "After setting defaults, use 'cmat apply' to assign the default models to all existing contacts that don't already have a model assigned.\n\nSyntax:\n  cmat apply [range ...]\n\nWithout range, applies to all contacts. With range, applies only to contacts matching the range condition.\n\nExample:\n  cmat default model linearpbond property pb_ten 10.0e6\n  cmat apply\n\nNote: cmat apply only assigns the model to contacts that have no model. To change an existing contact model, use 'contact model'."
+    },
+    {
+      "heading": "contact model — Changing Existing Contacts",
+      "content": "Change the contact model of existing contacts that already have a model.\n\nSyntax:\n  contact model <model_name> range contact type <ball-ball|ball-wall> [...]\n\n  range contact type  — filter by contact type\n  range ...           — additional range filters\n\nExample:\n  contact model linearpbond range contact type ball-ball\n  contact model linearpbond range contact type ball-ball group 'sample' slot 'material'"
+    },
+    {
+      "heading": "contact method — Setting Stiffness Method for Existing Contacts",
+      "content": "Apply deformability or bonding method to existing contacts.\n\n  contact method bond gap G\n    — Activates bonding for contacts with gap < G. Only affects contact-bonded models.\n    — For linearpbond: when gap < G and bond is activated, the bond carries the parallel force.\n    — gap G: activation distance (negative = overlap required; positive = small gap allowed).\n\n  contact method deform emod E krat R\n    — Sets kn/ks via deformability for existing contacts (ball-ball and ball-wall).\n    — emod E: Young's modulus\n    — krat R: kn/ks ratio\n\n  contact method pb_deform emod E krat R\n    — Sets parallel bond stiffness via deformability for existing linearpbond contacts.\n    — emod E: parallel bond modulus\n    — krat R: pb_kn/pb_ks ratio\n\nExamples:\n  contact method bond gap -0.001 range contact type ball-ball\n  contact method deform emod 1.0e9 krat 2.5\n  contact method pb_deform emod 1.0e9 krat 2.5"
+    },
+    {
+      "heading": "contact property — Setting Contact Properties",
+      "content": "Set or modify contact properties directly.\n\nSyntax:\n  contact property <prop_name> <value> [<prop_name> <value> ...] [range ...]\n\nCommon linear model properties:\n  kn K      — normal stiffness (force/length)\n  ks K      — shear stiffness (force/length)\n  fric F    — friction coefficient (0.0 = frictionless)\n\nCommon linearpbond additional properties:\n  pb_ten T  — parallel bond tensile strength (stress)\n  pb_coh C  — parallel bond cohesion (stress)\n  pb_fa A   — parallel bond friction angle (degrees)\n  pb_kn K   — parallel bond normal stiffness (stress/length)\n  pb_ks K   — parallel bond shear stiffness (stress/length)\n\nExamples:\n  contact property kn 1.0e7 ks 1.0e7 fric 0.7\n  contact property pb_ten 5.0e6 pb_coh 25.0e6 range contact type ball-ball"
+    },
+    {
+      "heading": "Viewing Contact Information",
+      "content": "Use the following commands to inspect contacts:\n  contact list              — list all contacts with basic info\n  contact list model        — show contact models\n  contact list property     — show contact properties\n  contact list range ...    — filter by range\n\nIn FISH, access contact information via:\n  contact.find(id)          — find contact by ID\n  contact.pos(cp, dir)      — contact position\n  contact.force.n(cp)       — normal contact force\n  contact.force.s(cp)       — shear contact force magnitude\n  contact.gap(cp)           — contact gap (negative = overlap)\n  contact.surf1(cp)         — first surface pointer\n  contact.surf2(cp)         — second surface pointer"
+    },
+    {
+      "heading": "Practical Notes",
+      "content": "- cmat commands must be issued BEFORE contacts form (before ball generation) to take effect on new contacts.\n- After ball generation, use 'cmat apply' to propagate defaults.\n- To change an existing contact's model, use 'contact model ...' followed by 'contact method ...' and 'contact property ...'.\n- The deformability method is preferred over manual kn/ks specification because it automatically scales with particle size.\n- For cohesive materials (rock, cemented soil), use 'linearpbond' model. For granular materials, use 'linear' or 'rollingresistance'.\n- In PFC 5.0, always set 'cmat default' before 'ball distribute' or 'ball generate' to ensure proper contact model assignment."
+    }
+  ]
+}

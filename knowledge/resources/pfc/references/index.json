@@ -1,0 +1,24 @@
+{
+  "type": "pfc_references",
+  "description": "Reference documentation for PFC syntax elements and model properties.",
+  "categories": {
+    "pfc5-guide": {
+      "name": "PFC 5.0 Programming Guide",
+      "description": "PFC 5.0 syntax rules, workflow patterns, and differences from PFC 7.0",
+      "directory": "pfc5-guide",
+      "index_file": "pfc5-guide/index.json",
+      "summary": "Complete PFC 5.0 coding guide: command syntax, best practices, servo control, measurement, and migration from PFC 7.0",
+      "usage": "itasca_browse_reference('pfc5-guide <topic>')"
+    }
+  },
+  "navigation": {
+    "root": "List all reference categories",
+    "category": "List topics (e.g., 'pfc5-guide')",
+    "item": "Full documentation (e.g., 'pfc5-guide syntax-overview')"
+  },
+  "notes": [
+    "PFC 5.0 programming guide covers syntax, workflows, and best practices",
+    "Use itasca_query_command with version='5.0' for command-level docs",
+    "Use itasca_browse_reference with 'pfc5-guide <topic>' for coding guidance"
+  ]
+}

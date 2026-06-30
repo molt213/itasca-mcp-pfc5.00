@@ -1,0 +1,46 @@
+{
+  "full_name": "PFC 5.0 Syntax Overview",
+  "description": "Key syntax and usage differences between PFC 5.0 and PFC 7.0+. This guide helps migrate datafiles and FISH scripts from the PFC 5.0 syntax to the PFC 7.0+ command syntax, or understand legacy datafiles that use PFC 5.0 conventions.",
+  "sections": [
+    {
+      "heading": "Coordinate Axes Keywords",
+      "content": "PFC 5.0 uses bare coordinate keywords (x, y, z) with values following the keyword. PFC 7.0+ uses hyphenated position keywords.\n\nPFC 5.0:\n  wall generate plane dip 90 dd 90 position 0 0 0\n  ball generate radius 1.0 1.4 box -5.0 5.0 x -5.0 5.0 y -5.0 5.0 z\n\nPFC 7.0+:\n  wall generate plane dip 90 dd 0 position-x 0 position-y 0 position-z 0\n  ball generate radius 1.0 1.4 box -5.0 5.0 position-x -5.0 5.0 position-y -5.0 5.0 position-z -5.0 5.0\n\nNote: In PFC 5.0, the 'z' keyword used after the box extent (for ball generate) is a shorthand for the z-range, but the full 'x', 'y', 'z' keywords are also supported in some contexts. PFC 7.0+ requires the full position-x/position-y/position-z keywords."
+    },
+    {
+      "heading": "Velocity Keywords",
+      "content": "PFC 5.0 uses concatenated keywords (xvelocity, yvelocity, zvelocity). PFC 7.0+ uses hyphenated keywords (velocity-x, velocity-y, velocity-z).\n\nPFC 5.0:\n  wall attribute xvelocity 1.0e-4 range id 1\n  ball attribute yvelocity 0.0\n\nPFC 7.0+:\n  wall attribute velocity-x 1.0e-4 range id 1\n  ball attribute velocity-y 0.0"
+    },
+    {
+      "heading": "Contact Model Setup (CMAT)",
+      "content": "PFC 5.0 uses the bare 'cmat' command. PFC 7.0+ requires the 'contact' prefix.\n\nPFC 5.0:\n  cmat default model linear\n  cmat default model linear method deformability emod 1.0e9 kratio 0.0\n  cmat default type ball-ball model linearpbond property ...\n  cmat apply\n\nPFC 7.0+:\n  contact cmat default model linear\n  contact cmat default model linear method deformability emod 1.0e9 kratio 0.0\n  contact cmat default type ball-ball model linearpbond property ...\n  contact cmat apply"
+    },
+    {
+      "heading": "Ball Generation Commands",
+      "content": "PFC 5.0 ball generate uses 'number N box x1 x2 y1 y2 z1 z2' format. The range syntax for ball-related commands differs.\n\nPFC 5.0:\n  ball generate radius 1.0 1.4 number 30 box -5.0 5.0\n  ball distribute porosity 0.2 radius 1.0e-3 1.5e-3 box -0.025 0.025 -0.025 0.025 -0.04 0.04\n\nPFC 5.0 ball distribute sub-keywords use concatenated forms:\n  numbin N           (vs PFC 7.0+: number-bins N)\n  volumefraction f   (vs PFC 7.0+: volume-fraction f)\n  gauss              (same in both)\n\nPFC 5.0 ball distribute with multiple size fractions:\n  ball distribute porosity 0.15 radius 1e-3 1.8e-3 box ... numbin 4 bin 1 radius 1e-3 1.3e-3 volumefraction 0.25 bin 2 radius 1.3e-3 1.6e-3 volumefraction 0.5 bin 3 radius 1.6e-3 1.8e-3 volumefraction 0.25"
+    },
+    {
+      "heading": "Wall Servo Keywords",
+      "content": "PFC 5.0 uses concatenated parameter keywords in the wall servo command. PFC 7.0+ uses hyphenated keywords.\n\nPFC 5.0:\n  wall servo gainfactor 0.8 gainupdate 1 vmax 0.01\n  wall servo xforce 1000.0 activate on range name 'top'\n\nPFC 7.0+:\n  wall servo gain-factor 0.8 gain-update 1 velocity-max 0.01\n  wall servo force-x 1000.0 activate on range name 'top'\n\nKeyword mapping:\n  gainfactor  -> gain-factor\n  gainupdate  -> gain-update\n  vmax        -> velocity-max\n  xforce      -> force-x\n  yforce      -> force-y\n  zforce      -> force-z"
+    },
+    {
+      "heading": "Wall History Keywords",
+      "content": "PFC 5.0 uses a different word order for wall history commands. PFC 7.0+ places the type keyword first.\n\nPFC 5.0:\n  history wall xcontactforce id 1\n  history wall ydisplacement id 2\n  history wall zcontactforce id 3\n\nPFC 7.0+:\n  wall history force-contact-x id 1\n  wall history displacement-y id 2\n  wall history force-contact-z id 3\n\nMapping:\n  wall xcontactforce  -> wall.force.contact(wp, 1)  (or 'force-contact-x')\n  wall ycontactforce  -> wall.force.contact(wp, 2)  (or 'force-contact-y')\n  wall zcontactforce  -> wall.force.contact(wp, 3)  (or 'force-contact-z')\n  wall xdisplacement  -> wall.disp(wp, 1)           (or 'displacement-x')\n  wall ydisplacement  -> wall.disp(wp, 2)           (or 'displacement-y')\n  wall zdisplacement  -> wall.disp(wp, 3)           (or 'displacement-z')"
+    },
+    {
+      "heading": "FISH Variable Interpolation",
+      "content": "PFC 5.0 uses the '@' prefix for FISH variable interpolation inside commands. PFC 7.0+ uses square brackets '[...]'.\n\nPFC 5.0:\n  command\n    wall attribute xvelocity @servo_vel range id 3\n  end_command\n\nPFC 7.0+:\n  command\n    wall attribute velocity-x [servo_vel] range id 3\n  end_command\n\nNote: In PFC 5.0, when referencing FISH variables inside FISH (not in command blocks), the '@' prefix is NOT used. Variables are referenced directly:\n  local x = ball.pos(bp, 1)   -- no @ prefix needed in FISH\n  @x is only needed when interpolating FISH variables into command strings"
+    },
+    {
+      "heading": "Range Group Syntax",
+      "content": "PFC 5.0 uses 'range set name' to reference groups by name. PFC 7.0+ uses the 'range group' keyword directly.\n\nPFC 5.0:\n  range set name 'groupname'\n  ball attribute damp 0.7 range set name 'sample'\n\nPFC 7.0+:\n  range group 'groupname'\n  ball attribute damp 0.7 range group 'sample'\n\nIn PFC 5.0, groups are created differently:\n  range set name 'groupname'\n  ... (implicitly)/or\n  ball property density 2600 range set name 'sample' (creates and assigns in one step)\n\nIn PFC 7.0+, groups are explicit:\n  ball group 'sample' range ...\n  ball attribute density 2600 range group 'sample'"
+    },
+    {
+      "heading": "Domain Condition Syntax",
+      "content": "PFC 5.0 uses 'condition stop/destroy' as a sub-keyword of the domain command. PFC 7.0+ uses 'condition ...' as a separate keyword chain.\n\nPFC 5.0:\n  domain extent -10.0 10.0 condition stop\n  domain extent -10.0 10.0 condition destroy\n\nPFC 7.0+:\n  domain extent -10.0 10.0 condition stop\n  domain extent -10.0 10.0 condition destroy\n\n(The syntax for this particular command is similar between versions, but the available condition types may differ. PFC 5.0 supports 'stop' and 'destroy'; PFC 7.0+ adds additional condition types like 'reflect'.)"
+    },
+    {
+      "heading": "Summary of Key Differences",
+      "content": "| Aspect               | PFC 5.0                     | PFC 7.0+                       |\n|----------------------|-----------------------------|--------------------------------|\n| Coordinate keywords  | x, y, z                     | position-x, position-y, pos-z  |\n| Velocity keywords    | xvelocity, yvelocity, zvel  | velocity-x, velocity-y, vel-z  |\n| CMAT command         | cmat default ...            | contact cmat default ...       |\n| Ball generate range  | box x1 x2 y1 y2 [z]         | box x1 x2 [position-...]       |\n| ball distribute bins | numbin, volumefraction      | number-bins, volume-fraction   |\n| Wall servo           | gainfactor, gainupdate,vmax | gain-factor, gain-update,vel-max|\n| Wall history         | history wall xcontactforce  | wall history force-contact-x   |\n| FISH interpolation   | @var                        | [var]                          |\n| Range group          | range set name 'g'          | range group 'g'                |\n| Domain condition     | condition stop/destroy      | condition stop/destroy/reflect |"
+    }
+  ]
+}

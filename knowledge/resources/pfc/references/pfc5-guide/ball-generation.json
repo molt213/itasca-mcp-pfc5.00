@@ -1,0 +1,30 @@
+{
+  "full_name": "Ball Generation in PFC 5.0",
+  "description": "Generating particles (balls) in PFC 5.0 using ball generate and ball distribute commands. Covers syntax, porosity-based generation, size distributions, and practical examples.",
+  "sections": [
+    {
+      "heading": "ball generate — No-Overlap Generation",
+      "content": "Generates balls with no initial overlap. More computationally expensive for dense packings, but starts from a valid mechanical state.\n\nSyntax:\n  ball generate radius r1 r2 number N box x1 x2 [y1 y2] [z1 z2] [tries T]\n\n  radius r1 r2   — min and max radius (uniform random distribution between these values)\n  number N       — target number of balls to generate\n  box x1 x2 ...  — bounding box for generation\n  tries T        — max placement attempts per ball (default 50000); higher values help denser packings\n\nThe generator randomly attempts to place non-overlapping balls within the box. If tries are exhausted before placing N balls (due to dense packing), fewer balls are generated. The user should check the actual number placed.\n\nExample:\n  ball generate radius 1.0 1.4 box -5.0 5.0 number 30\n\nFor 2D simulations (PFC 2D), omit the z-range:\n  ball generate radius 0.5 0.8 box -10.0 10.0 -10.0 10.0 number 100 tries 100000"
+    },
+    {
+      "heading": "ball distribute — Porosity-Based Generation",
+      "content": "Generates balls to achieve a target porosity within a box. Balls may initially overlap; overlapping contacts are resolved during cycling.\n\nSyntax:\n  ball distribute porosity P radius r1 r2 box x1 x2 y1 y2 z1 z2\n\n  porosity P      — target porosity (0.0-1.0). Porosity = 1 - (ball volume / box volume)\n  radius r1 r2    — min and max radius range\n  box x1 x2 ...   — bounding box\n\nThis is the preferred method for creating dense granular packings. The generator calculates how many balls of the given radius distribution are needed to fill the box volume at the target porosity, then places them randomly (with possible overlap).\n\nExample:\n  ball distribute porosity 0.2 radius 1.0e-3 1.5e-3 box -0.025 0.025 -0.025 0.025 -0.04 0.04"
+    },
+    {
+      "heading": "ball distribute — Multiple Size Fractions",
+      "content": "Use multiple size bins to create a graded particle size distribution (PSD).\n\nSyntax:\n  ball distribute porosity P radius r1 r2 box ... numbin N bin i radius r1i r2i volumefraction fi ...\n\n  numbin N                    — number of size fractions\n  bin i radius r1i r2i        — radius range for bin i\n  bin i ... volumefraction fi — volume fraction for bin i (must sum to 1.0)\n  gauss                       — optional: use Gaussian distribution within each bin (default is uniform)\n\nExample with 4 size fractions:\n  ball distribute porosity 0.15 radius 1e-3 1.8e-3 box -0.024 0.024 -0.049 0.049 -0.024 0.024 numbin 4 \\\n    bin 1 radius 1e-3 1.3e-3 volumefraction 0.25 \\\n    bin 2 radius 1.3e-3 1.6e-3 volumefraction 0.50 \\\n    bin 3 radius 1.6e-3 1.8e-3 volumefraction 0.25\n\nNote: In PFC 5.0, the keywords are 'numbin' (not 'number-bins') and 'volumefraction' (not 'volume-fraction'). PFC 7.0+ uses the hyphenated forms."
+    },
+    {
+      "heading": "ball distribute with Gaussian Distribution",
+      "content": "Add the 'gauss' keyword to use a Gaussian (normal) distribution instead of uniform within radius bounds.\n\nSyntax:\n  ball distribute porosity P radius r1 r2 box ... numbin N gauss bin 1 radius ...\n\nWith 'gauss', the mean radius is (r1 + r2)/2 and the standard deviation is (r2 - r1)/4, meaning approximately 95% of balls fall within the specified radius range.\n\nExample:\n  ball distribute porosity 0.2 radius 2e-4 6e-4 box ... numbin 3 gauss \\\n    bin 1 radius 2e-4 3e-4 volumefraction 0.2 \\\n    bin 2 radius 3e-4 5e-4 volumefraction 0.6 \\\n    bin 3 radius 5e-4 6e-4 volumefraction 0.2"
+    },
+    {
+      "heading": "Post-Generation Commands",
+      "content": "After distributing or generating balls, common follow-up commands:\n\nSet ball attributes:\n  ball attribute density D    — set density (used for mass calculation)\n  ball attribute damp d       — set local damping coefficient (default ~0.7)\n\nSet initial conditions:\n  ball attribute xvelocity 0  — zero initial velocities\n  ball attribute spin 0       — zero initial spin\n\nCycle to equilibrium:\n  cycle 1000 calm 50          — cycle 1000 steps, calm every 50 steps\n  solve aratio 1e-4           — solve to average ratio (max unbalanced / avg contact force) < 1e-4\n\nApply gravity:\n  set gravity 0 0 -9.81       — apply gravitational acceleration (z-direction)\n\nNote: The 'calm' keyword in the cycle command zeros ball velocities every N steps, which helps dissipate kinetic energy during initial packing."
+    },
+    {
+      "heading": "Practical Notes",
+      "content": "- Prior to ball generation, set the random seed with 'set random N' for reproducibility.\n- 'ball generate' is recommended for sparse packings (low particle count or large box).\n- 'ball distribute' is better for dense packings (e.g., soil/rock samples with porosity 0.1-0.4).\n- After 'ball distribute', cycle with 'calm' to dissipate energy from overlapping contacts.\n- The domain extent must be set large enough to contain the generation box, or balls may be deleted at the domain boundary. Use 'domain extent ... condition destroy' to delete escapees.\n- The 'set random' seed affects both 'ball generate' and 'ball distribute' (and also 'wall generate'). Different seeds produce different packings.\n- In PFC 5.0, 'ball generate' and 'ball distribute' are separate commands. In PFC 7.0+, they have been unified under a single command with sub-options."
+    }
+  ]
+}

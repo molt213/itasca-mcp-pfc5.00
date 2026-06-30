@@ -1,0 +1,38 @@
+{
+  "full_name": "Stress and Strain Measurement in PFC 5.0",
+  "description": "Measuring stress, strain, and porosity in PFC 5.0 simulations using measurement spheres and FISH functions. Essential for extracting continuum-like quantities from discrete particle assemblies.",
+  "sections": [
+    {
+      "heading": "Measurement Spheres — Overview",
+      "content": "Measurement spheres compute averaged continuum quantities (stress tensor, porosity, coordination number) over a spherical region containing many particles.\n\nCreating a measurement sphere:\n  measure create id N radius R x X y Y z Z\n\n  id N       — unique identifier for this measurement sphere\n  radius R   — radius of the spherical measurement region\n  x X y Y z Z — center coordinates\n\nExample:\n  measure create id 1 radius 0.03 x 0 y 0 z 0\n\nAfter creation, quantities are updated automatically each cycle. Access them via history or FISH."
+    },
+    {
+      "heading": "Stress from Measurement Spheres",
+      "content": "The measurement sphere computes the average stress tensor over all particles intersecting the sphere.\n\nAccess via FISH:\n  meas.stress(mp, i, j)   — stress tensor component i,j\n\n  mp          — measurement sphere pointer (from measure.find(id))\n  i, j        — tensor indices: 1=x, 2=y, 3=z\n\nCommon components:\n  meas.stress(mp, 1, 1)  — sigma_xx (normal stress in x)\n  meas.stress(mp, 2, 2)  — sigma_yy (normal stress in y)\n  meas.stress(mp, 3, 3)  — sigma_zz (normal stress in z)\n  meas.stress(mp, 1, 2)  — tau_xy  (shear stress)\n\nAccess via history:\n  history id N measure stressxx id M\n  history id N measure stressyy id M\n  history id N measure stresszz id M\n\n  id N  — history ID\n  id M  — measurement sphere ID\n\nExample:\n  measure create id 1 radius 0.03 x 0 y 0 z 0\n  history id 1 measure stresszz id 1"
+    },
+    {
+      "heading": "Porosity from Measurement Spheres",
+      "content": "Access porosity (void ratio) from a measurement sphere.\n\nFISH:\n  measure.porosity(mp)   — returns porosity (0 = solid, 1 = void)\n\nHistory:\n  history id N measure porosity id M\n\nExample:\n  local mp = measure.find(1)\n  local poro = measure.porosity(mp)\n  io.out('Current porosity: ' + poro)\n\nNote: Porosity is computed as the void volume fraction within the measurement sphere. Only particles whose centers lie within the sphere are included. For accurate porosity near boundaries, place measurement spheres away from walls."
+    },
+    {
+      "heading": "Wall-Based Stress Measurement",
+      "content": "For boundary stress (e.g., stress on loading platens), measure contact force on walls:\n\nFISH:\n  wall.force.contact(wp, dir)  — total contact force on wall in direction dir\n\n  wp        — wall pointer (from wall.find(id))\n  dir       — 1=x, 2=y, 3=z\n\nCompute stress from force:\n  local wp = wall.find(6)  ; top platen\n  local force = wall.force.contact(wp, 3)  ; force in z-direction\n  stress = force / area\n\nWhere 'area' is the cross-sectional area of the sample contacting the wall.\n\nExample function:\n  define axial_stress\n    local wp_top = wall.find(6)\n    local wp_bot = wall.find(5)\n    local force_top = wall.force.contact(wp_top, 3)\n    local force_bot = wall.force.contact(wp_bot, 3)\n    local avg_force = (force_top + force_bot) / 2.0\n    axial_stress = avg_force / cross_area\n  end"
+    },
+    {
+      "heading": "Wall-Based Strain Measurement",
+      "content": "Compute axial strain from wall displacement:\n\nFISH:\n  wall.disp(wp, dir)  — cumulative displacement of wall in direction dir\n\nStrain = change_in_length / original_length\n  For compression: strain = -wall.disp(wp, dir) / initial_height\n\nExample:\n  local disp = wall.disp(wp_top, 3) - wall.disp(wp_bot, 3)\n  local strain = disp / initial_height  ; positive = extension\n\nOr track relative to initial position:\n  local wp = wall.find(6)\n  local initial_z = initial_wall_pos\n  local current_z = wall.pos(wp, 3)\n  local strain = (initial_z - current_z) / initial_height\n\nExample function:\n  define axial_strain\n    axial_strain = -wall.disp(wall_top, 3) / sample_height\n  end"
+    },
+    {
+      "heading": "Cross-Sectional Area from Ball Extents",
+      "content": "For accurate stress in deforming samples, compute cross-sectional area dynamically from ball positions:\n\n  define update_area\n    local xmin = 1e12; local xmax = -1e12\n    local ymin = 1e12; local ymax = -1e12\n    loop foreach bp ball.list\n      local r = ball.radius(bp)\n      xmin = math.min(xmin, ball.pos.x(bp) - r)\n      xmax = math.max(xmax, ball.pos.x(bp) + r)\n      ymin = math.min(ymin, ball.pos.y(bp) - r)\n      ymax = math.max(ymax, ball.pos.y(bp) + r)\n    end_loop\n    local dx = xmax - xmin\n    local dy = ymax - ymin\n    if global.dim = 2 then\n      cross_area = dx  ; unit thickness in 2D\n    else\n      cross_area = math.pi * 0.25 * dx * dy  ; elliptical approximation\n      ; or: cross_area = dx * dy  ; rectangular approximation\n    end_if\n  end\n\nThe computed area is used in wall-based stress calculation:\n  stress = force / cross_area"
+    },
+    {
+      "heading": "Gage-Ball Strain Measurement",
+      "content": "Use gage balls (tracked balls) to measure strain locally, similar to physical strain gages.\n\nPattern:\n  1. Place marker balls at reference positions (top and bottom of sample)\n  2. Use ball.near(pos) to find them\n  3. Track ball.disp(bp, dir) over time\n  4. Compute strain from relative displacement\n\nExample:\n  local top_bp = ball.near(0, 0, 0.039)\n  local bot_bp = ball.near(0, 0, -0.039)\n  local top_disp = ball.disp(top_bp, 3)\n  local bot_disp = ball.disp(bot_bp, 3)\n  local rel_disp = top_disp - bot_disp\n  local height = 0.078  ; initial gage length\n  axial_strain = -rel_disp / height\n\nNote: Gage balls provide local strain, which may differ from wall-based (boundary) strain in heterogeneous samples. Both methods are complementary."
+    },
+    {
+      "heading": "Practical Notes",
+      "content": "- Create measurement spheres BEFORE cycling to ensure they track from the start.\n- Measurement sphere radius should be large enough to contain at least 20-30 particles for statistically meaningful averages.\n- Place measurement spheres at the sample center, away from walls, to avoid boundary effects.\n- Wall-based stress is the most reliable for boundary stress (what the platens feel).\n- Measurement sphere stress gives the internal average stress, which may differ from boundary stress during dynamic events.\n- For strain, wall-based is simple but includes boundary effects. Gage-ball strain is local. Use both for comparison.\n- Update cross-sectional area dynamically in a while_stepping function if the sample deforms significantly (e.g., >5% strain).\n- In FISH, direction indices are always: 1=x, 2=y, 3=z, regardless of dimension (2D or 3D)."
+    }
+  ]
+}

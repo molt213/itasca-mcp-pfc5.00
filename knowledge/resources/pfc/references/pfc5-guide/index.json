@@ -1,0 +1,13 @@
+{
+  "topics": [
+    {"name": "syntax-overview", "title": "PFC 5.0 Syntax Overview", "file": "syntax-overview.json", "short_description": "Key syntax differences between PFC 5.0 and PFC 7.0+"},
+    {"name": "wall-creation", "title": "Wall Creation", "file": "wall-creation.json", "short_description": "Creating walls in PFC 5.0 using wall generate plane and wall create vertices"},
+    {"name": "ball-generation", "title": "Ball Generation", "file": "ball-generation.json", "short_description": "Generating particles with ball generate and ball distribute"},
+    {"name": "contact-model", "title": "Contact Model Setup", "file": "contact-model.json", "short_description": "Setting contact models with cmat, contact model, and contact property"},
+    {"name": "servo-control", "title": "Servo Control", "file": "servo-control.json", "short_description": "Stress-controlled boundary conditions with wall servo and FISH while_stepping"},
+    {"name": "measurement", "title": "Stress/Strain Measurement", "file": "measurement.json", "short_description": "Measuring stress, strain, and porosity with measurement spheres and FISH"},
+    {"name": "history-recording", "title": "History Recording", "file": "history-recording.json", "short_description": "Recording simulation data with history commands"},
+    {"name": "workflow-biaxial", "title": "Biaxial Test Workflow", "file": "workflow-biaxial.json", "short_description": "Complete biaxial compression test workflow for PFC 5.0"},
+    {"name": "fish-functions", "title": "Key FISH Functions", "file": "fish-functions.json", "short_description": "Important FISH intrinsic functions for PFC 5.0 scripting"}
+  ]
+}
