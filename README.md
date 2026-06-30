@@ -213,7 +213,7 @@ xcopy /E /I knowledge "C:\Users\%USERNAME%\AppData\Roaming\uv\tools\itasca-mcp\L
 
 打开 PFC 5.0 GUI，在 Python 控制台中执行：
 
-**方式一：使用 addon.py（推荐）**
+**方式一：使用 addon.py**
 ```
 1. 打开 scripts/addon.py
 2. 全选复制所有内容
@@ -238,7 +238,7 @@ Bridge started in blocking mode (console). Press Ctrl+C to stop.
 > ⚠️ PFC 5.0 没有 Qt 绑定，Bridge 会在 blocking mode 下运行。
 > 这不会影响使用，HTTP 服务运行在独立线程中。
 
-**方式二：手动启动**
+**方式二：手动启动（推荐）**
 ```python
 import itasca_mcp_bridge
 itasca_mcp_bridge.start(port=9001, auto_upgrade=False)
