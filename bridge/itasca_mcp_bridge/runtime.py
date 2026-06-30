@@ -17,10 +17,11 @@ VALID_RUNTIME_MODES = ("auto", "gui", "console")
 
 
 # Qt binding shipped with the host product varies by version:
-#   PFC 6/7 and early PFC 9 -> PySide2 (Qt5)
-#   PFC 9.7+                 -> PySide6 (Qt6)
+#   PFC 5.0              -> PySide 1.x (Qt4)
+#   PFC 6/7 / early 9    -> PySide2 (Qt5)
+#   PFC 9.7+             -> PySide6 (Qt6)
 # Probe newest first so the same bridge build works across all of them.
-_QT_BINDINGS = ("PySide6", "PySide2")
+_QT_BINDINGS = ("PySide", "PySide6", "PySide2")
 
 
 def _import_qtcore(logger=None):
