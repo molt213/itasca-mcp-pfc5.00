@@ -1,0 +1,54 @@
+{
+  "full_name": "PFC 5.0 Common Syntax Pitfalls (实战验证)",
+  "description": "Real-world PFC5 syntax errors found and fixed during conjugate shear fracture experiment development. VERIFIED against PFC 5.0 help docs and live on pfc3d500_gui_64.exe.",
+  "sections": [
+    {
+      "heading": "Top-level variable assignment: use [var = value]",
+      "content": "PFC 5.0 command-line DOES NOT accept plain 'var = value' or 'global var = value'.\n\nPFC 5.0 (CORRECT):\n  [sx0 = 0.050]\n  [fj_emod = 20.0e9]\n  [poro_target = 0.20]\n\nPFC 5.0 (WRONG — will error with 'Bad conversion of parameter number 1'):\n  sx0 = 0.050                    ; ERROR: not a command keyword\n  global sx0 = 0.050              ; ERROR: global only valid inside define...end\n\nNote: Inside a FISH define...end block, 'global var = value' IS correct and required.\n  The [var = value] syntax evaluates a FISH expression inline at command level,\n  which creates/assigns the global variable."
+    },
+    {
+      "heading": "io.out() in command context: must wrap in [...]",
+      "content": "PFC 5.0 does not accept io.out() as a standalone command-line statement.\n\nPFC 5.0 (CORRECT):\n  [io.out('message')]\n  [io.out('Peak stress: ' + string(peak_axial_stress))]\n\nPFC 5.0 (WRONG):\n  io.out('message')              ; ERROR: Bad conversion of io.out\n\nThe [...] brackets evaluate the enclosed FISH expression at the command level.\nInside define...end blocks, io.out() is called directly without brackets."
+    },
+    {
+      "heading": "FISH function calls at command level: @func vs [func]",
+      "content": "PFC 5.0 supports both @func and [func] for calling FISH functions, with different behaviors.\n\n@func() — calls a FISH function and returns its value:\n  @setup_triaxial\n  @compute_gain(gain_safety)\n\n[func] — evaluates a FISH expression (also calls the function):\n  [setup_triaxial]\n  [compute_gain(0.5)]\n\nBoth work. Use @func for readability at command level.\n\nImportant: @func with no parens also calls the function (no-argument call).\n  @setup_wall        ; calls setup_wall()\n  @track_init         ; calls track_init()"
+    },
+    {
+      "heading": "ball group command syntax",
+      "content": "PFC 5.0's ball group command differs from intuitive syntax.\n\nPFC 5.0 (CORRECT):\n  ball group 'layer1' range z -0.100 -0.050\n  ball group 'test' slot 1 range z -0.100 0.000\n\nThe group name is a STRING argument following 'ball group'. Can be quoted or unquoted.\n\nPFC 5.0 (WRONG):\n  group layer1 range z -0.100 -0.050             ; ERROR: missing 'ball'\n  ball group layer1 range z -0.100 -0.050        ; might work without quotes\n\nNote: The help doc shows 'ball group <s> <<keyword ...>> <range>' where\n  <s> is the group name, keywords are: add | remove | slot."
+    },
+    {
+      "heading": "contact.type() returns STRING, not integer",
+      "content": "PFC 5.0 FISH function contact.type(cp) returns a STRING like 'ball-ball', 'ball-facet'.\n\nCORRECT:\n  if contact.type(ct) # 'ball-ball' then continue   ; skip non-ball-ball\n\nWRONG:\n  if contact.type(ct) # 3 then continue             ; string never equals integer 3\n\nNote: contact.type() returns: 'ball-ball', 'ball-facet', 'ball-pebble',\n  'pebble-facet', 'pebble-pebble'."
+    },
+    {
+      "heading": "Loop structures must be inside define...end",
+      "content": "PFC 5.0 command-line does NOT support 'loop while', 'loop foreach', or 'do while'.\n\nPFC 5.0 (CORRECT — wrap in a function):\n  define run_loop\n    local i = 1\n    loop while i <= 5\n      command\n        restore bonded_homo\n      end_command\n      [conf_pressure = conf_list(i)]\n      command\n        call run_triaxial.p3dat\n      end_command\n      i = i + 1\n    endloop\n  end\n  @run_loop\n\nNote: Inside define...end, use 'command...end_command' blocks to issue PFC commands.\n  The FISH 'command' block allows any PFC command-line syntax within."
+    },
+    {
+      "heading": "['name'] vs name in range group filters",
+      "content": "PFC 5.0 range filters accept group names with or without quotes.\n\nBoth work:\n  range contact type ball-ball group 'layer1'\n  range contact type ball-ball group layer1\n\nHowever, when the group name COULD be confused with a keyword, use quotes.\n  range group wallassembly          ; unquoted, fine for simple names\n  range group 'layer1'              ; quoted for clarity"
+    },
+    {
+      "heading": "set fishcall vs set fish callback",
+      "content": "PFC 5.0 supports two forms for registering cyclic callbacks:\n\n  set fishcall <time> @function     ; one-word form (used in fragmentation examples)\n  set fish callback <time> @function ; two-word form (documented in pfc5-guide)\n\nBoth are equivalent. Examples:\n  set fishcall 1.0 @servo_control\n  set fish callback 1.0 @servo_control"
+    },
+    {
+      "heading": "FISH variable interpolation: @var and [expr]",
+      "content": "PFC 5.0 command-line accepts both forms of variable interpolation:\n\n  @var       — reference a FISH variable by name (simpler)\n  [expr]     — evaluate any FISH expression (more powerful)\n\nExamples:\n  wall attribute zvelocity -[ax_vel] range id 1\n  save result_[conf_pressure]\n  set logfile triaxial_[conf_pressure].log\n\nThe [expr] form is needed for expressions (e.g., [sz0+0.003]).\nThe @var form works for simple variable references (@fj_emod).\n\nNote: Inside 'command...end_command' blocks within FISH functions, always use [expr]."
+    },
+    {
+      "heading": "Verified: Flat-Joint property pb_radius",
+      "content": "PFC 5.0 Flat-Joint model stores pb_radius as a contact property, accessible via:\n  contact.prop(ct, 'pb_radius')\n\nThis works for both linearpbond and flatjoint contact models. The fracture size\nused in the fragmentation fracture.p3fis uses contact.prop(ct,'pb_radius').\n\nVERIFIED: This property is available on flatjoint contacts."
+    },
+    {
+      "heading": "history add vs history id",
+      "content": "PFC 5.0 requires 'history add' syntax for creating histories.\n\nPFC 5.0 (CORRECT):\n  history add id 1 @axial_stress\n  history add id 2 @axial_strain\n  history add id 3 @crack_total\n\nPFC 5.0 (WRONG — 'id' is not a primary keyword without 'add'):\n  history id 1 @axial_stress\n\nTo write histories to file:\n  history write 1 2 3 file 'results.his'     ; space-separated IDs"
+    },
+    {
+      "heading": "Python API: ball.count(group_name) is valid",
+      "content": "In PFC 5.0 Python API, itasca.ball.count() with a group name argument returns\nball count in that group:\n\n  itasca.ball.count()                  ; total ball count\n  itasca.ball.count('layer1')          ; balls in group 'layer1'\n\nThere is NO itasca.ball.BallFilter in PFC 5.0's Python API.\n  itasca.ball.BallFilter.by_group()    ; AttributeError"
+    }
+  ]
+}

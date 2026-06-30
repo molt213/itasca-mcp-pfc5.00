@@ -8,6 +8,7 @@
     {"name": "measurement", "title": "Stress/Strain Measurement", "file": "measurement.json", "short_description": "Measuring stress, strain, and porosity with measurement spheres and FISH"},
     {"name": "history-recording", "title": "History Recording", "file": "history-recording.json", "short_description": "Recording simulation data with history commands"},
     {"name": "workflow-biaxial", "title": "Biaxial Test Workflow", "file": "workflow-biaxial.json", "short_description": "Complete biaxial compression test workflow for PFC 5.0"},
-    {"name": "fish-functions", "title": "Key FISH Functions", "file": "fish-functions.json", "short_description": "Important FISH intrinsic functions for PFC 5.0 scripting"}
+    {"name": "fish-functions", "title": "Key FISH Functions", "file": "fish-functions.json", "short_description": "Important FISH intrinsic functions for PFC 5.0 scripting"},
+    {"name": "common-pitfalls", "title": "Common Syntax Pitfalls", "file": "common-pitfalls.json", "short_description": "Real-world PFC 5.0 syntax errors and fixes, verified against pfc3d500_gui_64.exe"}
   ]
 }
