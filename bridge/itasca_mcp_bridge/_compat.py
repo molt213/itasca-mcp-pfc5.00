@@ -77,6 +77,7 @@ class Future(object):
         self._state = self._STATE_PENDING
         self._result = None
         self._exception = None
+        self._done_callbacks = []
     
     def done(self):
         with self._condition:
@@ -121,20 +122,37 @@ class Future(object):
             self._result = result
             self._state = self._STATE_FINISHED
             self._condition.notify_all()
-    
+            self._call_done_callbacks()
+
     def set_exception(self, exception):
         with self._condition:
             self._exception = exception
             self._state = self._STATE_FINISHED
             self._condition.notify_all()
-    
+            self._call_done_callbacks()
+
     def cancel(self):
         with self._condition:
             if self._state == self._STATE_PENDING:
                 self._state = self._STATE_CANCELLED
                 self._condition.notify_all()
+                self._call_done_callbacks()
                 return True
             return False
+
+    def add_done_callback(self, fn):
+        with self._condition:
+            if self._state in (self._STATE_FINISHED, self._STATE_CANCELLED):
+                fn(self)
+                return
+            self._done_callbacks.append(fn)
+
+    def _call_done_callbacks(self):
+        for cb in self._done_callbacks:
+            try:
+                cb(self)
+            except Exception:
+                pass
 
 # =============================================================================
 # TimeoutError - Python 3 builtin, not in Python 2
