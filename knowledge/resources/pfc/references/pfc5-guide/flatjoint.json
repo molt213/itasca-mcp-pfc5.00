@@ -1,0 +1,46 @@
+{
+  "full_name": "PFC 5.0 Flat-Joint Contact Model Reference (from pfc5help)",
+  "description": "Complete Flat-Joint model syntax, properties, methods, and callback events for PFC 5.0, extracted from pfc5help/common/contactmodel/flatjoint/doc/manual/cmflatjoint.html",
+  "sections": [
+    {
+      "heading": "Overview",
+      "content": "The flat-joint model (flatjoint) simulates the behavior of an interface between two notional surfaces, each connected rigidly to a piece. The interface is discretized into elements, each being either bonded or unbonded. Bonded elements are linear elastic until strength is exceeded; unbonded elements are linear elastic and frictional with Coulomb slip limit. The model can be installed at both ball-ball and ball-facet contacts.\n\nBetter UCS/TS ratio (~10-20) than linearpbond (~5), suitable for bonded-particle rock models."
+    },
+    {
+      "heading": "Installation Commands",
+      "content": "Install on all existing contacts:\n  contact model flatjoint\n  contact property fj_track on\n\nBond ball-ball contacts within gap distance:\n  contact method bond gap <f> range contact type ball-ball\n  Example: contact method bond gap 2.0e-4 range contact type ball-ball\n\nSet stiffness via deformability method:\n  contact method deform emod <E> krat <R>\n  Note: actual example rocktest/flat_joint.p3dat uses 'krat' (short form).\n  The keyword in the method table is 'kratio'; both forms work.\n\nSet default for future contacts via CMAT:\n  cmat default model flatjoint ...\n      property fj_track on ...\n      method deform emod <E> krat <R> ...\n      type ball-ball"
+    },
+    {
+      "heading": "Properties (Modifiable)",
+      "content": "fj_ten    FLT  [0,∞)  default=0.0  -- Tensile strength [stress]\nfj_coh    FLT  [0,∞)  default=0.0  -- Cohesion [stress]\nfj_fa     FLT  [0,90) default=0.0  -- Friction angle [degrees]\nfj_fric   FLT  [0,∞)  default=0.0  -- Friction coefficient\nfj_kn     FLT  [0,∞)  default=0.0  -- Normal stiffness [stress/disp.]\nfj_ks     FLT  [0,∞)  default=0.0  -- Shear stiffness [stress/disp.]\nfj_track  BOOL {true,false} default=false -- Tracking state for contact plotting\nfj_elem   INT  [1,total] default=1 -- Element index for element-based data access"
+    },
+    {
+      "heading": "Properties (Read-only / Install-time)",
+      "content": "fj_nr     INT  [1,∞)  default=2  -- Elements in radial dir. (total in 2D)\nfj_nal    INT  [3,∞)  default=4  -- Elements in circumferential dir. (3D only)\nfj_rmul   FLT  (0,∞)  default=1.0 -- Radius multiplier\nfj_gap0   FLT  [0,∞)  default=0.0 -- Initial surface gap\nfj_emod   FLT  [0,∞)  default=0.0 -- Effective modulus (set via method, then read-only)\nfj_kratio FLT  [0,∞)  default=0.0 -- Normal-to-shear stiffness ratio (set via method, then read-only)\nfj_radius FLT  read-only -- Flat-joint radius (set via fj_rmul * R)\nfj_gap    FLT  read-only -- Surface gap\nfj_slip   BOOL read-only -- Slip state of element\nfj_state  INT  {0,1,2,3} -- Bond state: 0=unbonded, 1=...(see note)\nfj_force  VEC  read-only -- Interface force\nfj_moment VEC  read-only -- Interface moment\nfj_mtype  INT  {1,2,3,4} -- Initial microstructural type (install-time, read-only)\n\nNOTE: fj_nr, fj_nal, fj_rmul, fj_gap0, fj_mtype are set at first cycle after\ninstallation and CANNOT be modified afterwards."
+    },
+    {
+      "heading": "Methods",
+      "content": "1. deformability -- Set stiffness via effective modulus and kratio:\n     contact method deform emod <E> kratio <R>\n     Sets: kn = E / (R1+R2)  and  ks = kn / kratio\n\n2. bond -- Bond element(s):\n     contact method bond                    -- Bond all elements (if overlap)\n     contact method bond element <i>        -- Bond specific element\n     contact method bond gap <f1> [<f2>]    -- Bond if gap within interval\n     Example: contact method bond gap 2.0e-4 range contact type ball-ball\n\n3. unbond -- Unbond element(s):\n     contact method unbond\n     contact method unbond element <i>\n     contact method unbond gap <f1> [<f2>]\n\nNote: The method command is issued via the generic 'contact method' syntax:\n  contact method bond|deform|unbond ..."
+    },
+    {
+      "heading": "Callback Events",
+      "content": "bond_break -- Triggered when a bonded element fails (tension or shear):\n    entries(1) = C_PNT  -- Contact address (contact pointer)\n    entries(2) = INT    -- Element number (e)\n    entries(3) = INT    -- Break mode: 1=tension, 2=shear\n\nslip_change -- Triggered when slip state of element changes:\n    entries(1) = C_PNT  -- Contact address\n    entries(2) = INT    -- Element number (e)\n    entries(3) = INT    -- Slip change mode: {0,1}\n\nRegistration (PFC5):\n  set fishcall bond_break @your_callback_function"
+    },
+    {
+      "heading": "Energy Partitions",
+      "content": "estrain -- Strain energy stored in springs (NOT accumulated)\neslip   -- Total energy dissipated by frictional slip (accumulated)\n\nAccessible via: contact.prop(cp, 'estrain') and contact.prop(cp, 'eslip')"
+    },
+    {
+      "heading": "Bond State (fj_state) Values",
+      "content": "0 = Unbonded (element is not bonded)\n1 = Bonded (element is intact)\n2 = Bond broken in tension\n3 = Bond broken in shear"
+    },
+    {
+      "heading": "Full Working Example (from rocktest/flat_joint.p3dat)",
+      "content": "; Complete Flat-Joint installation workflow for PFC 5.0:\nrestore unbonded\n\ncontact model flatjoint\ncontact property fj_track on\n\n; bond ball-ball contacts\ncontact method bond gap 2.0e-4 range contact type ball-ball\n\n; set stiffness using deformability method\ncontact method deform emod 1.0e9 krat 1.0\n\n; set bond strengths\ncontact property fj_ten 10.0e6 fj_coh 50.0e6 fj_fa 0.0\n\n; set ball-ball friction to non-zero value\ncontact property fj_fric 0.577 range contact type ball-ball\n\n; Set new ball-ball contacts to be flatjoint (unbonded)\ncmat default model flatjoint ...\n    property fj_track on ...\n    method deform emod 1.0e9 krat 1.0 ...\n    type ball-ball\n\n; Reset system\nball attribute displacement multiply 0.0\ncontact property lin_force 0.0 0.0 0.0 lin_mode 1\nball attribute contactforce multiply 0.0 contactmoment multiply 0.0\ncycle 1\nsolve aratio 1e-5\n\nsave flatjoint"
+    },
+    {
+      "heading": "PFC5-Specific Notes",
+      "content": "1. 'contact method' is the PFC5 command to invoke contact model methods.\n   In PFC7+, the syntax changed to 'contact method' too (mostly compatible).\n\n2. The deformability method keyword is 'kratio' in the official docs, but\n   'krat' also works (verified in rocktest/flat_joint.p3dat).\n   Both:  method deform emod 20e9 kratio 2.5\n          method deform emod 20e9 krat 2.5\n\n3. 'range contact type ball-ball' is REQUIRED on bond command to avoid\n   attempting to bond ball-wall contacts.\n\n4. 'fj_track on' enables contact tracking state for plotting - required\n   for proper DFN fracture creation visualization.\n\n5. Properties marked 'NO[1]' (fj_nr, fj_nal, fj_rmul, fj_gap0) are frozen\n   after the first cycle following installation. Set them before cycling.\n\n6. After restoring a saved bonded state, the flatjoint model properties\n   are preserved (fj_ten, fj_coh, etc. remain as set)."
+    }
+  ]
+}

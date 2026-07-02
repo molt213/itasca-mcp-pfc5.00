@@ -43,8 +43,8 @@
       "content": "PFC 5.0 Flat-Joint model stores pb_radius as a contact property, accessible via:\n  contact.prop(ct, 'pb_radius')\n\nThis works for both linearpbond and flatjoint contact models. The fracture size\nused in the fragmentation fracture.p3fis uses contact.prop(ct,'pb_radius').\n\nVERIFIED: This property is available on flatjoint contacts."
     },
     {
-      "heading": "history add vs history id",
-      "content": "PFC 5.0 requires 'history add' syntax for creating histories.\n\nPFC 5.0 (CORRECT):\n  history add id 1 @axial_stress\n  history add id 2 @axial_strain\n  history add id 3 @crack_total\n\nPFC 5.0 (WRONG — 'id' is not a primary keyword without 'add'):\n  history id 1 @axial_stress\n\nTo write histories to file:\n  history write 1 2 3 file 'results.his'     ; space-separated IDs"
+      "heading": "history 语法：id N @func 和 add 两种形式都有效",
+      "content": "PFC 5.0 支持两种创建 history 的语法（已验证于 rocktest 示例）：\n\n简写形式（推荐，rocktest 使用）：\n  history id 1 @axial_stress\n  history id 2 @axial_strain\n  history id 3 @crack_total\n\n完整形式（与文档语法表一致）：\n  history add id 1 fish @axial_stress\n  history add id 2 fish @axial_strain\n\n内置关键字使用 mechanical age（不要用 mech age 缩写）：\n  history id 1 mechanical age          ; 正确\n  history id 1 mech age                ; 可能出错，不推荐\n\n导出 history 到文件：\n  history write 1 2 3 file 'results.his'     ; 空格分隔的 ID，不需要 id 关键字"
     },
     {
       "heading": "Python API: ball.count(group_name) is valid",

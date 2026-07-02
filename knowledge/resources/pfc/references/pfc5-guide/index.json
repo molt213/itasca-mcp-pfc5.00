@@ -4,6 +4,8 @@
     {"name": "wall-creation", "title": "Wall Creation", "file": "wall-creation.json", "short_description": "Creating walls in PFC 5.0 using wall generate plane and wall create vertices"},
     {"name": "ball-generation", "title": "Ball Generation", "file": "ball-generation.json", "short_description": "Generating particles with ball generate and ball distribute"},
     {"name": "contact-model", "title": "Contact Model Setup", "file": "contact-model.json", "short_description": "Setting contact models with cmat, contact model, and contact property"},
+    {"name": "pfc5-contact-models", "title": "PFC5 Contact Models Complete Reference", "file": "pfc5-contact-models.json", "short_description": "All 12 PFC5 contact models with PFC5-specific syntax, plus 8 PFC7+ only models listed"},
+    {"name": "flatjoint", "title": "Flat-Joint Model Reference", "file": "flatjoint.json", "short_description": "Complete Flat-Joint model syntax, properties, methods, and callback events for PFC 5.0, extracted from pfc5help"},
     {"name": "servo-control", "title": "Servo Control", "file": "servo-control.json", "short_description": "Stress-controlled boundary conditions with wall servo and FISH while_stepping"},
     {"name": "measurement", "title": "Stress/Strain Measurement", "file": "measurement.json", "short_description": "Measuring stress, strain, and porosity with measurement spheres and FISH"},
     {"name": "history-recording", "title": "History Recording", "file": "history-recording.json", "short_description": "Recording simulation data with history commands"},
