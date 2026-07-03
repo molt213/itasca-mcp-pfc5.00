@@ -1,43 +1,37 @@
 # Changelog
 
-## v0.4.2 (2026-06-29)
+## v0.4.2-pfc5 (2026-07-03)
 
-PFC 5.0 兼容版本，基于 itasca-mcp-bridge v0.4.1 上游。
-新增 PFC 5.0 命令知识库（pfchelp.chm 提取，131 条命令）。
-修复 Bridge 在 PFC 5.0 上 Python 2.7 的兼容性问题。
-
-### 新增
-- `_compat.py`: Python 2/3 兼容层，涵盖 `threading.get_ident`、`Future`、`TimeoutError`、
-  `Queue/queue`、HTTP server、`urlopen`、`importlib.invalidate_caches`、`makedirs` 等
-- `scripts/addon.py`: PFC 5.0 一键启动引导脚本（自动跳过 PyPI 升级）
-- `scripts/run_itasca_mcp.py`: MCP Server 包装脚本（设置 `NO_PROXY` 环境变量）
-- `knowledge/`: PFC 5.0 命令知识库，131 条命令，12 个分类
+PFC 5.0 完整知识库版本，基于 itasca-mcp-bridge v0.4.2。
+新增 PFC 5.0 实战参考指南（pfc5-guide）和完整接触模型参考。
+修复 PFC 5.0 命令式语法在 knowledge 和 bridge 中的多个兼容性问题。
 
 ### 新增
-- `_compat.py`: Python 2/3 兼容层，涵盖 `threading.get_ident`、`Future`、`TimeoutError`、
-  `Queue/queue`、HTTP server、`urlopen`、`importlib.invalidate_caches`、`makedirs` 等
-- `scripts/addon.py`: PFC 5.0 一键启动引导脚本（自动跳过 PyPI 升级）
-- `scripts/run_itasca_mcp.py`: MCP Server 包装脚本（设置 `NO_PROXY` 环境变量）
+- `knowledge/resources/pfc/references/pfc5-guide/`: 12 个参考指南文件
+  - `syntax-overview.json` — PFC 5.0 vs 7.0+ 语法差异总览
+  - `wall-creation.json` — 墙创建命令参考
+  - `ball-generation.json` — 颗粒生成命令参考
+  - `contact-model.json` — 接触模型设置参考（cmat, deformability）
+  - `pfc5-contact-models.json` — 全部 12 个 PFC5 接触模型完整语法 + 8 个 PFC7+ 仅有的模型对比
+  - `flatjoint.json` — Flat-Joint 模型完整参考（属性、方法、回调、能量）
+  - `servo-control.json` — 伺服控制参考
+  - `measurement.json` — 应力/应变测量参考
+  - `history-recording.json` — History 记录参考
+  - `fish-functions.json` — 关键 FISH 内置函数参考
+  - `common-pitfalls.json` — 实战语法陷阱大全（含 12 条已验证条目）
+  - `workflow-biaxial.json` — 双轴试验工作流参考
+- `knowledge/resources/pfc/references/index.json`: 参考索引（链接 pfc5-guide 全部文件）
+- `_compat.py`: 增加 `threading.Thread.ident` 兼容回退（Python 2.7 不支持的属性）
 
 ### 修复
-- **`__init__.py`**: `from . import upgrade` 用 `try/except ImportError` 保护，
-  避免 upgrade 模块不存在时崩溃
-- **`runtime.py`**: `python-reset-state false` 命令增加 PFC 5.0 语法回退
-- **`utils/file_buffer.py`**: `TextIOWrapper` 在 Python 2.7 只接受 `unicode` 类型，
-  添加 bytes→unicode 自动解码
-- **`utils/command_log.py`**: `program log-file ''` 在 PFC 5.0 中不存在，
-  通过探针命令+异常静默跳过
-- **`execution/snippet.py`**: 移除 PFC 5.0 不支持的 `capture_pfc_console`；
-  添加 `thread.get_ident` 兼容回退
-- **`execution/main_thread.py`**: 修复 `traceback.format_exc()` 在 `set_exception()`
-  之前调用的顺序错误
-- **`handlers/execute_code.py`**: 异常时添加 `traceback.print_exc()` 完整日志
-- **`scripts/addon.py`**: `_import_bridge()` 改为清除所有 `itasca_mcp_bridge.*` 子模块缓存
-  而非仅删除顶层模块，修复 Python 2.7 相对导入因 stale module 对象失败的问题
-- **`bridge/client.py`** (MCP Server): `httpx.AsyncClient(trust_env=False)`
-  禁用 Windows 系统代理自动检测，修复 502 Bad Gateway
+- **`common-pitfalls.json`**: 修正 `history write` 语法说明
+  - `history id N @func` 和 `history add id N fish @func` 在 PFC5 中都有效（非仅 add 形式）
+  - `history write` 不接受 `id` 关键字或 `all` 参数，必须显式列 ID
+- **`contact-model.json`**: 模型数量从 10 更新为 12（增加 rrlinear 和 burger）
+- **`_compat.py`**: 增加 `threading.Thread.ident` 可选属性适配，修复 Python 2.7 下的 `Future` 错误
+- **`README.md`**: 更新 PFC 5.0 知识库版本号为 v0.4.2-pfc5
 
-### 兼容性
-- 全部 32 个 `.py` 文件均添加 `from __future__ import absolute_import, print_function`
-- 全部使用 `.format()` 风格字符串格式化（Python 2.6+），无 f-string
-- 类型标注仅使用注释形式 (`# type:`)，无运行时类型提示
+### 知识库内容
+- PFC 5.0 命令文档：138 条命令，14 个分类（ball, wall, clump, contact, cmat, measure, history, domain, cycle, solve, set, plot, fish, 通用）
+- PFC 5.0 参考指南：12 篇实战指南（syntax, ball, wall, contact-model, pfc5-models, flatjoint, servo, measurement, history, fish, pitfalls, workflow）
+- 完整的 contact-model 知识图谱：12 个 PFC5 模型 × 全部属性/方法/回调 + 8 个 PFC7+ 模型清单
