@@ -36,7 +36,7 @@
     },
     {
       "heading": "FISH variable interpolation: @var and [expr]",
-      "content": "PFC 5.0 command-line accepts both forms of variable interpolation:\n\n  @var       — reference a FISH variable by name (simpler)\n  [expr]     — evaluate any FISH expression (more powerful)\n\nExamples:\n  wall attribute zvelocity -[ax_vel] range id 1\n  save result_[conf_pressure]\n  set logfile triaxial_[conf_pressure].log\n\nThe [expr] form is needed for expressions (e.g., [sz0+0.003]).\nThe @var form works for simple variable references (@fj_emod).\n\nNote: Inside 'command...end_command' blocks within FISH functions, always use [expr]."
+      "content": "PFC 5.0 command-line accepts both forms of variable interpolation:\n\n  @var       — reference a FISH variable by name (simpler)\n  [expr]     — evaluate any FISH expression (more powerful)\n\nExamples:\n  save result_[conf_pressure]\n  set logfile triaxial_[conf_pressure].log\n  wall attribute zvelocity [ax_vel] range id 1        ; positive velocity\n  wall generate id 2 plane dip 0 dd 0 position 0 0 [sz0+0.003]\n\nThe [expr] form is needed for expressions (e.g., [sz0+0.003]).\nThe @var form works for simple variable references (@fj_emod).\n\nNote: Inside 'command...end_command' blocks within FISH functions, always use [expr].\n\nIMPORTANT: See the separate 'Negative values with [expr]: use [-(expr)]' entry\nfor the correct way to write negative values."
     },
     {
       "heading": "Verified: Flat-Joint property pb_radius",
@@ -49,6 +49,10 @@
     {
       "heading": "Python API: ball.count(group_name) is valid",
       "content": "In PFC 5.0 Python API, itasca.ball.count() with a group name argument returns\nball count in that group:\n\n  itasca.ball.count()                  ; total ball count\n  itasca.ball.count('layer1')          ; balls in group 'layer1'\n\nThere is NO itasca.ball.BallFilter in PFC 5.0's Python API.\n  itasca.ball.BallFilter.by_group()    ; AttributeError"
+    },
+    {
+      "heading": "Negative values with [expr]: use [-(expr)], not -[expr]",
+      "content": "PFC 5.0 command-line does NOT accept -[expression] for negative values.\nThe '-' minus sign outside the brackets is parsed as a separate token,\ncausing 'Bad conversion of parameter number N' errors.\n\nPFC 5.0 (CORRECT — put the minus INSIDE the brackets):\n  wall generate id 2 plane dip 0 dd 0 position 0 0 [-(sz0+0.003)]\n  box [-(sx0)] [sx0] [-(sy0)] [sy0] [-(sz0)] [sz0]\n  wall attribute zvelocity [-(ax_vel)] range id 1\n\nPFC 5.0 (WRONG — minus outside brackets):\n  wall generate id 2 plane dip 0 dd 0 position 0 0 -[sz0+0.003]      ; ERROR\n  box -[sx0] [sx0] -[sy0] [sy0] -[sz0] [sz0]                        ; ERROR\n  wall attribute zvelocity -[ax_vel] range id 1                       ; ERROR\n\nReason: [expression] evaluates to a single token (the numeric value).\nThe '-' before the bracket is NOT absorbed into the bracket token.\nThe parser sees two separate tokens: '-' and '0.103'.\n\nVERIFIED on pfc3d500_gui_64.exe with error:\n  'Bad conversion of parameter number 11 (0). Expected tokens: 3D vector of floating point values'"
     }
   ]
 }
